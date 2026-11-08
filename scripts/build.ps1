@@ -30,7 +30,14 @@ $buildJunction = $null
 if (!$short -or $short.Contains(' ')) {
   # Sin nombres cortos 8.3 (volumen con 8dot3 desactivado): compilar a traves
   # de un junction sin espacios que apunte al proyecto.
-  $buildJunction = Join-Path ([IO.Path]::GetTempPath()) 'mesa-build'
+  $tempBase = [IO.Path]::GetTempPath().TrimEnd('\')
+  if ($tempBase.Contains(' ')) {
+    $tb = New-Object System.Text.StringBuilder 512
+    [void][MesaBuildPaths]::GetShortPathName($tempBase, $tb, 512)
+    $tempBase = $tb.ToString()
+  }
+  if ($tempBase.Contains(' ')) { throw 'No hay una ruta temporal sin espacios para compilar. Usa un checkout sin espacios.' }
+  $buildJunction = Join-Path $tempBase ("mesa-build-" + $PID)
   if (Test-Path -LiteralPath $buildJunction) { & cmd.exe /c "rmdir `"$buildJunction`"" 2>$null }
   & cmd.exe /c "mklink /J `"$buildJunction`" `"$root`"" | Out-Null
   if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath (Join-Path $buildJunction '.tools/flutter/bin/flutter.bat'))) {
