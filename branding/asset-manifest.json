@@ -1,0 +1,63 @@
+[
+  {
+    "path": "branding\\mesa-icon-512.png",
+    "bytes": 29500,
+    "sha256": "030f09b590bfb89c850d1c689f87494f952705fdb4d1a45691528f014d60d0a5",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "branding\\mesa-icon.svg",
+    "bytes": 516,
+    "sha256": "29913a0805a11da2f17637a8fb696ef96d5b5b156fcddc7af3d91f4ec05ffa87"
+  },
+  {
+    "path": "branding\\mesa-identidad.png",
+    "bytes": 52894,
+    "sha256": "3c82dd8b41e6452a7b5e206059a5c1852d7fd8d9bf5468e8453aea13ab9aa2f5",
+    "dimensions": [
+      1400,
+      720
+    ]
+  },
+  {
+    "path": "branding\\mesa-logo.svg",
+    "bytes": 657,
+    "sha256": "a0d6623a7c7a3c5ab95fdb47c1d8d14934e5d1836803dc4c0e2cabeca5d83f23"
+  },
+  {
+    "path": "branding\\mesa-mark.json",
+    "bytes": 735,
+    "sha256": "28d366cbed76937e842390694568d4cc4128a5e071d71766540d380fb46e14dc"
+  },
+  {
+    "path": "branding\\mesa-monochrome.svg",
+    "bytes": 463,
+    "sha256": "ea6138db30d9f187300841dd6488fc78b4055de158b28df220dca67283687a7f"
+  },
+  {
+    "path": "branding\\mesa-store-icon-512.png",
+    "bytes": 18531,
+    "sha256": "fc9729e1dc030009e47f8e952999b861985707b77c3b3e578934d23e3eba59f5",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "branding\\mesa-symbol-512.png",
+    "bytes": 16123,
+    "sha256": "11b1b3201243d2462ea2a9131adfd052cf87fbc8fefce7eef918b3c2a397a535",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "branding\\mesa-symbol.svg",
+    "bytes": 463,
+    "sha256": "cec65884966c999db49b0676af015fa939aea1945bb7e49f49356390d987af2a"
+  }
+]

@@ -1,0 +1,155 @@
+{
+  "original_sources": 38,
+  "cutoff_position": 17,
+  "retained_ids": [
+    "es-petitchef",
+    "mx-kiwilimon",
+    "es-gratis",
+    "es-directo",
+    "ar-cocineros",
+    "mx-nestle",
+    "es-hogarmania",
+    "mx-larousse",
+    "es-rechupete",
+    "es-bonviveur",
+    "es-nestle",
+    "es-recetinas",
+    "delokos-es",
+    "ar-paulina",
+    "pe-buenazo",
+    "wiki-es"
+  ],
+  "retired_ids": [
+    "agro-caribe",
+    "agro-arracacha",
+    "sabores-uy",
+    "caribe-goya",
+    "cu-vero",
+    "cl-pilar",
+    "us-foodhero",
+    "ec-laylita",
+    "gt-aprende",
+    "mx-mely",
+    "co-erica",
+    "es-canarias",
+    "ve-tuya",
+    "us-bueno-barato",
+    "bo-subsidios",
+    "ca-alberta",
+    "rd-iddi",
+    "co-picante",
+    "cl-uchile",
+    "us-myplate",
+    "py-senatur",
+    "cr-ucr"
+  ],
+  "removed_this_release": [
+    {
+      "id": "caribe-goya",
+      "name": "GOYA · español",
+      "previous_position": 17
+    },
+    {
+      "id": "cu-vero",
+      "name": "La cocina de Vero",
+      "previous_position": 18
+    },
+    {
+      "id": "cl-pilar",
+      "name": "La cocina chilena de Pilar",
+      "previous_position": 19
+    },
+    {
+      "id": "us-foodhero",
+      "name": "Food Hero · español",
+      "previous_position": 20
+    },
+    {
+      "id": "ec-laylita",
+      "name": "Laylita",
+      "previous_position": 21
+    },
+    {
+      "id": "gt-aprende",
+      "name": "Guatemala.com · Aprende",
+      "previous_position": 22
+    },
+    {
+      "id": "mx-mely",
+      "name": "México en mi Cocina",
+      "previous_position": 23
+    },
+    {
+      "id": "co-erica",
+      "name": "My Colombian Recipes · español",
+      "previous_position": 24
+    },
+    {
+      "id": "es-canarias",
+      "name": "Recetas y cosas canarias",
+      "previous_position": 25
+    },
+    {
+      "id": "ve-tuya",
+      "name": "Venezuela Tuya",
+      "previous_position": 26
+    },
+    {
+      "id": "us-bueno-barato",
+      "name": "Bueno y Barato · español",
+      "previous_position": 27
+    },
+    {
+      "id": "bo-subsidios",
+      "name": "Recetario Subsidios",
+      "previous_position": 28
+    },
+    {
+      "id": "ca-alberta",
+      "name": "Universidad de Alberta · español",
+      "previous_position": 29
+    },
+    {
+      "id": "rd-iddi",
+      "name": "Cocina con chines · IDDI",
+      "previous_position": 30
+    },
+    {
+      "id": "co-picante",
+      "name": "Picante pero sabroso · AGROSAVIA",
+      "previous_position": 31
+    },
+    {
+      "id": "cl-uchile",
+      "name": "Cocina de integración · Universidad de Chile",
+      "previous_position": 32
+    },
+    {
+      "id": "us-myplate",
+      "name": "MyPlate · español",
+      "previous_position": null
+    },
+    {
+      "id": "py-senatur",
+      "name": "SENATUR · Turismo gastronómico",
+      "previous_position": null
+    },
+    {
+      "id": "cr-ucr",
+      "name": "UCR · Cocina a la tica",
+      "previous_position": null
+    }
+  ],
+  "added_open_ids": [
+    "wiki-en",
+    "wiki-fr",
+    "wiki-it",
+    "wiki-pt",
+    "wiki-de",
+    "open-based",
+    "es-creativegan",
+    "book-polaca",
+    "es-encantar"
+  ],
+  "expansion_reason": "Fuentes con licencia publicada, autorizadas por el usuario el 11/10/2026."
+}

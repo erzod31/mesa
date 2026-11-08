@@ -1,0 +1,79 @@
+param([ValidateSet('windows','android','both')][string]$Target='both', [switch]$SkipPublish)
+$ErrorActionPreference = 'Stop'
+$root = Split-Path -Parent $PSScriptRoot
+# An Android-only delivery must still have the matching Windows installer.
+if ($Target -eq 'android') {
+  $releaseLine = Get-Content (Join-Path $root 'client/pubspec.yaml') | Where-Object { $_ -match '^version:' } | Select-Object -First 1
+  $releaseVersion = ($releaseLine -replace '^version:\s*','').Trim()
+  $windowsManifest = Join-Path $root 'dist/windows-installer.json'
+  if (!(Test-Path -LiteralPath $windowsManifest)) {
+    throw 'Toda entrega necesita instalador Windows. Ejecuta primero build.ps1 -Target windows o -Target both.'
+  }
+  $windowsRelease = Get-Content -Raw -LiteralPath $windowsManifest | ConvertFrom-Json
+  if ($windowsRelease.appVersion -ne $releaseVersion -or !(Test-Path -LiteralPath $windowsRelease.installer) -or (Get-FileHash -Algorithm SHA256 -LiteralPath $windowsRelease.installer).Hash.ToLowerInvariant() -ne $windowsRelease.sha256) {
+    throw 'El instalador Windows no coincide con esta entrega. Ejecuta build.ps1 -Target windows o -Target both.'
+  }
+}
+Add-Type -TypeDefinition @'
+using System;
+using System.Text;
+using System.Runtime.InteropServices;
+public static class MesaBuildPaths {
+  [DllImport("kernel32.dll", CharSet=CharSet.Unicode)]
+  public static extern uint GetShortPathName(string path, StringBuilder result, uint length);
+}
+'@
+$buffer = New-Object System.Text.StringBuilder 32768
+[void][MesaBuildPaths]::GetShortPathName($root,$buffer,32768)
+$short = $buffer.ToString()
+if (!$short -or $short.Contains(' ')) { throw 'El SDK Dart no admite esta ruta con espacios para algunos componentes nativos. Usa un checkout sin espacios para compilar.' }
+$flutter = Join-Path $short '.tools/flutter/bin/flutter.bat'
+if (!(Test-Path -LiteralPath $flutter)) { throw 'Prepara Flutter 3.47.7 en .tools/flutter siguiendo README.md.' }
+$env:ANDROID_HOME = Join-Path $short '.tools/android'
+$env:GRADLE_USER_HOME = Join-Path $short '.tools/gradle'
+$env:ANDROID_USER_HOME = Join-Path $short '.tools/android-user'
+Push-Location (Join-Path $root 'client')
+try {
+  $pub = & $flutter pub get 2>&1
+  $pub | Write-Output
+  if ($LASTEXITCODE -ne 0) {
+    if ("$pub" -notmatch '(?i)symlink') { throw 'No se pudieron resolver las dependencias Flutter.' }
+    & (Join-Path $root 'scripts/prepare_windows_plugins.ps1')
+    # Retry after preparing junctions: a failed pub get can leave Android's
+    # GeneratedPluginRegistrant empty even when Gradle builds successfully.
+    & $flutter pub get
+    if ($LASTEXITCODE -ne 0) { throw 'No se pudieron registrar los componentes nativos de Flutter.' }
+  }
+  & (Join-Path $root 'scripts/prepare_windows_plugins.ps1')
+  & $flutter analyze --no-pub
+  if ($LASTEXITCODE -ne 0) { throw 'El análisis del cliente falló.' }
+  & $flutter test --no-pub
+  if ($LASTEXITCODE -ne 0) { throw 'Las pruebas del cliente fallaron.' }
+  if ($Target -in @('windows','both')) {
+    & $flutter build windows --release --no-pub --target lib/main.dart
+    if ($LASTEXITCODE -ne 0) { throw 'La compilación Windows falló.' }
+    New-Item -ItemType Directory -Force -Path (Join-Path $root 'dist/Mesa-Windows') | Out-Null
+    Copy-Item -Path 'build/windows/x64/runner/Release/*' -Destination (Join-Path $root 'dist/Mesa-Windows') -Recurse -Force
+    # Copying a release over an older installation must also retire old assets.
+    foreach ($name in @('sabores-andantes.json','agro-arracacha.json','agro-caribe.json')) {
+      $retired = [IO.Path]::GetFullPath((Join-Path $root "dist/Mesa-Windows/data/flutter_assets/assets/catalogs/$name"))
+      if (!$retired.StartsWith([IO.Path]::GetFullPath($root) + [IO.Path]::DirectorySeparatorChar)) { throw 'Recurso fuera del proyecto.' }
+      if (Test-Path -LiteralPath $retired) { Remove-Item -LiteralPath $retired }
+    }
+    & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $root 'scripts/build_windows_installer.py') --client-dir (Join-Path $root 'client/build/windows/x64/runner/Release')
+    if ($LASTEXITCODE -ne 0) { throw 'Falta un instalador Windows utilizable; no se continúa la entrega.' }
+  }
+  if ($Target -in @('android','both')) {
+    & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $root 'scripts/sign_android.py')
+    if ($LASTEXITCODE -ne 0) { throw 'No se pudo preparar la firma Android.' }
+    & $flutter build apk --release --target-platform android-arm64 --no-pub --target lib/main.dart
+    if ($LASTEXITCODE -ne 0) { throw 'La compilación Android falló.' }
+    & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $root 'scripts/verify_android.py') 'build/app/outputs/flutter-apk/app-release.apk'
+    if ($LASTEXITCODE -ne 0) { throw 'La APK no contiene los componentes nativos necesarios para arrancar.' }
+    New-Item -ItemType Directory -Force -Path (Join-Path $root 'dist') | Out-Null
+    if (!$SkipPublish) {
+      & (Join-Path $root '.venv/Scripts/python.exe') (Join-Path $root 'scripts/publish_android_update.py') 'build/app/outputs/flutter-apk/app-release.apk'
+      if ($LASTEXITCODE -ne 0) { throw 'No se pudo publicar el paquete de actualización Android.' }
+    }
+  }
+} finally { Pop-Location }

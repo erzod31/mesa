@@ -1,0 +1,626 @@
+{
+  "provider": "book-polaca",
+  "checked_at": "2026-10-16",
+  "document": {
+    "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf",
+    "country": "Polonia",
+    "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "sha256": "70146536320400301cfbae8ced880a87eeb6e5b1549d23fdc615106907040222",
+    "photo_pages": [
+      91,
+      93,
+      95,
+      97,
+      99,
+      101,
+      103,
+      105,
+      107,
+      109,
+      111,
+      113
+    ]
+  },
+  "recipes": [
+    {
+      "title": "Tortitas proziaki",
+      "ingredients": [
+        "450–500 g de harina de trigo",
+        "250 ml de kéfir, yogur o leche agria",
+        "1 huevo",
+        "una pizca de sal",
+        "1 cucharadita de bicarbonato sódico"
+      ],
+      "steps": [
+        "Mezclamos bien el huevo con el kéfir o con el yogur. Añadimos sal y bicarbonato. Finalmente, agregamos la harina. Amasamos brevemente. Si la masa se sigue pegando a las manos, añadimos un poco más de harina y amasamos de nuevo. Cubrimos un bol con un paño de lino y dejamos la masa reposar 20–30 minutos. Sacamos la masa y la estiramos sobre la encimera hasta un grosor de aproximadamente 1 cm. Con un vaso o un cortapastas redondo, recortamos tortitas de unos 6–12 cm de diámetro. Colocamos las tortitas en una sartén de fondo grueso, seca y precalentada, y las tostamos hasta que estén doradas (10–15 minutos). También se pueden hornear durante 14–17 minutos en el horno precalentado a 190 grados. Tradicionalmente los proziaki se sirven con mantequilla, queso o mermelada."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=90",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=91",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=90",
+          "caption": "Tortitas proziaki",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "90",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=90",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Ñoquis perezosos de queso",
+      "ingredients": [
+        "150 g de patatas hervidas",
+        "200 g de requesón",
+        "200 g de harina",
+        "1 huevo",
+        "mantequilla",
+        "canela",
+        "azúcar"
+      ],
+      "steps": [
+        "En un bol ponemos patatas hervidas, requesón, huevo, sal y harina. Amasamos todo bien para obtener una masa lisa y homogénea. Si la masa está pegajosa, añadimos un poco de harina, pero no mucha, para que los ñoquis no se hagan demasiado duros. En la encimera formamos con la masa largos y estrechos rollos de unos 2 centímetros de grosor. Aplastamos los rollos ligeramente con la palma de la mano y los cortamos en trozos de 3–4 centímetros de largo. Ponemos los kluski en la olla con agua hirviendo, les agregamos sal. Cuando empiecen a flotar en la superficie del agua, hay que dejarlos cocer unos 4–5 minutos más antes de sacarlos. Escurrimos y servimos los kluski con mantequilla, espolvoreados con azúcar y canela. Están sabrosos incluso recalentados en una sartén."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=92",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=93",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=92",
+          "caption": "Ñoquis perezosos de queso",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "92",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=92",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Arenques al estilo de Casubia",
+      "ingredients": [
+        "Arenques:",
+        "500 g de arenques frescos o salados (filetes)",
+        "sal",
+        "pimienta",
+        "harina de trigo",
+        "aceite para freír",
+        "2 cebollas",
+        "Adobo de vinagre:",
+        "650 ml de agua",
+        "125 ml de vinagre de alcohol 10%",
+        "3 cucharadas de azúcar",
+        "media cucharadita de sal",
+        "4 hojas de laurel",
+        "6 granos de pimienta de Jamaica",
+        "10 granos de pimienta negra",
+        "un gran tarro"
+      ],
+      "steps": [
+        "Si preparamos este plato con arenques salados, hay que dejarlos en remojo unas 2–3 horas en agua fría para desalar. Una vez desalados, secamos los filetes, los sazonamos con sal y pimienta y los espolvoreamos con harina. Freímos los arenques en una sartén hasta que se doren. Retiramos el arenque, en el mismo aceite freímos la cebolla cortada en anillos. Vertemos el agua en una olla. Añadimos azúcar, sal y especias y lo ponemos a hervir. Al final agregamos vinagre y cocemos este adobo a fuego lento durante 1–2 minutos. Luego lo dejamos enfriarse. Ponemos el arenque y la cebolla en el tarro, vertemos el adobo de vinagre y lo guardamos en la nevera durante al menos dos días. Servimos el hylyng frito con cebolla con pan o patatas hervidas y con nata."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=94",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=95",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=94",
+          "caption": "Arenques al estilo de Casubia",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "94",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=94",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Pastel de patatas",
+      "ingredients": [
+        "1,5 kg de patatas",
+        "300 g de tocino ahumado",
+        "2 cebollas medianas",
+        "75 g de harina de trigo",
+        "2 huevos",
+        "sal, pimienta",
+        "hojas de perejil",
+        "nata agria"
+      ],
+      "steps": [
+        "Cortamos el tocino en dados y lo freímos en una sartén. Una vez que la carne esté frita, añadimos cebollas picadas y las sofreímos hasta que estén doradas. Quitamos la sartén del fuego. Pelamos, lavamos y rallamos las patatas. Escurrimos el exceso de agua que han soltado. A la masa de patatas añadimos la harina, los huevos, una pizca de sal y la pimienta y lo mezclamos bien. A continuación, agregamos el tocino frito con cebolla y lo revolvemos de nuevo. Vertemos la mezcla en un molde forrado con papel de horno para que forme una capa de unos 3–4 cm de altura. Horneamos durante 70–85 minutos en un horno precalentado a 180 grados. Servimos con nata agria y hojas de perejil picadas. El pastel sabe mejor recalentado al día siguiente, ya que entonces se permite cortar con mucha más facilidad. El color del pastel depende del tipo de patatas. Si usamos una variedad que no adquiere un color negruzco al pelar, el pastel no se volverá grisáceo."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=96",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=97",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=96",
+          "caption": "Pastel de patatas",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "96",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=96",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Sopa de rábano con huevo y salchicha blanca",
+      "ingredients": [
+        "2 l de caldo de carne",
+        "4 raíces de perejil medianos",
+        "4 zanahorias medianas",
+        "1 apio pequeño",
+        "rábano fresco (según el gusto), puede ser sustituido por el rábano seco",
+        "sal, pimienta, mejorana, pimienta de Jamaica, ajo seco, laurel",
+        "nata agria",
+        "huevos duros",
+        "salchicha blanca",
+        "hojas de perejil o cebollino"
+      ],
+      "steps": [
+        "Pelamos las zanahorias, el perejil y el apio y los cortamos en pequeños dados. Ponemos el caldo a hervir y agregamos las especias y el rábano picante rallado. Luego añadimos las verduras cortadas en dados y las cocinamos durante 15–20 minutos. Servimos la sopa en los platos. Ponemos en cada plato un cuarto de un huevo duro, una cucharada de nata y 2–3 rodajas de salchicha blanca. Espolvoreamos la sopa con perejil picado o cebollino."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=98",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=99",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=98",
+          "caption": "Sopa de rábano con huevo y salchicha blanca",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "98",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=98",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Empanadillas rusas y de ciruela",
+      "ingredients": [
+        "Masa:",
+        "500 g de harina de trigo",
+        "1 huevo",
+        "225–250 ml de agua",
+        "una pizca de sal",
+        "1 cucharada de aceite de colza",
+        "Relleno ruso:",
+        "350 g de patatas",
+        "200 g de queso fresco (requesón)",
+        "3 cebollas",
+        "200 g de tocino",
+        "grasa para freír",
+        "sal, pimienta",
+        "Relleno de ciruelas:",
+        "500–600 g de ciruelas",
+        "azúcar",
+        "fécula de patata",
+        "nata agria"
+      ],
+      "steps": [
+        "Masa: amasamos la harina con el agua y los huevos. A continuación, añadimos una cucharada de aceite. Estiramos la masa con un rodillo hasta que quede fina y con un vaso recortamos obleas redondas. En cada oblea ponemos un poco de relleno, la doblamos y sellamos bien primero con los dedos y luego con un tenedor o adornamos el borde con pequeños dobladillos. Cocinamos en abundante agua salada. Cuando los pierogi empiecen a flotar hay que dejarlos cocer unos 3 ó 4 minutos antes de sacarlos y escurrir. Se sirven con pequeños torreznos de tocino, cebolla o con nata agria. Son deliciosos recalentados en una sartén. Relleno ruso: pelamos, hervimos, y luego machacamos las patatas. Las dejamos enfriarse. Mezclamos el requesón con las patatas y añadimos una pizca de sal y pimienta. Rellenamos los pierogi. Cortamos la cebolla y el tocino en dados. Freímos el tocino hasta obtener pequeños torreznos. Después, agregamos la cebolla. Servimos los pierogi en un plato y los aderezamos con torreznos y cebolla. Relleno de ciruelas: lavamos las ciruelas, las deshuesamos y las cortamos en cuartos. Colocamos las frutas en un bol, espolvoreamos con azúcar y un poco de fécula de patata. Ponemos un poco de relleno de ciruela en el centro de cada oblea, formamos los pierogi y los cocemos. Sacamos 3 ó 4 minutos después de que floten. Servimos los pierogi con nata agria y azúcar."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=100",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=101",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=100",
+          "caption": "Empanadillas rusas y de ciruela",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "100",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=100",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Rollo de carne silesiano",
+      "ingredients": [
+        "1 kg de carne de vaca",
+        "200 g de pepinillos encurtidos (fermentados)",
+        "300 g de tocino ahumado",
+        "300 g de salchichas",
+        "200 g de cebollas",
+        "manteca de cerdo",
+        "mostaza",
+        "harina de trigo",
+        "sal",
+        "pimienta",
+        "5–6 granos de pimienta de Jamaica",
+        "2–3 hojas de laurel",
+        "agua",
+        "1 cucharada de harina"
+      ],
+      "steps": [
+        "Cortamos la carne en filetes gordos, los extendemos, y los ablandamos con un mazo de carne. Disponemos los filetes uniformemente, salpimentamos y untamos con una capa fina de mostaza. Cortamos pepinillos encurtidos, tocino y salchichas en tiras finas. Cortamos la cebolla en trozos más grandes. Colocamos los ingredientes en la carne extendida y la enrollamos. Atamos cada rollo de carne con hilo y lo rebozamos en harina. Freímos la carne de cada lado en manteca caliente para dorarla. Luego, ponemos los rollos fritos en una sartén o una olla y vertemos encima agua caliente hasta cubrirlos. Cocemos a fuego lento hasta que la carne se ablande. Durante la cocción, volteamos los rollos de vez en cuando. Al final, ponemos una cucharada de harina en un bol y agregamos un poco del caldo que ha soltado la carne. Mezclamos bien todo. Vertemos esta mezcla en la olla y revolvemos todo bien durante otros 2 o 3 minutos hasta que se espese ligeramente. Servimos los rollos con kluski silesianos o con trigo sarraceno."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=102",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=103",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=102",
+          "caption": "Rollo de carne silesiano",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "102",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=102",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Aguja de cerdo asado con comino",
+      "ingredients": [
+        "1 kg de cuello de cerdo",
+        "500 ml de caldo de carne o de verduras",
+        "150 ml de nata",
+        "3 cebollas",
+        "1–2 cucharaditas de comino molido",
+        "harina de trigo",
+        "sal",
+        "pimienta",
+        "manteca de cerdo"
+      ],
+      "steps": [
+        "Cortamos los filetes de aguja de cerdo en tiras de unos 2 centímetros. Sazonamos con sal, pimienta y comino. Los colocamos en un bol, tapamos y dejamos reposar en la nevera durante unas horas (preferiblemente durante toda la noche). Derretimos la manteca de cerdo. Rebozamos las tiras de carne con harina y las freímos de ambos lados en una sartén. Ponemos la carne en un plato resistente al calor, vertemos encima el caldo y horneamos de 2 a 2 horas y media en un horno precalentado a 160 grados. Una hora antes de que termine el horneado, agregamos cebolla picada. Después de hornear la carne, vertemos la salsa en una cacerola y añadimos la nata. Servimos la carne con patatas o entre dos mitades de un panecillo. Rociamos generosamente con la salsa."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=104",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=105",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=104",
+          "caption": "Aguja de cerdo asado con comino",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "104",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=104",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Tarta de manzana",
+      "ingredients": [
+        "370–400 g de harina de trigo",
+        "120 ml de leche",
+        "150 g de azúcar",
+        "45 g de mantequilla",
+        "18–20 g de levadura fresca",
+        "3 huevos medianos",
+        "300–400 g de manzanas pequeñas",
+        "fécula de patata",
+        "canela",
+        "zumo de limón"
+      ],
+      "steps": [
+        "Calentamos la leche ligeramente. En la leche tibia disolvemos la levadura, removiéndola bien. Vertemos la harina en un bol, y luego añadimos mantequilla, huevos y la leche tibia. Amasamos la masa a fondo. Cubrimos la masa amasada con un paño y la dejamos reposar durante unos 60–90 minutos en un molde para que crezca. Pelamos las manzanas y las cortamos en cuartos. Rociamos cada uno de ellos con zumo de limón y espolvoreamos con canela y fécula de patata. Ponemos la fruta encima de la masa. Volvemos a cubrir el molde de tarta con un paño y dejamos que la masa crezca de nuevo durante unos 60 minutos. Horneamos durante 55–65 minutos en un horno precalentado a 170 grados."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=106",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=107",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=106",
+          "caption": "Tarta de manzana",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "106",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=106",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Pastel de miel con confitura",
+      "ingredients": [
+        "Masa:",
+        "320–350 g de harina de trigo",
+        "50 g de azúcar",
+        "1 cucharada plana de levadura en polvo",
+        "1 huevo grande",
+        "100 g de mantequilla",
+        "80 g de miel de tilo (líquida)",
+        "Relleno:",
+        "600 g de guindas o ciruelas",
+        "70–90 g de azúcar",
+        "20 ml de miel líquida",
+        "40-50 g de mantequilla",
+        "tomillo fresco o tomillo seco"
+      ],
+      "steps": [
+        "Masa: ponemos la harina, el azúcar y la levadura en polvo en un bol. Añadimos los huevos, la mantequilla y la miel. Mezclamos y formamos una masa que dejamos reposar en la nevera durante unos 30 minutos. Dividimos la masa enfriada en 3 partes. Cada parte la estiramos con un rodillo y con un cuchillo recortamos tres rectángulos de 9 × 21 cm. Colocamos los rectángulos de masa en una bandeja forrada con papel de horno y horneamos durante unos 18–23 minutos en un horno precalentado a 180 grados. Después, recortamos los bordes para formar láminas rectangulares uniformes. Relleno: cortamos las frutas por la mitad y las deshuesamos. Derretimos la mantequilla en una sartén y freímos las frutas. Cuando se ablanden, agregamos azúcar y miel y las freímos a fuego lento hasta que tengan una consistencia bastante espesa. Colocamos una lámina previamente horneada y enfriada en un molde. Aplicamos una capa de frutas encima. Luego colocamos otra lámina y otra capa de fruta. Cubrimos todo con la tercera lámina y dejamos el pastel en la nevera durante unas 5–6 horas. Antes de servirlo, lo cortamos en trozos de unos 2–3 cm de ancho. También se puede verter encima un poco de miel o jarabe de fruta y adornarlo con hierbas frescas."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=108",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=109",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=108",
+          "caption": "Pastel de miel con confitura",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "108",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=108",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Galletas de jengibre katarzynki",
+      "ingredients": [
+        "200 g de harina de trigo",
+        "50 g de harina de centeno",
+        "130 g de miel líquida",
+        "10 g de azúcar",
+        "70 g de mantequilla blanda",
+        "10–12 g de su mezcla favorita de especias para el pan de jengibre",
+        "¼ cucharadita de bicarbonato sódico"
+      ],
+      "steps": [
+        "Calentamos la miel con azúcar y la enfriamos. Vertemos la harina en un bol, añadimos las especias y la mantequilla blanda. A continuación, agregamos la miel con azúcar. Mezclamos bien todo. Envolvemos la masa en el plástico alimentario y la dejamos reposar en la nevera durante 1 ó 2 horas. Extendemos la masa enfriada hasta un espesor de medio centímetro. Recortamos las galletas con la ayuda de un cortapastas en forma de katarzynki. Colocamos en una bandeja forrada con papel de horno. Horneamos durante unos 11–13 minutos a 175 grados."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=110",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=111",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=110",
+          "caption": "Galletas de jengibre katarzynki",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "110",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=110",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Cócteles Levístico y En el matorral de frambuesas",
+      "ingredients": [
+        "Levístico:",
+        "30 ml de vodka polaco",
+        "80 ml de sidra seca",
+        "unas hojas de levístico fresco",
+        "cubitos de hielo",
+        "agua con gas",
+        "En el matorral de frambuesas:",
+        "40 ml de vodka polaco",
+        "15 ml de zumo de frambuesa",
+        "15 ml de jarabe de flor de saúco",
+        "algunas frambuesas frescas",
+        "cubitos de hielo",
+        "agua con gas"
+      ],
+      "steps": [
+        "Levístico: colocamos los cubitos de hielo en un vaso alto (hasta la mitad del vaso). Añadimos el vodka, la sidra y las hojas de levístico frescas. Llenamos el vaso con agua con gas y removemos con una varilla. En el matorral de frambuesas: colocamos los cubitos de hielo en un vaso alto (hasta la mitad del vaso). Añadimos el vodka, el zumo de frambuesa, el jarabe de flor de saúco y las frambuesas. Llenamos el vaso con agua con gas y removemos con una varilla."
+      ],
+      "servings": 1,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=112",
+      "tags": [
+        "Polonia"
+      ],
+      "notes": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider. CC BY 4.0. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas. Ver páginas originales para el contexto y notas editoriales.",
+      "photos": [
+        {
+          "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=113",
+          "source": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=112",
+          "caption": "Cócteles Levístico y En el matorral de frambuesas",
+          "artist": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "origin": {
+        "provider": "book-polaca",
+        "id": "112",
+        "url": "https://bunkatura.pl/pdf/mesa_polaca.pdf#page=112",
+        "attribution": "Magdalena Tomaszewska-Bolałek · Fundación Bunkatura; traducción Maria Schneider",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    }
+  ]
+}

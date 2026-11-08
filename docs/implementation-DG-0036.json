@@ -1,0 +1,523 @@
+{
+  "taskId": "DG-0036",
+  "projectKey": "programa_de_recetas",
+  "projectRoot": "C:\\Users\\alvar\\Desktop\\Programa de recetas",
+  "generatedAt": "2026-11-02T06:24:01.333754+00:00",
+  "objective": "Reconcile preserved original Mesa family identity with updated Windows runtime without reset/migration. Original target established and minimal profile-selection fix packaged as37; application of that candidate is pending the exact Computer Use app-approval gate.",
+  "status": "connection_fix_implemented_verified_candidate37_operational_install_blocked_by_computer_use_app_approval_timeout",
+  "currentVersions": {
+    "privateWindowsFeed": "1.18.1+36",
+    "privateAndroidFeed": "1.18.1+36",
+    "actualDownloadedWindows": "1.18.1+36",
+    "actualDownloadedAndroid": "1.18.1+36",
+    "usualWindowsShortcutTargetFiles": {
+      "path": "C:\\Users\\alvar\\AppData\\Local\\Programs\\Mesa",
+      "nativeClientBefore": "1.17.0+34",
+      "nativeClientAfter": "1.18.1+36",
+      "registeredVersion": "1.18.1",
+      "registeredInstallPath": "C:\\Users\\alvar\\AppData\\Local\\Programs\\Mesa",
+      "managedUpdater": true,
+      "normalAppRunning": false,
+      "runningUpdaterVersionCode": 36,
+      "state": "Own instance closed normally before reviewed37 update;37 never launched due app approval timeout."
+    },
+    "projectPortableWindows": "1.16.0+32, preserved and not launched",
+    "firstManualWindowsInstallationRequired": false,
+    "userAndroidInstalledVersion": "Not inspected; no physical device contacted",
+    "recipeApi8765": "Own version36 launcher closed normally for37 update; no recipe server currently observed. No unrelated service forcibly stopped.",
+    "manualBootstrapCompleted": true,
+    "latestPreparedWindowsCandidate": "1.18.2+37",
+    "latestPreparedAndroidCandidate": "1.18.2+37",
+    "sourceVersion": "1.18.2+37"
+  },
+  "findings": [
+    {
+      "finding": "Current launcher36 unconditionally selects LocalAppData/Mesa/server. Stored URL and credential identify original project/data instead; no human choice or identity/data merge is necessary.",
+      "confidence": "high",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\identity-evidence.json"
+    },
+    {
+      "finding": "No normal documented existing-profile selection was available in36; isolated-profile changes vault/client behavior and is unsuitable. Minimal explicit existing-profile selection implemented and packaged as37, with fail-closed validation.",
+      "confidence": "high",
+      "evidence": [
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\server\\server_profile.py",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\WINDOWS-INSTALLER.md"
+      ]
+    },
+    {
+      "finding": "Candidate37 passes193 Python/186 Flutter tests and extracted real payload/model/helper/restart-queue verification. Android candidate retains family certificate; manifests prepared and signed but not activated.",
+      "confidence": "high",
+      "evidence": [
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\python-tests-37.log",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\client-check-37.log",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\payload-20261101T223955Z\\result.json"
+      ]
+    },
+    {
+      "finding": "The exact launch attempt for installer37 returned Computer Use app approval timed out. No37 installer process was observed after; installed marker/registry/PE remain36. This is a tool app-approval gate, not an observed Windows installer/UAC error or an automatic-review rejection reason.",
+      "confidence": "high",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\app-approval-timeout-37.json"
+    },
+    {
+      "finding": "Earlier publication and real Windows36 installation remain completed and preserved; credential verifier was corrected to primary DPAPI, with no credential loss/reset. Details retained in phase reports.",
+      "confidence": "high",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\installation-phase-report-before-reconciliation.json"
+    }
+  ],
+  "implemented": [
+    "Identified original saved family unambiguously using URL, config, credential fingerprint and profile counters; no global credential enumeration or secret output.",
+    "Implemented tested fail-closed existing-profile selection, preserving normal client/vault/update cache and isolated QA fencing.",
+    "Built complete Windows installer/Android37 and prepared signed feeds outside live distribution; old36 public channel preserved.",
+    "Closed only the owned normal Mesa36 window using Alt+F4 after main-view/empty-queue checks; launcher exited normally and its own server stopped.",
+    "Captured fresh full backup and reviewed candidate37 before launch; recorded exact app approval timeout and withheld both installation/config selection without bypass."
+  ],
+  "changedFiles": [
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\pubspec.yaml",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\update_notes.json",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\WINDOWS-INSTALLER.md",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\implementation-DG-0036.json",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\windows_launcher.py",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\server\\server_profile.py",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\server\\test_server_profile.py"
+  ],
+  "sourceCodeChanged": true,
+  "checks": [
+    {
+      "command": "Read-only saved prefs/DPAPI/config/user fingerprint/profile counter comparison",
+      "result": "passed: exact saved credential matches original project profile only; URL/publicURL consistent; profiles kept distinct",
+      "scope": "No secret values, recipes, new identities or data merges",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\identity-evidence.json"
+    },
+    {
+      "command": "pytest server/test_server_profile.py; full pytest server",
+      "result": "6 focused/193 total passed",
+      "scope": "Synthetic isolated profile auth/config tests, not live user authentication or speed measurement",
+      "evidence": [
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\profile-tests.log",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\python-tests-37.log"
+      ]
+    },
+    {
+      "command": "scripts/check_client.ps1; Flutter Windows/Android37 builds; apksigner; candidate preparation",
+      "result": "186 Flutter/analyzer passed; native packages built; family certificate and signed metadata verified",
+      "scope": "Actual candidate binaries, no phone install or live publication",
+      "evidence": [
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\client-check-37.log",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\windows-build-37.log",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\android-build-37.log",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\android-certificate-37.log"
+      ]
+    },
+    {
+      "command": "verify_app_update_payload.py37 --verify-restart-queue",
+      "result": "passed: extracted payload hashes, frozen backend/Indra, signed no-console helper, native isolated launch and populated-queue restart",
+      "scope": "Extraction/isolated runtime only; no QA installer execution",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\payload-20261101T223955Z\\result.json"
+    },
+    {
+      "command": "Current normal UI read; queue counts; sky.press_key Alt_L+F4; fresh backup and review",
+      "result": "main recetario, no editor,0 pending; own normal client/launcher exited without kill; backup550 files1182265267 bytes complete/reviewed",
+      "scope": "Authorized own-instance normal close; no other service/device changed",
+      "evidence": [
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\before-normal-close.json",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\preinstall-review-37.json"
+      ]
+    },
+    {
+      "command": "sky.launch_app exact reviewed installer37 path, no arguments",
+      "result": "BLOCKED: Computer Use app approval timed out",
+      "scope": "No alternate path/command/silent switch; no observed installer37 process or installed version change",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\app-approval-timeout-37.json"
+    },
+    {
+      "command": "Final candidate signatures/hashes, identity/config membership and live distribution baseline/feed checks",
+      "result": "passed:62 distribution/signing hashes unchanged; stored original identity unchanged; two live feeds HTTP200/code36",
+      "scope": "No actual profile selection or live translation probe; installed36 remains closed after failed37 launch",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\final-reconciliation-state.json"
+    },
+    {
+      "scope": "Earlier DG-0036 publication/real36 operation",
+      "result": "Preserved historical phase evidence; not rerun or represented as new37 installation",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\installation-phase-report-before-reconciliation.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\Mesa-Setup-1.18.1-36-x64.exe",
+      "version": "1.18.1+36",
+      "bytes": 760360427,
+      "sha256": "10b4ab5530d1b81281bb6eaae49744dc2f90b56edba54f73f400fc4dcbf308de",
+      "role": "Published Windows x64 installer; complete HTTPS download and actual reviewed operational update on this PC verified; not a clean-VM QA test"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\Mesa-Android-1.18.1-36.apk",
+      "version": "1.18.1+36",
+      "bytes": 39821714,
+      "sha256": "0e7a1a046ee515238b6afc7649eb501b9360baa7b93f4ec7ac6a0886efb0bac5",
+      "role": "Published Android ARM64 APK; complete HTTPS download and original family certificate verified, not installed"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\windows-update.json",
+      "version": "1.18.1+36",
+      "bytes": 891,
+      "sha256": "cbbd0ed232b8012a60735b15e6e3274be74357cf769b6eadbb58fa0e01c2007d",
+      "role": "Published Ed25519 signed Windows feed"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\android-update.json",
+      "version": "1.18.1+36",
+      "bytes": 843,
+      "sha256": "755252297a46e588d11b62dcdf075b4b252445e4e0bcb01c42fa4019afc8f87a",
+      "role": "Published Ed25519 signed Android feed served at /descargar/update.json"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\artifacts-37\\Mesa-Setup-1.18.2-37-x64.exe",
+      "version": "1.18.2+37",
+      "bytes": 760363724,
+      "sha256": "863b4ec467442e58b0bf0f4c4bc7811f0658e03781ac48dd6c76b9ae5f911558",
+      "role": "New Windows x64 candidate with existing-server selection; extracted payload verified; operational launch blocked by Computer Use app approval timeout, not installed or published"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\artifacts-37\\Mesa-Android-1.18.2-37.apk",
+      "version": "1.18.2+37",
+      "bytes": 39821714,
+      "sha256": "80d8a3dcee3a3eb30c6f95b0cd25092edffdb7a3f043d5b5e9d3a0a65206515e",
+      "role": "Matching signed ARM64 candidate; original family certificate; not installed or published"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\channel-37\\windows-update.json",
+      "version": "1.18.2+37",
+      "bytes": 879,
+      "sha256": "e137d4daa5aade8d0b5d9f7a1a3ebdd2290b9b1b569884d98a4bb67d42db9172",
+      "role": "Prepared Ed25519 Windows candidate feed; live channel remains36"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\channel-37\\android-update.json",
+      "version": "1.18.2+37",
+      "bytes": 831,
+      "sha256": "14b2b6a41cd239b0337e65987d7b09df4c7164990d014e355c365dc211aaf787",
+      "role": "Prepared Ed25519 Android candidate feed; live channel remains36"
+    }
+  ],
+  "platformMatrix": [
+    {
+      "platform": "Windows",
+      "architecture": "x64",
+      "publishedVersion": "1.18.1+36",
+      "downloadUrl": "https://starfly.tailc69897.ts.net:9443/descargar/Mesa-Setup-1.18.1-36-x64.exe",
+      "feed": "https://starfly.tailc69897.ts.net:9443/descargar/windows-update.json",
+      "feedStatus": 200,
+      "manifestVerification": "Pinned canonical Ed25519, exact identity/code/hash; completed HTTPS installer check",
+      "nativeConfirmation": "Real operational normal NSIS window observed installing; no silent flags supplied. No real system/security prompt bypassed; intermediate clicks were not observed or invented.",
+      "reopen": "Updated Mesa opened normally by explicit installed launcher; child window recovered and code36 confirmed",
+      "currentUsualCopy": "Installed1.18.1+36; closed normally for37 update, tool gate prevented launch",
+      "dataPreservation": "Full fresh reviewed backup and actual before/after row/hash/DPAPI preservation checks; no fixtures in real profile",
+      "actualUserInstallationPerformed": true,
+      "authenticode": "No certificate existed; installer NotSigned as explicitly allowed by signed feed policy. Not claimed Authenticode-signed.",
+      "testLevel": "Real update on this PC, not a complete clean-VM install/update/uninstall test",
+      "existingConnectionLimitation": "Original family identified; runtime selection fix37 is built/tested but not installed. No re-pair/reset/merge applied.",
+      "normalAppCurrentlyRunning": false,
+      "new37CandidateReady": true
+    },
+    {
+      "platform": "Android",
+      "architecture": "arm64-v8a",
+      "publishedVersion": "1.18.1+36",
+      "downloadUrl": "https://starfly.tailc69897.ts.net:9443/descargar/Mesa-Android-1.18.1-36.apk",
+      "feed": "https://starfly.tailc69897.ts.net:9443/descargar/update.json",
+      "feedStatus": 200,
+      "manifestVerification": "Pinned canonical Ed25519, native APK signature/package/version/ABI and complete download verified",
+      "familyCertificateSha256": "cfac930697914840904bfa97aa30f4c763cd8138858fe7ff9339ab69e2474d18",
+      "nativeConfirmation": "Existing UI checks/download/permission/system installer; new signed flat metadata is backward compatible with older field readers",
+      "reopen": "Android installer Open/manual reopening; not tested on physical phone",
+      "actualUserInstallationPerformed": false
+    },
+    {
+      "platform": "LG/webOS, Shield, iOS, macOS, Linux, Web",
+      "newChannelActivated": false,
+      "realDeviceTouched": false,
+      "scope": "No publication or device testing for other platforms in DG-0036"
+    }
+  ],
+  "operationalActions": {
+    "earlierPublicationAndReal36Update": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\installation-phase-report-before-reconciliation.json",
+    "currentOwnMesaClosedNormally": true,
+    "forcedClosures": [],
+    "candidate37LaunchAttempted": true,
+    "candidate37InstallerProcessObserved": false,
+    "exactToolError": "Computer Use app approval timed out",
+    "selectionOrFamilyDataChanged": false,
+    "credentialResetOrMerge": false,
+    "alternateOrSilentLaunchAttempted": false,
+    "activePrivateChannel36Preserved": true,
+    "lgOrOtherDeviceTouched": false
+  },
+  "publication": {
+    "prepared": true,
+    "performed": true,
+    "liveVersion": "1.18.1+36",
+    "new37Prepared": true,
+    "new37Published": false,
+    "steps": [
+      "Earlier reviewed36 publication and exact helper restoration completed",
+      "Both live36 feeds still HTTP200 after37 timeout"
+    ],
+    "rollback": {
+      "originalPlan": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0033\\publication\\publication.json",
+      "priorBackupsPreserved": true,
+      "performed": false
+    },
+    "impact": "Only existing private36 channel remains active; new37 candidate/selection not applied.",
+    "dependencies": [
+      "Existing private Tailscale/helper",
+      "Computer Use app approval to run exact reviewed37 installer; task authorization already present"
+    ],
+    "phaseReport": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\installation-phase\\publication-report-before-real-update.json"
+  },
+  "translationPerformance": {
+    "source": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\implementation-DG-0033.json",
+    "evidenceType": "Historical timing, unchanged translation optimization code in36/37; not rerun",
+    "actualPreservedCredentialFlowConfirmed": false,
+    "reason": "37 profile-selection fix not installed; own36 normal app is closed pending gate."
+  },
+  "actualUserInstallationsTouched": true,
+  "lgRealDeviceTouched": false,
+  "blockers": [
+    {
+      "scope": "Operational37 update needed for exact original-profile reuse",
+      "reason": "Computer Use app approval timed out for the exact reviewed installer37; no approval-review rejection text or Windows security/installer failure observed. Cannot bypass via silent/alternate execution.",
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\app-approval-timeout-37.json",
+      "productAuthorizationMissing": false,
+      "familySelectionAmbiguous": false,
+      "actionNeeded": "Resolve the Computer Use app gate for the exact37 installer; refresh preconditions/snapshot after overnight wait, then continue native update and reversible profile selection."
+    }
+  ],
+  "remainingWork": [
+    "Resolve exact Computer Use app approval gate for installer37; do not ask again for the already-authorized product correction or bypass the gate.",
+    "Refresh session/no work/ports/full backup review, install37 normally, apply prepared server-profile.json selecting original project/data, then open owned Mesa.",
+    "Verify preserved credential /v1/me and /v1/snapshot200 and expected identity/counters read-only; no synthetic recipes in the real profile and no repeated user-profile speed benchmark.",
+    "Live channel36/old artifacts stay intact unless a separately reviewed publication of37 is instructed."
+  ],
+  "recommendations": [
+    "Use exact original family selection; do not replace credentials, merge users or copy databases across profiles.",
+    "Keep all original/local profile directories and all backups.",
+    "Prepared37 installer SHA256863b4ec467442e58b0bf0f4c4bc7811f0658e03781ac48dd6c76b9ae5f911558 is the concrete gate target.",
+    "A tool app-approval timeout is distinct from Windows/UAC rejection and from missing task authorization; no rejection reason has been invented."
+  ],
+  "publicationPhaseReport": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\installation-phase\\publication-report-before-real-update.json",
+  "operationalAuthorization": {
+    "source": "Current DG-0036 delegated continuation in this chat after concrete candidate/hash review",
+    "userQuotes": [
+      "implementa todo lo que puedes hacer",
+      "la velocidad en la traduccion en mesa debe ser rapida, soluciona ese problema"
+    ],
+    "scope": "Real operational Mesa Windows update 1.17.0+34 -> 1.18.1+36, not shared-Windows QA; normal installer and startup after complete reviewed backup. No repeat permission requested.",
+    "limits": [
+      "LG/phone/Shield excluded",
+      "No forced closures or unrelated service restart",
+      "No installer if backup incomplete; no profile fixture or user-document benchmark",
+      "Native security/system prompts must not be bypassed"
+    ],
+    "decision": "Initial backup verifier was incorrect for the actual DPAPI primary store. Corrected read-only verifier passed fixture/corruption/live/backup validation, then fresh complete snapshot was reviewed before operational launch."
+  },
+  "credentialVerifierCorrection": {
+    "resolved": true,
+    "primaryMechanism": "DPAPI JSON via Dart FFI, not legacy native AES Credential Manager target",
+    "fixtureAndReadOnlyActualBackupVerified": true,
+    "credentialLossEstablished": false,
+    "secretsPrinted": false,
+    "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\installation-phase\\credential-dpapi-verification.json"
+  },
+  "installationBeforeAfter": {
+    "completedEarlierDGPhase": {
+      "before": "1.17.0+34",
+      "after": "1.18.1+36",
+      "actualOperationalInstall": true,
+      "report": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\installation-phase-report-before-reconciliation.json"
+    },
+    "current": {
+      "installed": "1.18.1+36",
+      "normalAppOpen": false,
+      "candidate37Installed": false,
+      "selectionApplied": false,
+      "exactToolError": "Computer Use app approval timed out"
+    }
+  },
+  "installationSnapshot": {
+    "historical36BackupPreserved": true,
+    "current37PreinstallBackup": {
+      "fullBackupRoot": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\installation-phase\\backup-20261101T224201Z",
+      "files": 550,
+      "bytes": 1182265267,
+      "credentialsAndFilesCompleteReviewed": true,
+      "preinstallReview": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\preinstall-review-37.json",
+      "previousSelection": null,
+      "previousProfilesAndAllPriorBackupsRetained": true,
+      "rollback": "With Mesa normally closed and no active jobs, restore prior server-profile.json; if previously absent, move the new selection to backup. Do not move/delete either family directory or overwrite its database.",
+      "mustRefreshBeforeResume": "Approval wait elapsed overnight; recheck session/no work/ports and refresh snapshot before retry."
+    },
+    "review": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\preinstall-review-37.json"
+  },
+  "candidateArtifacts": [
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\artifacts-37\\Mesa-Setup-1.18.2-37-x64.exe",
+      "version": "1.18.2+37",
+      "bytes": 760363724,
+      "sha256": "863b4ec467442e58b0bf0f4c4bc7811f0658e03781ac48dd6c76b9ae5f911558",
+      "role": "New Windows x64 candidate with existing-server selection; extracted payload verified; operational launch blocked by Computer Use app approval timeout, not installed or published"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\artifacts-37\\Mesa-Android-1.18.2-37.apk",
+      "version": "1.18.2+37",
+      "bytes": 39821714,
+      "sha256": "80d8a3dcee3a3eb30c6f95b0cd25092edffdb7a3f043d5b5e9d3a0a65206515e",
+      "role": "Matching signed ARM64 candidate; original family certificate; not installed or published"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\channel-37\\windows-update.json",
+      "version": "1.18.2+37",
+      "bytes": 879,
+      "sha256": "e137d4daa5aade8d0b5d9f7a1a3ebdd2290b9b1b569884d98a4bb67d42db9172",
+      "role": "Prepared Ed25519 Windows candidate feed; live channel remains36"
+    },
+    {
+      "path": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\channel-37\\android-update.json",
+      "version": "1.18.2+37",
+      "bytes": 831,
+      "sha256": "14b2b6a41cd239b0337e65987d7b09df4c7164990d014e355c365dc211aaf787",
+      "role": "Prepared Ed25519 Android candidate feed; live channel remains36"
+    }
+  ],
+  "installationPhaseReportBeforeConnectionWork": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\installation-phase-report-before-reconciliation.json",
+  "connectionReconciliation": {
+    "before": {
+      "ui": "Access expired/revoked",
+      "installedRuntime": "1.18.1+36",
+      "savedConnection": {
+        "url": "http://127.0.0.1:8765",
+        "publicUrl": "https://starfly.tailc69897.ts.net:9443",
+        "generationFingerprint": "20de2cc39ebcb83bee94026b6d03d167f03ed146430dbe63fa26c92bf52464e2",
+        "dataCounts": {
+          "entities": 0,
+          "outbox": 0,
+          "conflicts": 0
+        }
+      },
+      "serverDataForcedByLauncher": "LocalAppData/Mesa/server"
+    },
+    "identityEvidence": {
+      "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\identity-evidence.json",
+      "profiles": [
+        {
+          "label": "saved-project",
+          "folder": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\data",
+          "configUrl": "http://127.0.0.1:8765",
+          "publicUrl": "https://starfly.tailc69897.ts.net:9443",
+          "desktopCredentialMatchesSaved": true,
+          "validMatchingUserCount": 1,
+          "tableCounts": {
+            "entities": 0,
+            "users": 1,
+            "invites": 0,
+            "history": 0,
+            "changes": 0
+          },
+          "profileIdentityFingerprint": "a9337c1e5a36c5a8a3f22edf1872abc05f8ad6cc719f599af9d0507bade7452b",
+          "metaColumns": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "label": "installed-server",
+          "folder": "C:\\Users\\alvar\\AppData\\Local\\Mesa\\server",
+          "configUrl": "http://127.0.0.1:8765",
+          "publicUrl": null,
+          "desktopCredentialMatchesSaved": false,
+          "validMatchingUserCount": 0,
+          "tableCounts": {
+            "entities": 0,
+            "users": 1,
+            "invites": 0,
+            "history": 0,
+            "changes": 0
+          },
+          "profileIdentityFingerprint": "93a6c043363ddabe226eaae0dbc1b3655c41658de06e57f4e84cb157f0e3ff0a",
+          "metaColumns": [
+            "key",
+            "value"
+          ]
+        }
+      ],
+      "conclusion": "Saved credential exactly equals original project desktop config token and authenticates one unrevoked project user; it does not match the installed profile. Both profiles retain own separate identities, each with 0 entities/1 user. Target is inferable from saved identity; no human family choice required.",
+      "secretValuesPrinted": false,
+      "profileCopyOrMergePerformed": false
+    },
+    "selectedTarget": {
+      "directory": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\data",
+      "reason": "Exactly the already-saved family identity and connection, not the other empty default family",
+      "requiresCode": "1.18.2+37",
+      "selectedInLiveConfiguration": false
+    },
+    "changes": {
+      "sourceFiles": [
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\server\\server_profile.py",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\windows_launcher.py",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\server\\test_server_profile.py",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\pubspec.yaml",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\update_notes.json",
+        "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\WINDOWS-INSTALLER.md"
+      ],
+      "mechanism": "Explicit server-profile.json outside binaries with schema1/server_data_directory; validates existing DB/config/live credential before create_app. MESA_SERVER_DATA and documented RECETARIO_DATA supported; isolated profiles ignore normal overrides.",
+      "noSilentBlankFamilyFallback": true,
+      "noCredentialGenerationOrReplacement": true,
+      "noDataMigrationOrMerge": true,
+      "installedBinariesPatchedByHand": false,
+      "normalConfigurationFileWritten": false,
+      "preparedSelection": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\selected-server-profile.json",
+      "reviewedPlan": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\selection-plan.json"
+    },
+    "backups": {
+      "fullBackupRoot": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\installation-phase\\backup-20261101T224201Z",
+      "files": 550,
+      "bytes": 1182265267,
+      "credentialsAndFilesCompleteReviewed": true,
+      "preinstallReview": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\preinstall-review-37.json",
+      "previousSelection": null,
+      "previousProfilesAndAllPriorBackupsRetained": true,
+      "rollback": "With Mesa normally closed and no active jobs, restore prior server-profile.json; if previously absent, move the new selection to backup. Do not move/delete either family directory or overwrite its database.",
+      "mustRefreshBeforeResume": "Approval wait elapsed overnight; recheck session/no work/ports and refresh snapshot before retry."
+    },
+    "authenticationAfter": {
+      "actualOriginalProfileStarted": false,
+      "actualSavedCredentialHttp200Verified": false,
+      "reason": "Candidate37 installer never started; configuration was not applied. SQL/config identity proof and isolated API fixture200 are not presented as actual authenticated user flow or translation.",
+      "isolatedRegression": "193 Python tests passed including six profile-selection tests; original synthetic credential rejected by wrong family and accepted by correct selected family without copied users."
+    },
+    "dataPreservation": {
+      "originalIdentityRecheckedAfterTimeout": true,
+      "usersAndCredentialUnchanged": true,
+      "noFamiliesMerged": true,
+      "noProfileReset": true,
+      "distributionAndSigningFilesUnchanged": 62,
+      "liveChannelVersion": 36,
+      "liveFeedsHttp200": true,
+      "normalCloseOnly": true,
+      "noForcedTerminations": true,
+      "noUserRecipeOrTranslationProbe": true
+    },
+    "remainingDecision": {
+      "humanFamilyChoiceRequired": false,
+      "productTaskAuthorizationAlreadyPresent": true,
+      "technicalGate": "Computer Use app approval for exact reviewed Mesa-Setup-1.18.2-37-x64.exe",
+      "toolErrorExact": "Computer Use app approval timed out",
+      "automaticReviewRejectionReason": null,
+      "windowsSecurityOrInstallerRejectionObserved": false,
+      "bypassAttempted": false,
+      "installerProcessAfterTimeout": false,
+      "nextStep": "Resolve that app gate, then revalidate backup/work/session, install reviewed37 normally, atomically apply prepared selection, open own Mesa, verify /v1/me and /v1/snapshot read-only with preserved identity. Do not reset/re-pair or alter either family."
+    }
+  },
+  "fullAuditReport": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\implementation-DG-0036\\connection-reconciliation\\full-reconciliation-audit.json"
+}

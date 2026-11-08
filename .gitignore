@@ -1,0 +1,15 @@
+.tools/
+.venv/
+data/
+dist/
+output/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+client/.dart_tool/
+client/build/
+client/android/local.properties
+client/android/key.properties
+client/android/*.jks
+Mesa.lnk

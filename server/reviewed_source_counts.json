@@ -1,0 +1,72 @@
+{
+  "wiki-es": {
+    "recipe_count": 1016,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://es.wikibooks.org/w/api.php?action=query&list=allpages&apprefix=Artes_culinarias/Recetas/&apfilterredir=nonredirects&aplimit=500&format=json",
+    "count_note": "Páginas únicas bajo Artes culinarias/Recetas, con las tres páginas de la API completas. Se excluyen redirecciones y 27 índices de letras. No se ha comprobado foto y cantidades en todas ellas.",
+    "count_checked_at": "2026-10-11"
+  },
+  "delokos-es": {
+    "recipe_count": 1745,
+    "count_kind": "displayed_total",
+    "count_evidence": "https://delokos.wordpress.com/recetas-publicadas-todas/",
+    "count_note": "El autor rotula su índice «Recetas publicadas (1.745)». No se confunde con el mapa SEO, que solo lista parte de las entradas.",
+    "count_checked_at": "2026-10-11"
+  },
+  "ar-paulina": {
+    "recipe_count": 1679,
+    "count_kind": "catalog_entries",
+    "count_evidence": "https://www.paulinacocina.net/wp-json/wp/v2/posts?categories=31,32,33,34,36,37,40,42,43,48,50,51,52,55,60,56,57,58,14,15,16,17,19,20,23,24,59,25,26,28&categories_exclude=27&per_page=1&_fields=id",
+    "count_note": "Entradas únicas de Recetas y todas sus subcategorías, excluyendo Trucos y tips. Se cuenta la unión en la API, no la suma de categorías; las recopilaciones cuentan como una entrada.",
+    "count_checked_at": "2026-10-11"
+  },
+  "pe-buenazo": {
+    "recipe_count": 1292,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://buenazo.pe/sitemap/recetas.xml",
+    "count_note": "Enlaces únicos del mapa de recetas publicado por Buenazo. Las recopilaciones son una ficha; no se descargan los textos ni se comprueban todas las recetas para su importación.",
+    "count_checked_at": "2026-10-11"
+  },
+  "mx-nestle": {
+    "recipe_count": 8662,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://www.recetasnestle.com.mx/sitemap.xml",
+    "count_note": "URLs únicas /recetas/ de las tres páginas completas del mapa español de México. Se excluyen marcas, cursos, productos, artículos y las ediciones de otros países.",
+    "count_checked_at": "2026-10-11"
+  },
+  "es-bonviveur": {
+    "recipe_count": 4297,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://bonviveur.com/es/webmap/cat/recetas/",
+    "count_note": "Enlaces únicos de las 52 páginas del mapa «Recetas de cocina». Se excluyen navegación, listas temáticas y noticias; no se estima el total multiplicando páginas.",
+    "count_checked_at": "2026-10-11"
+  },
+  "es-rechupete": {
+    "recipe_count": 4386,
+    "count_kind": "catalog_entries",
+    "count_evidence": "https://www.abc.es/recetasderechupete/wp-json/wp/v2/posts?per_page=1&_fields=id&categories=3590,3,4006,4000,4003,3561,3560,3563,3571,3565,3572,3575,3999,4007,4001,3997,3998,3839,3894,3898,3881,4261,3897,3889,4008,4002,3883,3882,3924,4011,4004,3761,3562,3910,3763,3841,3906,3911,3909,4070,5786,5785,5013,3908,3907,3842,3905,3755,3843,5718,3750,3756,4005,3888,3887,3884,4010,3840,3767,3757,3896,3838,3913,3759,3880,4009,3895,3861,4195,6,3570,3567,3568,3597,3595,3569,3559,3577,3829,3825,4180,445,3862,3443,3831,3835,4179,3765,3900,7,3912,4181,3833,3891,3444,3451,4193,3834,3445,4445,3927,3932,3938,3933,3939,3573,3937,3929,3754,3930,3940,3935,3936,3931,3941,3758,3766,3760,3893,3446,3901,3899,3523,3764,8,3890,3830,3447,3860,3827,3886,3576,123,9,3752,3748,3749,3885,4956,3822,3821,3823,3824,10,4444,3456,3458,3454,3448,3452,3453,3459,3457,3455,4269,3442,3441,3460,11,3993,5787,3828,5784,3564,3832,3524,3826,100,3836,3996,3892,3574,3762,3904,4196,581,3450,5783,4194,3837,3992,13,3558,4446,3995,3994",
+    "count_note": "Entradas únicas de Recetario de cocina y todas sus categorías descendientes, tras revisar las 222 categorías públicas. No se suman categorías; se excluyen escuela de alimentación, noticias y libros fuera del recetario.",
+    "count_checked_at": "2026-10-11"
+  },
+  "es-petitchef": {
+    "recipe_count": 33527,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://www.petitchef.es/upload_data/sitemaps/recipe-es.xml",
+    "count_note": "Mapa recipe-es.xml de la edición española, contando URLs de recetas únicas. Se excluyen artículos, preguntas, categorías, mapas de imágenes y otros idiomas. Sustituye la cifra histórica multilingüe de 2014.",
+    "count_checked_at": "2026-10-11"
+  },
+  "es-directo": {
+    "recipe_count": 10300,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://www.directoalpaladar.com/recipe/sitemap.xml",
+    "count_note": "Mapa específico de recetas, no el mapa de noticias o el total de artículos del medio. Se cuentan enlaces únicos clasificados por el editor como recetas; algunos son recopilaciones o contienen varias preparaciones.",
+    "count_checked_at": "2026-10-11"
+  },
+  "es-recetinas": {
+    "recipe_count": 2605,
+    "count_kind": "catalog_entries",
+    "count_evidence": "https://recetinas.com/wp-json/wp/v2/posts?categories=557%2C419%2C346%2C489%2C568%2C544%2C538%2C536%2C546%2C552%2C558%2C251%2C220%2C561%2C154%2C415%2C1209%2C517%2C950%2C242%2C239%2C308%2C234%2C87%2C79%2C255%2C236%2C573%2C545%2C417%2C323%2C554%2C541%2C215%2C1294%2C139%2C23%2C548%2C13%2C70%2C142%2C512%2C65%2C5%2C18%2C58%2C551%2C180%2C32%2C248%2C69%2C1275%2C35%2C1272%2C1276%2C1279%2C8%2C306%2C46%2C49%2C1280%2C542%2C15%2C62%2C1281%2C67%2C1247%2C1248%2C1278%2C513%2C14%2C421%2C574%2C431%2C519%2C1277&per_page=1&_fields=id",
+    "count_note": "Entradas únicas de la unión de categorías de recetas y cocinas; se excluyen consejos, selección de productos, recomendaciones y contenidos sin categoría. Las recopilaciones cuentan una vez.",
+    "count_checked_at": "2026-10-11"
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ar-paulina",
+    "url": "https://www.paulinacocina.net/como-hacer-empanadas-de-carne/9220",
+    "file": "ar-paulina.html"
+  },
+  {
+    "id": "ar-cocineros",
+    "url": "https://cocinerosargentinos.com/recetas/carne/empanadas-de-carne",
+    "file": "ar-cocineros.html"
+  },
+  {
+    "id": "pe-buenazo",
+    "url": "https://buenazo.pe/recetas/platos-de-fondo/lomo-saltado-ingredientes-preparacion-61",
+    "file": "pe-buenazo.html"
+  },
+  {
+    "id": "mx-larousse",
+    "url": "https://laroussecocina.mx/receta/pozole-rojo/",
+    "file": "mx-larousse.html"
+  },
+  {
+    "id": "mx-nestle",
+    "url": "https://www.recetasnestle.com.mx/recetas/chilaquiles-rojos",
+    "file": "mx-nestle.html"
+  },
+  {
+    "id": "es-bonviveur",
+    "url": "https://bonviveur.com/es/recetas/tortilla-de-betanzos",
+    "file": "es-bonviveur.html"
+  },
+  {
+    "id": "es-rechupete",
+    "url": "https://www.abc.es/recetasderechupete/tortilla-de-patatas-espanola-receta-paso-a-paso/5182/",
+    "file": "es-rechupete.html"
+  },
+  {
+    "id": "es-hogarmania",
+    "url": "https://www.hogarmania.com/cocina/recetas/tortilla-de-patatas-al-horno.html",
+    "file": "es-hogarmania.html"
+  },
+  {
+    "id": "es-petitchef",
+    "url": "https://www.petitchef.es/recetas/postre/bizcocho-de-manzana-y-canela-con-streusel-crujiente-de-almendras-fid-1615469",
+    "file": "es-petitchef.html"
+  },
+  {
+    "id": "es-directo",
+    "url": "https://www.directoalpaladar.com/recetas-de-huevos-y-tortillas/empezando-en-la-cocina-receta-de-tortilla-de-patatas-con-cebolla",
+    "file": "es-directo.html"
+  },
+  {
+    "id": "es-gratis",
+    "url": "https://recetas.elperiodico.com/receta-de-lentejas-con-arroz-y-tomate-59773.html",
+    "file": "es-gratis.html"
+  },
+  {
+    "id": "es-recetinas",
+    "url": "https://recetinas.com/agua-de-sandia/",
+    "file": "es-recetinas.html"
+  }
+]

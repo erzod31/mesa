@@ -1,0 +1,12 @@
+fastapi==0.143.0
+uvicorn==0.54.0
+pillow==12.3.0
+httpx==0.28.1
+ctranslate2==4.8.2
+sentencepiece==0.2.2
+numpy==2.5.4
+pypdf==6.10.0
+indra-ocr==1.1.2
+onnxruntime==1.31.1
+opencv-python-headless==5.0.0.93
+cryptography==48.0.0

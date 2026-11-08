@@ -1,0 +1,15 @@
+{
+  "name": "Mesa · la cocina que compartes",
+  "viewBox": [0, 0, 96, 96],
+  "background": "#25634B",
+  "foreground": "#FFFEFB",
+  "accent": "#9ED8B8",
+  "paths": [
+    {"id": "bowl", "fill": "foreground", "d": "M22 51 C22 67 34 79 48 79 C62 79 74 67 74 51 Z"},
+    {"id": "steam-m", "stroke": "foreground", "width": 8, "d": "M31 39 L31 29 C31 21 48 21 48 29 L48 39 M48 29 C48 21 65 21 65 29 L65 39"},
+    {"id": "leaf", "fill": "accent", "d": "M65 45 C68 38 75 36 80 38 C79 44 73 49 65 45 Z"}
+  ],
+  "rationale": "Cuenco reconocible, vapor en forma de m y hoja secundaria; curva tranquila, proporciones legibles y continuidad del verde.",
+  "provenance": "Geometría vectorial original de Mesa. Sin copiar logotipos de terceros."
+}
+

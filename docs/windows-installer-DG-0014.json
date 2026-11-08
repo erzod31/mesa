@@ -1,0 +1,367 @@
+{
+  "projectKey": "Mesa",
+  "taskId": "DG-0014",
+  "recordedAt": "2026-10-28T05:39:24.091741+00:00",
+  "status": "delivered_with_known_limitations",
+  "acceptance": "Installer artifact and evidence delivered; normal installation acceptance remains pending.",
+  "appVersion": "1.16.1+33",
+  "architecture": "x64",
+  "installerPath": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\Mesa-Setup-1.16.1-33-x64-4.exe",
+  "installerKind": "NSIS Unicode per-user EXE",
+  "sha256": "2b282e62858a774631335ffcba1ac785f1d65c287234ef7eb8c59952b9afd2af",
+  "bytes": 609250191,
+  "buildCommand": ".venv\\Scripts\\python.exe -B scripts\\build_windows_installer.py --client-dir client/build/windows/x64/runner/Release",
+  "buildWorkingDirectory": "C:\\Users\\alvar\\Desktop\\Programa de recetas",
+  "buildEvidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-package-verified.log",
+  "verificationCommands": [
+    ".venv\\Scripts\\python.exe -B scripts\\verify_windows_installer.py dist\\Mesa-Setup-1.16.1-33-x64-4.exe",
+    ".venv\\Scripts\\python.exe -B output\\windows-installer-DG-0014\\finish-inspection.py",
+    ".venv\\Scripts\\python.exe -B output\\windows-installer-DG-0014\\record-final-inspection.py"
+  ],
+  "verificationNote": "The original verifier stopped on the Android helper request. Continuation recorded translations and restarted the same extracted payload; its reconnect wait timed out. Final read-only recording preserved all failures and compared scoped snapshots. No installer was executed for these final checks.",
+  "checks": [
+    {
+      "name": "installer_identity_size_sha256",
+      "result": "passed",
+      "details": {
+        "bytes": 609250191,
+        "sha256": "2b282e62858a774631335ffcba1ac785f1d65c287234ef7eb8c59952b9afd2af",
+        "activeIndex": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\windows-installer.json"
+      }
+    },
+    {
+      "name": "payload_version_and_native_architecture",
+      "result": "passed",
+      "details": {
+        "appVersion": "1.16.1+33",
+        "windowsResourceVersions": {
+          "installer": "1.16.1",
+          "client": "1.16.1+33",
+          "authenticode": "NotSigned"
+        },
+        "peMachines": {
+          "Mesa.exe": "AMD64 (0x8664)",
+          "app/mesa.exe": "AMD64 (0x8664)",
+          "_internal/python312.dll": "AMD64 (0x8664)",
+          "app/flutter_windows.dll": "AMD64 (0x8664)"
+        },
+        "note": "NSIS setup stub may be 32-bit; shipped application, Python and Flutter payload are x64."
+      }
+    },
+    {
+      "name": "flutter_tests",
+      "result": "passed",
+      "details": {
+        "count": 12,
+        "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-client-tests.log",
+        "scope": "Earlier build-stage run: isolated profile and store tests."
+      }
+    },
+    {
+      "name": "flutter_analyze",
+      "result": "passed",
+      "details": {
+        "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-analyze.log"
+      }
+    },
+    {
+      "name": "flutter_windows_release_build",
+      "result": "passed",
+      "details": {
+        "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-flutter-final.log"
+      }
+    },
+    {
+      "name": "nsis_extraction_and_payload_sha256",
+      "result": "passed",
+      "details": {
+        "files": 311,
+        "version": "1.16.1+33",
+        "architecture": "x64",
+        "privateDatabasesOrKeysBundled": false,
+        "extracted": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\extracted"
+      }
+    },
+    {
+      "name": "frozen_backend_save_read_translation",
+      "result": "passed",
+      "details": {
+        "version": "1.16.1+33",
+        "health": {
+          "status": "ok",
+          "product": "mesa",
+          "version": "0.7.0",
+          "protocol": 1,
+          "capabilities": [
+            "collections",
+            "recipe-attribution",
+            "photo-gallery",
+            "publisher-catalogs",
+            "remote-photos",
+            "local-translation",
+            "paginated-snapshot",
+            "retranslate-original",
+            "translation-warmup",
+            "persistent-translation-cache"
+          ]
+        },
+        "saveRead": true,
+        "translation": {
+          "en": "Mezcle 2 huevos."
+        },
+        "isolatedProfile": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\profile"
+      }
+    },
+    {
+      "name": "isolated_native_first_frame",
+      "result": "passed",
+      "details": {
+        "ready": true,
+        "entries": 0,
+        "pending": 0,
+        "connected": true,
+        "credentialVaultUsed": false,
+        "systemNotificationsUsed": false
+      }
+    },
+    {
+      "name": "isolated_api_recipe_import",
+      "result": "passed",
+      "details": {
+        "steps": [
+          "Batir."
+        ]
+      }
+    },
+    {
+      "name": "android_download_helper",
+      "result": "failed",
+      "details": {
+        "error": "RemoteDisconnected: the packaged helper closed the update feed request without a response.",
+        "evidence": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-final2.log",
+        "impact": "Android download/update feed served by this Windows package is not validated and failed this request. Core recipe API and native app remain running."
+      }
+    },
+    {
+      "name": "translation_en",
+      "result": "passed",
+      "details": {
+        "steps": [
+          "Mezcle 2 huevos."
+        ],
+        "originalPreserved": true
+      }
+    },
+    {
+      "name": "translation_fr",
+      "result": "passed",
+      "details": {
+        "steps": [
+          "Mezclar 2 huevos."
+        ],
+        "originalPreserved": true
+      }
+    },
+    {
+      "name": "translation_it",
+      "result": "passed",
+      "details": {
+        "steps": [
+          "Mezclar 2 huevos."
+        ],
+        "originalPreserved": true
+      }
+    },
+    {
+      "name": "translation_de",
+      "result": "failed",
+      "details": {
+        "error": "HTTP Error 422: Unprocessable Entity"
+      }
+    },
+    {
+      "name": "translation_pt",
+      "result": "passed",
+      "details": {
+        "steps": [
+          "Mezcle 2 huevos."
+        ],
+        "originalPreserved": true
+      }
+    },
+    {
+      "name": "isolated_client_database",
+      "result": "passed",
+      "details": {
+        "entities": 1,
+        "pending": 0,
+        "integrity": "ok"
+      }
+    },
+    {
+      "name": "isolated_restart_local_recipe_persistence",
+      "result": "passed",
+      "details": {
+        "ready": {
+          "ready": true,
+          "entries": 1,
+          "pending": 0,
+          "connected": false,
+          "credentialVaultUsed": false,
+          "systemNotificationsUsed": false
+        },
+        "entities": 1,
+        "integrity": "ok",
+        "queueWasEmpty": true,
+        "scope": "One existing recipe reopened; nonempty queue persistence not exercised."
+      }
+    },
+    {
+      "name": "isolated_restart_reconnect",
+      "result": "failed",
+      "details": {
+        "connected": false,
+        "observed": "Second native first frame contains the persisted recipe but no connection.",
+        "sourceFinding": "Cookbook.connect refuses changing the saved server URL; the QA launcher chooses a new random port on restart.",
+        "limitation": "Normal fixed-port restart not tested.",
+        "classification": "Observed failure under random-port QA conditions; not a confirmed defect in normal fixed-port reopening.",
+        "followupConclusion": "Same-port isolated full restart cannot be forced with existing launcher options; see same_port_isolated_full_launcher_restart."
+      }
+    },
+    {
+      "name": "scoped_normal_data_registry_shortcuts_unchanged_during_final_inspection",
+      "result": "passed",
+      "details": {
+        "protectedEntries": 82,
+        "registrySnapshots": 8,
+        "scope": "Only locations in before.json, during the final extraction and isolated run; does not establish whole-system preservation or behavior of normal installation/update/uninstall."
+      }
+    },
+    {
+      "name": "normal_installation_update_uninstall",
+      "result": "not_run",
+      "details": "No more installer/updater/uninstaller execution was permitted on this Windows. Normal flows remain unvalidated."
+    },
+    {
+      "name": "clean_windows_without_developer_tools",
+      "result": "not_run",
+      "details": "Private Python, local MSVC CRT and translation models are bundled. Isolated launch used PATH with only Windows/System32 and Windows, and no PYTHONPATH/PYTHONHOME/VIRTUAL_ENV/JAVA_HOME. This does not substitute for a clean-machine test."
+    },
+    {
+      "name": "authenticode_signature",
+      "result": "not_signed",
+      "details": {
+        "status": "NotSigned"
+      }
+    },
+    {
+      "name": "qa_process_cleanup",
+      "result": "passed",
+      "details": "Read-only Win32_Process inventory after inspection found no processes with executable paths under the extracted QA lab. Only test child processes identified by exact executable path and launcher parent PID were stopped."
+    },
+    {
+      "name": "same_port_isolated_full_launcher_restart",
+      "result": "not_run",
+      "details": {
+        "requestedScope": "Close and reopen the extracted launcher with the same temporary profile and identical isolated loopback API port, without touching normal paths or services.",
+        "inspectionMethod": "Read-only AST inspection of the launcher implementation and its existing argument definitions; original extracted-payload run reports retained as execution evidence.",
+        "launcherOptions": [
+          "--isolated-profile",
+          "--self-test",
+          "--report"
+        ],
+        "isolatedApiPortExpression": "free_port() if args.isolated_profile else 8765",
+        "freePortBehavior": "Binds loopback port 0 to obtain an OS-assigned free port for every isolated launch; the socket is released before server startup.",
+        "portOverrideAvailable": false,
+        "reason": "The existing isolated-profile option always calls free_port(). There is no API-port argument, environment override, or profile configuration override. Changing isolated-connection.json cannot force the server port: the launcher rewrites that connection with its newly selected port. The fixed 8765 branch requires normal mode, which selects normal data/client paths and is outside the permitted test scope.",
+        "whatWasVerifiedPreviously": "Extracted native client first launch connected successfully; closing and reopening the same temporary profile retained one recipe and SQLite integrity. On the second launch a different random port was selected and the saved-URL guard prevented reconnection.",
+        "whatRemainsUnverified": "Complete extracted launcher close/reopen with the same isolated API port, including service shutdown/restart and client reconnection. Normal fixed-port restart remains unvalidated; the previous random-port result is not a confirmed normal restart defect.",
+        "noUnsupportedWorkaroundUsed": true,
+        "noApplicationOrHarnessChanges": true,
+        "noInstallerOrUninstallerExecuted": true,
+        "noRegistryTestsPerformed": true,
+        "sourcePath": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\windows_launcher.py",
+        "sourceSha256": "a909258cea5a95a58c937426e906ebdfb38c2bc0725c165f643d0d3a23c9f7cf",
+        "previousExecutionReports": [
+          "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\launch.json",
+          "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\relaunch.json"
+        ]
+      }
+    }
+  ],
+  "installationTested": false,
+  "updateTested": false,
+  "uninstallationTested": false,
+  "isolatedLaunchTested": true,
+  "sourceRevision": null,
+  "sourceRevisionNote": "Workspace is not a Git repository; git rev-parse HEAD failed accordingly.",
+  "changedFiles": [
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\AGENTS.md",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\README.md",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\pubspec.yaml",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\lib\\store.dart",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\lib\\ui.dart",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\lib\\timers.dart",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\client\\test\\isolated_profile_test.dart",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\windows_launcher.py",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\build_windows_installer.py",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\windows-installer.nsi",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\verify_windows_installer.py",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\scripts\\build.ps1",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\WINDOWS-INSTALLER.md",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\windows-installer-DG-0014.json",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\windows-installer.json",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-DG-0014\\finish-inspection.py",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-DG-0014\\record-final-inspection.py",
+    "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-DG-0014\\write-delivery-evidence.py"
+  ],
+  "artifacts": {
+    "installerIndex": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\dist\\windows-installer.json",
+    "inspectionResult": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\result.json",
+    "inspectionChecks": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\checks.json",
+    "beforeSnapshot": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\before.json",
+    "afterSnapshot": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-20261028T053549Z\\after.json",
+    "initialVerifierLog": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-final2.log",
+    "continuationLog": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-inspection-completion.log",
+    "isolationIncident": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-DG-0014\\isolation-incident.json",
+    "recoveryState": "C:\\Users\\alvar\\Desktop\\Programa de recetas\\output\\windows-installer-DG-0014\\recovery-state.json"
+  },
+  "limitations": [
+    "Normal installation, update and uninstall were not validated.",
+    "Android helper feed failed with RemoteDisconnected.",
+    "German translation request failed with HTTP 422.",
+    "Isolated restart retained one recipe but did not reconnect after the QA random port changed. This does not confirm failure of normal fixed-port reopening. A same-port isolated full restart cannot be forced using existing launcher options.",
+    "No clean Windows VM test; developer runtime paths were excluded but system DLLs may be available on the host.",
+    "Nonempty queue persistence not exercised.",
+    "Original incident has no complete immediate AppData/registry baseline.",
+    "Installer is not Authenticode signed.",
+    "The initial prototype accidentally created a normal installation. Recovery using its uninstaller had begun before the order to stop further installation tests arrived. Subsequent verification was read-only or extracted-payload execution only.",
+    "Recovery observations show newly created normal installation directory, registration and shortcuts absent, original project shortcut present, and 19 protected project files matching historical 2026-10-24 hashes. These observations do not prove complete restoration: no complete immediate pre-incident AppData/registry snapshot was persisted.",
+    "Final before/after comparison covers only the file locations and registry keys enumerated in the inspection snapshots.",
+    "Automatic import of an existing portable project server database is not implemented; the previous project is retained and explicit export/import or pairing is required.",
+    "Local services run while the native window remains open. Tailscale and Ollama/TranslateGemma are optional external components, not included."
+  ],
+  "remainingWork": [
+    "Validate normal per-user installation, update and uninstall in a disposable clean Windows VM or independent Windows profile, with persisted complete pre/post evidence; do not run those flows again on this host.",
+    "Repair and verify the packaged Android download/update helper before relying on that service.",
+    "Investigate HTTP 422 for German recipe translation and verify expected support.",
+    "Validate normal fixed-port reopening in a disposable Windows VM or independent profile. Existing launcher options cannot force a same-port isolated full restart; the random-port QA failure is not a confirmed normal defect. Any future harness enhancement is separate work and does not justify changing server-switch safeguards.",
+    "Exercise a nonempty pending queue across restart and later update/uninstall preservation tests.",
+    "Apply Authenticode signing if a signed distribution is required."
+  ],
+  "publicationPerformed": false,
+  "existingPackagesDeleted": false,
+  "additionalBuildsDuringClosure": false,
+  "fixedPortFollowup": {
+    "recordedAt": "2026-10-28T05:42:07.663612+00:00",
+    "outcome": "Not reproducible with existing isolated launcher options; exact coverage and limits documented.",
+    "changedFiles": [
+      "C:\\Users\\alvar\\Desktop\\Programa de recetas\\docs\\windows-installer-DG-0014.json"
+    ],
+    "applicationChanged": false,
+    "rebuilt": false,
+    "newPayloadLaunches": 0,
+    "normalRestartFailureConfirmed": false,
+    "installationTested": false
+  }
+}

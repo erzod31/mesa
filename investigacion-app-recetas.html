@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investigación para una app familiar de recetas en Windows y Android</title>
+<style>
+:root{color-scheme:light;--ink:#24332d;--muted:#53645b;--green:#215b42;--line:#d9e1da;--paper:#fffefa;--soft:#eef4ee}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f3ed;color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1060px;margin:32px auto;background:var(--paper);padding:48px 60px;border:1px solid var(--line);border-radius:16px}header{border-bottom:2px solid var(--green);padding-bottom:28px}h1{font-size:clamp(30px,4vw,44px);line-height:1.16;max-width:850px;margin:12px 0 22px}h2{font-size:27px;line-height:1.3;margin:48px 0 18px;scroll-margin-top:24px}h3{font-size:20px;margin:26px 0 10px}p{margin:12px 0 18px}a{color:var(--green);text-underline-offset:3px}a:focus-visible{outline:3px solid #9f4b11;outline-offset:4px}.meta{font-size:14px;color:var(--muted)}.lead{font-size:21px;line-height:1.55}.callout{background:var(--soft);border-left:4px solid var(--green);padding:18px 22px;margin:24px 0}.callout p:last-child{margin-bottom:0}nav{background:var(--soft);padding:20px 24px;border-radius:10px;margin-top:28px}nav ol{columns:2;column-gap:36px;margin:8px 0;padding-left:24px}nav li{break-inside:avoid;padding:4px 0}ul,ol{padding-left:26px}li{margin:8px 0}.table-wrap{overflow-x:auto;margin:20px 0}table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}th,td{padding:13px 14px;text-align:left;vertical-align:top;border:1px solid var(--line)}th{background:var(--soft)}tbody tr:nth-child(even){background:#f9faf6}code{font:14px/1.5 Consolas,monospace;background:#edf0eb;padding:2px 5px;border-radius:4px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf0eb;padding:20px;font:14px/1.6 Consolas,monospace;border-radius:8px}.source{font-size:14px;color:var(--muted)}.badge{display:inline-block;background:var(--soft);color:var(--green);border-radius:6px;padding:4px 10px;font-size:13px;font-weight:700;letter-spacing:.04em}footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}@media(max-width:700px){main{margin:0;padding:28px 20px;border:0;border-radius:0}nav ol{columns:1}th,td{padding:10px}h2{font-size:24px}}@media print{body{background:white;font-size:11pt}main{max-width:none;margin:0;padding:0;border:0}nav{display:none}h2,h3{break-after:avoid}tr,.callout{break-inside:avoid}a{color:inherit}pre{font-size:9pt}.table-wrap{overflow:visible}h1{font-size:28pt}footer{font-size:9pt}}
+</style>
+</head>
+<body><main>
+<header>
+<span class="badge">WINDOWS · ANDROID · FAMILIA · TAILSCALE</span>
+<h1>Investigación para una app familiar de recetas en Windows y Android</h1>
+<p class="meta">10 de octubre de 2026 · Alcance confirmado: ordenador Windows, teléfonos Android y familia o grupo pequeño.</p>
+<p class="lead">La propuesta es un recetario que permita guardar una receta en pocos pasos, cocinar con una interfaz legible y compartir compras y menús. Cada dispositivo conserva sus datos localmente y se sincroniza con un servidor familiar accesible mediante Tailscale.</p>
+<p>Para desarrollar una app propia, recomiendo Flutter para ambos clientes, SQLite local con Drift y una API pequeña con FastAPI. Empezaría alojando el servidor en el PC, con posibilidad de trasladarlo a un equipo siempre encendido. La sincronización y la recuperación de datos deben entrar en la primera versión.</p>
+<p class="meta">Las capacidades de productos y plataformas se apoyan en documentación oficial enlazada. La arquitectura, los flujos, las prioridades y los objetivos de calidad son propuestas de diseño. Las estimaciones de trabajo son orientativas, no plazos comprometidos.</p>
+</header>
+<nav aria-label="Índice del informe"><strong>Contenido</strong><ol>
+<li><a href="#producto">Objetivo y principios del producto</a></li><li><a href="#alternativas">Soluciones existentes</a></li><li><a href="#funciones">Funciones y prioridades</a></li><li><a href="#experiencia">Pantallas y ergonomía</a></li><li><a href="#flujos">Flujos de uso</a></li><li><a href="#arquitectura">Arquitectura propuesta</a></li><li><a href="#tailscale">Conexión con Tailscale</a></li><li><a href="#sync">Sincronización y conflictos</a></li><li><a href="#datos">Modelo de datos</a></li><li><a href="#importacion">Importación y captura</a></li><li><a href="#cocina">Modo cocina y temporizadores</a></li><li><a href="#familia">Colaboración y privacidad</a></li><li><a href="#operacion">Instalación y copias de seguridad</a></li><li><a href="#validacion">Pruebas y criterios de aceptación</a></li><li><a href="#plan">Plan de desarrollo y costes</a></li><li><a href="#decisiones">Decisiones para comenzar</a></li></ol></nav>
+
+<section id="producto"><h2>1. Objetivo y principios del producto</h2>
+<p>El trabajo principal es convertir recetas dispersas —páginas web, mensajes, fotos y recuerdos familiares— en una colección que se pueda encontrar y utilizar. El ordenador sirve para introducir, corregir y organizar; el teléfono, para capturar, cocinar y comprar. Ambos deben permitir las tareas principales.</p>
+<ul>
+<li><strong>Guardar primero y completar después.</strong> Un título y un contenido, una foto o un enlace bastan para guardar un borrador. Raciones, tiempos, categorías y valoración son opcionales.</li>
+<li><strong>Respuesta inmediata.</strong> Abrir recetas, marcar ingredientes y editar una lista de compra depende de la copia local. Las transferencias aparecen como una actividad secundaria.</li>
+<li><strong>Datos recuperables.</strong> Papelera, historial de cambios, exportación y restauración forman parte del producto.</li>
+<li><strong>Complejidad progresiva.</strong> La búsqueda, la receta y el botón de añadir están visibles; organización masiva, permisos y diagnósticos viven en pantallas secundarias.</li>
+<li><strong>Comodidad al cocinar.</strong> Texto grande, pocos controles, ingredientes accesibles, pasos claros y avisos locales.</li>
+<li><strong>Una familia, identidades individuales.</strong> Recetario compartido y preferencias personales; cada persona conserva sus favoritos y su estado de cocina.</li>
+</ul>
+<div class="callout"><strong>Decisión fundamental</strong><p>Cuando el servidor esté apagado, se podrá leer lo descargado, cocinar, editar y comprar. Los cambios viajarán a los demás dispositivos al recuperar la conexión. Ninguna interfaz debe afirmar que un cambio llegó a la familia antes de recibir confirmación.</p></div>
+</section>
+
+<section id="alternativas"><h2>2. Soluciones existentes y oportunidad de una app propia</h2>
+<div class="table-wrap"><table><thead><tr><th>Solución</th><th>Qué aporta</th><th>Encaje en este proyecto</th></tr></thead><tbody>
+<tr><td><a href="https://mealie.io/documentation/getting-started/introduction/">Mealie</a></td><td>Servidor propio, interfaz web/PWA, API, importación de enlaces, menús, compras y hogares.</td><td>Buena opción para empezar pronto con acceso privado. Su condición de PWA no demuestra por sí sola edición y sincronización completa sin conexión.</td></tr>
+<tr><td><a href="https://docs.tandoor.dev/">Tandoor</a></td><td>Recetarios, planificación, búsqueda, importación y colaboración. Documenta listas de compra compartidas.</td><td>Interesante si pesa más organizar una colección amplia. La sincronización de archivos externos documentada es una función distinta de replicar una base local en Android.</td></tr>
+<tr><td><a href="https://www.paprikaapp.com/help/android/">Paprika</a></td><td>Referencia de experiencia culinaria: raciones, temporizadores, compras y planificación. Su sincronización documentada utiliza Paprika Cloud Sync.</td><td>Sirve de referencia funcional; no la elegiría para exigir un servidor de sincronización propio por Tailscale.</td></tr>
+<tr><td><a href="https://recipekeeperonline.com/">Recipe Keeper</a></td><td>Captura mediante fotos/OCR, recetas sin conexión y clientes Windows y Android.</td><td>Referencia de captura sencilla. Su política describe el envío de fotos/PDF a servidores para OCR; conviene diseñar explícitamente la privacidad de una alternativa propia.</td></tr>
+<tr><td>App propia</td><td>Control del almacenamiento, funcionamiento sin conexión, captura Android, interfaz y permisos.</td><td>Mayor trabajo inicial, sobre todo por sincronización, instaladores y pruebas; mejor ajuste si esas características son obligatorias.</td></tr>
+</tbody></table></div>
+<p><strong>Recomendación:</strong> usar Mealie y Tandoor como referencias de organización, Paprika como referencia de cocina y Recipe Keeper como referencia de captura. Construir una app propia si se desea la experiencia local descrita. Elegir Mealie como alternativa rápida si se acepta una experiencia principalmente web. Una envoltura de una web en una ventana no añade automáticamente una base local ni resolución de conflictos.</p>
+<p>No atribuyo a las alternativas limitaciones que no se hayan probado. Antes de adoptar una de ellas, comprobaría con la versión concreta: modo avión, edición offline, acceso desde Android, recuperación de cambios y exportación. Conectar un cliente propio a una API existente es posible como estrategia, pero el contrato de sincronización, los permisos y las actualizaciones del servidor deben evaluarse; no equivale a tener resuelto el funcionamiento offline.</p>
+<p class="source">Fuentes complementarias: <a href="https://docs.tandoor.dev/features/shopping/">compras compartidas de Tandoor</a>, <a href="https://docs.tandoor.dev/features/external_recipes/">recetas externas de Tandoor</a>, <a href="https://recipekeeperonline.com/privacy">privacidad de Recipe Keeper</a>.</p>
+</section>
+
+<section id="funciones"><h2>3. Funciones y prioridades</h2>
+<p>La versión inicial debe cerrar el ciclo guardar → encontrar → cocinar → comprar → recuperar. La planificación semanal sencilla entra en la primera versión familiar; la despensa detallada y la IA pueden esperar.</p>
+<div class="table-wrap"><table><thead><tr><th>Área</th><th>Primera versión usable</th><th>Ampliaciones posteriores</th></tr></thead><tbody>
+<tr><td>Captura</td><td>Entrada manual, pegar texto, enlace, foto adjunta, recepción desde Compartir en Android y bandeja de borradores.</td><td>OCR con revisión, documentos PDF y formatos de otras apps.</td></tr>
+<tr><td>Receta</td><td>Ingredientes y pasos por secciones, fotos, raciones, tiempos opcionales, notas, origen y enlace.</td><td>Vídeos locales breves, variaciones enlazadas y referencias de equipo.</td></tr>
+<tr><td>Organización</td><td>Búsqueda por título/ingredientes, etiquetas, colecciones, favoritos personales y filtro por duración conocida.</td><td>Búsqueda tolerante a errores, acciones masivas y consultas guardadas.</td></tr>
+<tr><td>Cocina</td><td>Pasos grandes, ingredientes marcables, escala de raciones, pantalla activa y temporizadores locales.</td><td>Lectura de pasos y control por voz tras probar su utilidad.</td></tr>
+<tr><td>Compras</td><td>Ingredientes seleccionables, elementos libres, agrupación por sección, cambios offline y lista compartida.</td><td>Preferencias de supermercados, historial de productos y listas recurrentes.</td></tr>
+<tr><td>Menú</td><td>Semana, comida/cena, raciones y notas como «sobras»; añadir una receta al día y generar compras.</td><td>Plantillas, arrastrar en escritorio y sugerencias explicables.</td></tr>
+<tr><td>Familia</td><td>Invitaciones, administrador/editor/lector, favoritos individuales y autoría.</td><td>Recetas privadas, permisos por colección y varios hogares.</td></tr>
+<tr><td>Fiabilidad</td><td>Copia local, cola persistente, conflictos conservados, papelera, exportación, copia y restauración.</td><td>Edición colaborativa avanzada y sincronización entre servidores.</td></tr>
+</tbody></table></div>
+<p>Las funciones nutricionales, el cálculo de costes y los filtros de dieta deben mostrar de dónde sale el dato. No convertiría una inferencia sobre ingredientes en una etiqueta de alérgenos garantizada. Una clasificación manual verificada por la familia es una opción inicial más clara.</p>
+<p>La despensa puede comenzar como «ya lo tengo» al preparar la compra. Exigir cantidades y caducidades desde el primer día suele añadir trabajo al usuario; el inventario preciso solo merece ampliarse si la familia lo mantiene.</p>
+</section>
+
+<section id="experiencia"><h2>4. Pantallas y ergonomía</h2>
+<p><strong>Android:</strong> navegación inferior con Recetas, Semana y Compra. Añadir como acción destacada; perfil, familia y ajustes en una zona secundaria. Recetas abre con búsqueda, filtros recientes y tarjetas con título, miniatura y tiempo, cuando se conozca. No añadir un panel de estadísticas como pantalla inicial.</p>
+<p><strong>Windows:</strong> barra lateral y vista de dos paneles: lista o tarjetas a la izquierda, receta a la derecha. Una ventana estrecha pasa a un panel. Atajos propuestos: Ctrl+F para buscar, Ctrl+N para añadir y Ctrl+S para confirmar una edición; las mismas acciones deben tener botones visibles. Fotos y texto se pueden pegar o arrastrar.</p>
+<p>La ficha de receta muestra título, raciones y tres acciones principales: Cocinar, Añadir a compra y Planificar. Ingredientes y preparación se leen sin abrir pestañas obligatorias. Editar, duplicar, exportar y eliminar se sitúan en un menú secundario. La receta no debe cambiar de orden mientras alguien cocina por recibir una actualización remota.</p>
+<p>El editor permite pegar una receta completa antes de estructurarla. Los ingredientes se editan como líneas naturales; un detalle opcional permite corregir cantidad, unidad y alimento. Para los pasos, Enter crea el siguiente y moverlos admite botones, además de arrastre. Autosalvado de borrador protege el trabajo antes de publicar la revisión compartida.</p>
+<ul>
+<li>Áreas táctiles de al menos 48 × 48 dp en Android; en cocina propondría 56–64 dp para acciones importantes.</li>
+<li>Texto inicial propuesto de 16–18 sp y modo cocina de 22–26 sp, respetando el tamaño de texto del sistema.</li>
+<li>Contraste mínimo de referencia 4,5:1 para texto normal y 3:1 para texto grande; probar ambos temas.</li>
+<li>Etiquetas accesibles, orden de foco, teclado completo en Windows y pruebas con TalkBack.</li>
+<li>Estado expresado con texto e icono: «Guardado en este móvil», «2 cambios pendientes», «Actualizado hace 5 min».</li>
+<li>Deshacer después de marcar o eliminar; confirmación concentrada en borrar definitivamente o reemplazar datos.</li>
+<li>Estado vacío con una acción concreta: «Añade tu primera receta» y un ejemplo eliminable.</li>
+</ul>
+<p>48 dp procede de la <a href="https://developer.android.com/guide/topics/ui/accessibility/apps">guía de accesibilidad de Android</a>. Los contrastes proceden de <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">WCAG</a>, utilizada aquí como referencia de diseño; no son una certificación de la app. Los tamaños mayores de cocina y la navegación son propuestas. Flutter documenta <a href="https://docs.flutter.dev/ui/adaptive-responsive">interfaces adaptables</a>: compartir código no obliga a compartir el mismo diseño.</p>
+</section>
+
+<section id="flujos"><h2>5. Flujos de uso que deben quedar resueltos</h2>
+<ol>
+<li><strong>Guardar desde una web:</strong> Compartir → app de recetas → extracción o borrador con el enlace → revisar → guardar. Si el servidor no responde, conservar el enlace y mostrar «Pendiente de importar», sin perder la captura.</li>
+<li><strong>Guardar una receta familiar:</strong> Añadir → escribir título → pegar ingredientes y pasos o adjuntar foto → guardar. Completar etiquetas después. Distinguir borrador de receta lista para cocinar.</li>
+<li><strong>Cocinar:</strong> abrir receta → ajustar raciones → Cocinar → marcar ingredientes/pasos e iniciar temporizadores. Salir y volver conserva el punto; la sesión personal no modifica la receta familiar.</li>
+<li><strong>Comprar entre dos personas:</strong> preparar la lista en el PC → ambos móviles descargan → marcar o añadir productos en tienda → converger al reconectar. Mostrar última actualización si hay cambios pendientes.</li>
+<li><strong>Recuperar un error:</strong> borrar → deshacer o papelera → restaurar. Si alguien sobrescribe una instrucción, abrir historial y restaurar una versión como nuevo cambio.</li>
+<li><strong>Añadir un familiar:</strong> instalar Tailscale e incorporarse a la red autorizada → instalar la app → escanear invitación → confirmar perfil → descargar colección.</li>
+</ol>
+<p>La app debe explicar la diferencia entre «sin conexión con el recetario» y «sin Internet». Puede haber Wi-Fi o datos móviles y seguir sin poder acceder al servidor. Un botón de ayuda puede revisar el destino y ofrecer abrir Tailscale, sin exigir al usuario interpretar mensajes técnicos.</p>
+</section>
+
+<section id="arquitectura"><h2>6. Arquitectura técnica propuesta</h2>
+<div class="table-wrap"><table><thead><tr><th>Opción</th><th>Ventajas para este caso</th><th>Trabajo a tener en cuenta</th><th>Elección</th></tr></thead><tbody>
+<tr><td><a href="https://docs.flutter.dev/reference/supported-platforms">Flutter</a></td><td>Clientes Windows y Android y lógica compartida; diseño adaptable y almacenamiento local.</td><td>Validar plugins de cámara, compartir, almacenamiento seguro, alarmas e instaladores en ambos sistemas.</td><td>Recomendada al comenzar sin una base previa.</td></tr>
+<tr><td><a href="https://dotnet.microsoft.com/en-us/apps/maui">.NET MAUI</a></td><td>Windows y Android con C# y ecosistema Microsoft.</td><td>Probar la experiencia de edición/cocina y las integraciones nativas.</td><td>Alternativa sólida si el equipo conoce C#.</td></tr>
+<tr><td><a href="https://v2.tauri.app/start/">Tauri 2</a></td><td>Interfaz web y componentes nativos; soporta escritorio y móvil.</td><td>Revisar el soporte de cada plugin por plataforma; compartir, alarmas y OCR pueden requerir integración Kotlin.</td><td>Alternativa para equipo con experiencia web/Rust.</td></tr>
+<tr><td>Web/PWA</td><td>Despliegue sencillo y acceso desde navegador.</td><td>Almacenamiento offline, permisos y avisos deben diseñarse y comprobarse.</td><td>Adecuada para adoptar Mealie o para una primera validación web.</td></tr>
+</tbody></table></div>
+<p>La elección de Flutter es un juicio de encaje, no un resultado de benchmark. Antes de cerrar la tecnología, realizar una prueba con una receta real, recepción de Compartir en Android, foto, base local, temporizador bloqueado y conexión HTTPS al servidor.</p>
+<pre aria-label="Arquitectura propuesta">App Windows + SQLite local        Apps Android + SQLite local
+             \                       /
+              \ HTTPS por Tailscale /
+                Tailscale Serve
+                       |
+             API en 127.0.0.1:8000
+                       |
+       Base SQLite del servidor + archivos de imágenes
+                       |
+          Copias versionadas en otro soporte</pre>
+<p><strong>Cliente:</strong> Flutter/Dart, repositorios que combinan datos locales y remotos, Drift para SQLite, búsqueda local y caché de imágenes. Drift documenta soporte de <a href="https://drift.simonbinder.eu/platforms/">Windows y Android</a>. Utilizar su <a href="https://drift.simonbinder.eu/platforms/vm/">ejecución de base en segundo plano</a> evita cargar el hilo de interfaz con consultas.</p>
+<p><strong>Servidor:</strong> FastAPI/Python, contratos JSON validados, SQLite en disco local, archivos de imágenes separados y registro persistente de cambios. Un único proceso de API y tareas de importación fuera de la ruta de respuesta son suficientes como punto de partida. FastAPI documenta <a href="https://fastapi.tiangolo.com/deployment/concepts/">procesos, reinicios y trabajadores</a>; la capacidad familiar propuesta debe medirse.</p>
+<p>El servicio se ejecuta separado de la ventana de escritorio. La app Windows también es cliente: no abre directamente la base del servidor. Al cerrarla, el servicio sigue disponible mientras el PC esté encendido. PostgreSQL quedaría para necesidades futuras de varios servidores o mayor concurrencia; no lo impondría de inicio.</p>
+</section>
+
+<section id="tailscale"><h2>7. Conexión privada mediante Tailscale</h2>
+<p>Tailscale proporciona conectividad cifrada entre dispositivos. Puede usar conexión directa o relés cifrados si la red impide la conexión directa; el rendimiento puede variar. La app debe tolerarlo y transferir miniaturas antes que imágenes grandes. <a href="https://tailscale.com/docs/reference/connection-types">Tipos de conexión</a>.</p>
+<p>Propondría instalar los clientes oficiales en Windows y Android y publicar la API con Tailscale Serve en HTTPS. Serve limita el servicio a la red privada y admite reglas de acceso. Funnel publica un servicio hacia Internet: no forma parte del diseño propuesto. <a href="https://tailscale.com/docs/features/tailscale-serve">Documentación de Serve</a>.</p>
+<pre># Ejemplo de configuración futura, con la API ya iniciada localmente:
+tailscale serve --bg http://127.0.0.1:8000
+tailscale serve status</pre>
+<p>El destino será una dirección HTTPS del tipo <code>recetario.nombre-de-red.ts.net</code>, obtenida de la salida real de Serve. El nombre anterior es ilustrativo. El indicador <code>--bg</code> permite que Serve reanude el servicio tras reiniciar, pero la API también necesita su propio arranque automático. <a href="https://tailscale.com/docs/reference/tailscale-cli/serve">Referencia del comando</a>.</p>
+<ul>
+<li>MagicDNS y certificados HTTPS configurados; usar el nombre completo del certificado en los clientes.</li>
+<li>Autorizar al grupo familiar al puerto HTTPS del servidor mediante <a href="https://tailscale.com/docs/reference/syntax/grants">grants</a>; revisar y sustituir las reglas amplias que pudieran permitir otros accesos.</li>
+<li>API enlazada a loopback, sin apertura pública de puertos del router. Para este esquema no hace falta un exit node ni un subnet router.</li>
+<li>Permisos de app además del acceso de red. Las cabeceras de identidad de Serve solo se aceptarían por el proxy local y con un modelo de confianza explícito; la propuesta inicial utiliza credenciales propias de dispositivo.</li>
+</ul>
+<p>La tarifa Personal consultada ofrece <strong>hasta 6 usuarios gratuitos</strong>, dispositivos personales ilimitados y hasta 3 grupos ACL; comprobar condiciones si crece la familia o cambia el uso. <a href="https://tailscale.com/pricing">Tarifas oficiales</a>.</p>
+<p>En Android existe la limitación de una VPN activa. Si ya se usa otra VPN, afecta al acceso del recetario. El split tunneling de Tailscale permite elegir apps que lo usan o lo evitan, pero no crea una segunda ranura VPN. <a href="https://tailscale.com/docs/reference/faq/other-vpns">Compatibilidad con otras VPN</a> y <a href="https://tailscale.com/docs/features/client/android-app-split-tunneling">split tunneling Android</a>.</p>
+<p>El contenido que viaja por la red Tailscale está cifrado entre dispositivos; la plataforma gestiona metadatos de cuenta, equipos y conexiones. No describiría esta solución como una app sin ninguna dependencia externa. Las recetas y copias permanecen en los equipos elegidos si no se añaden servicios de IA u OCR externos. <a href="https://tailscale.com/legal/privacy-policy">Privacidad de Tailscale</a>.</p>
+</section>
+
+<section id="sync"><h2>8. Sincronización sin pérdida silenciosa</h2>
+<p>La red transporta solicitudes; el protocolo de la app decide qué cambios aplicar. Seguiría un esquema de escritura local y sincronización posterior como los descritos en la <a href="https://docs.flutter.dev/app-architecture/design-patterns/offline-first">guía offline de Flutter</a>, con un servidor coordinador para reducir complejidad.</p>
+<ol>
+<li>Guardar el cambio y una operación pendiente en la misma transacción local.</li>
+<li>Enviar operaciones con identificador único, entidad, revisión base y contenido.</li>
+<li>El servidor comprueba usuario, permisos y revisión; registra la operación y el cambio en una transacción.</li>
+<li>Confirmar cada operación aplicada. Un reenvío del mismo identificador devuelve el resultado previo y no vuelve a sumar ni crear.</li>
+<li>Descargar cambios desde un cursor secuencial del servidor. Aplicarlos junto al nuevo cursor en una transacción local, preservando borradores y cambios pendientes.</li>
+</ol>
+<p>Las fechas sirven para mostrar historial; el orden autoritativo lo asigna el servidor. Un reloj incorrecto de un móvil no debe sobrescribir la edición de otro. El protocolo incorpora paginación, reintentos con espera creciente, límites de lote y recuperación completa cuando el cursor sea demasiado antiguo.</p>
+<div class="table-wrap"><table><thead><tr><th>Dato</th><th>Regla inicial de conflicto</th><th>Experiencia visible</th></tr></thead><tbody>
+<tr><td>Contenido de receta</td><td>Revisión optimista. Si cambió desde la base, conservar ambas propuestas; no sobreescribir automáticamente.</td><td>Comparar y elegir o crear variante, con autor y fecha.</td></tr>
+<tr><td>Compras nuevas</td><td>Identificador propio por elemento y deduplicación de operación. No fusionar textos parecidos durante la sincronización.</td><td>Ambos elementos sobreviven; combinar después si procede.</td></tr>
+<tr><td>Marcar una compra</td><td>Operación «establecer comprado = sí/no», nunca «alternar». Última operación aceptada por el servidor para ese campo.</td><td>Resultado convergente; puede cambiar al reconectar si hubo acción contraria. Historial breve y deshacer.</td></tr>
+<tr><td>Editar cantidad/nombre</td><td>Revisión por elemento; conflicto preservado si dos personas cambian el mismo valor.</td><td>Resolver sin perder la anotación de ninguna persona.</td></tr>
+<tr><td>Favoritos y cocina</td><td>Estado por persona; cocina por sesión/dispositivo.</td><td>Marcar un paso no lo marca en el móvil de otro familiar.</td></tr>
+<tr><td>Borrar frente a editar</td><td>Marca de borrado; la edición concurrente se conserva como recuperable.</td><td>Papelera e historial, sin resurrección automática silenciosa.</td></tr>
+</tbody></table></div>
+<p>Para las compras, la prioridad por orden de recepción es una simplificación deliberada: dos marcas opuestas hechas offline no pueden reflejar una intención conjunta desconocida. Debe ser visible y reversible. Si el uso real muestra problemas, introducir revisiones de campo o resolución explícita; no comenzar con un sistema CRDT completo sin necesidad demostrada.</p>
+<p>Los borrados se conservan como tombstones durante una retención definida. Un dispositivo que vuelva tras ese periodo debe hacer una recuperación completa y reconciliar su cola; no se borran marcas antiguas sin un mecanismo que impida recuperar datos eliminados.</p>
+<p>Mientras ambas apps estén abiertas y el servidor responda, un canal de eventos puede avisar de cambios; la descarga incremental sigue siendo la autoridad. Al abrir, volver a primer plano y guardar se intenta sincronizar. Android añade trabajo diferible con <a href="https://developer.android.com/develop/background-work/background-tasks/persistent">WorkManager</a>. No prometer sincronización inmediata cuando el sistema haya suspendido la app.</p>
+<p>Las imágenes se envían aparte, identificadas por hash, con reintentos. Una receta puede aparecer con texto completo y foto pendiente. Las miniaturas se descargan por defecto; las fotos necesarias para cocinar se fijan localmente al marcar una receta disponible sin conexión.</p>
+<div class="callout"><strong>No compartir el archivo de la base entre dispositivos</strong><p>Cada equipo tiene su propia base. El archivo SQLite del servidor se queda en su disco local y se accede por API. SQLite documenta que <a href="https://www.sqlite.org/wal.html">WAL no funciona sobre un sistema de archivos de red</a>; copiar o sincronizar una base abierta tampoco sustituye un protocolo de cambios.</p></div>
+</section>
+
+<section id="datos"><h2>9. Modelo de datos y reglas culinarias</h2>
+<div class="table-wrap"><table><thead><tr><th>Entidad</th><th>Datos principales</th></tr></thead><tbody>
+<tr><td>Receta</td><td>ID, hogar, título, descripción, raciones/rendimiento, tiempos, origen, autor, enlace, estado, revisión y borrado.</td></tr>
+<tr><td>Ingrediente de receta</td><td>ID, sección, orden, texto original, cantidad opcional, rango, unidad, alimento, preparación y regla de escala.</td></tr>
+<tr><td>Paso</td><td>ID, sección, orden, texto, ingredientes relacionados y temporizadores sugeridos.</td></tr>
+<tr><td>Imagen o adjunto</td><td>ID, receta, hash, tipo, tamaño, dimensiones, nombre y disponibilidad local/remota.</td></tr>
+<tr><td>Etiqueta y colección</td><td>Nombre y relación múltiple con recetas.</td></tr>
+<tr><td>Lista y elemento de compra</td><td>ID, hogar, nombre, sección, cantidad, unidad, comprado, revisión y procedencia.</td></tr>
+<tr><td>Entrada de menú</td><td>Día local, franja, receta o nota, raciones y referencia de versión usada.</td></tr>
+<tr><td>Usuario y membresía</td><td>Perfil, hogar, rol y preferencias personales.</td></tr>
+<tr><td>Dispositivo y operaciones</td><td>Identidad, credencial revocable, cola, cursor, resultado y versión de protocolo.</td></tr>
+<tr><td>Revisión y sesión</td><td>Historial de receta; estado personal de cocina y temporizadores locales.</td></tr>
+</tbody></table></div>
+<p>Conservar siempre el texto original de ingredientes. «Una pizca», «2–3 huevos», «½ taza» y «sal al gusto» deben seguir siendo legibles aunque el analizador no los estructure. Cantidad decimal o fracción racional y unidad son datos opcionales; un análisis incierto necesita revisión.</p>
+<p>Escalar desde las cantidades originales con el factor raciones elegidas / raciones base evita redondeos acumulados. Escalar un ingrediente no escala el tiempo del horno. Permitir ingredientes fijos y notas como «ajustar al gusto». Distinguir raciones de rendimiento: una receta puede producir un pan o doce galletas.</p>
+<p>Combinar 500 g y 1 kg del mismo alimento es razonable. Combinar gramos y mililitros requiere densidad; no hacerlo automáticamente. «Tomate triturado» y «tomate fresco» son alimentos distintos. Para compras, cada cantidad generada mantiene una contribución vinculada al menú/receta: al quitar un plato se elimina su contribución, sin borrar un producto añadido a mano.</p>
+<p>El usuario revisa lo que ya tiene antes de crear compras. Regenerar la semana no duplica contribuciones existentes ni cambia una compra ya confirmada sin explicarlo. La lista es una instantánea operativa: una futura edición de la receta no recalcula silenciosamente lo que alguien está comprando.</p>
+<p>Para búsqueda local, usar un índice de texto y normalización controlada de mayúsculas/acentos; preservar la escritura original y verificar el tratamiento de ñ. <a href="https://www.sqlite.org/fts5.html">SQLite FTS5</a> aporta búsqueda de texto; tolerar errores tipográficos requiere lógica adicional. No cargar un servicio de búsqueda aparte de inicio.</p>
+</section>
+
+<section id="importacion"><h2>10. Importación de enlaces, textos y fotografías</h2>
+<p>Priorizar extracción estructurada de <a href="https://schema.org/Recipe">Schema.org Recipe</a> y normalizar ingredientes, pasos/secciones, raciones y tiempos. Los pasos pueden aparecer como texto o estructuras; hay que aceptar ambos. Conservar autor y enlace y detectar más de una receta en la misma página.</p>
+<p>Para páginas especiales, evaluar <a href="https://github.com/hhursev/recipe-scrapers">recipe-scrapers</a>. Su documentación indica que se centra en analizar HTML; la descarga y protección de solicitudes sigue siendo responsabilidad de la app. Mantener una lista de sitios realmente probados y un fallback que guarde el enlace y permita pegar texto. Las webs cambian, y los vídeos/redes sociales no garantizan contenido estructurado.</p>
+<p>Recibir texto, enlaces e imágenes mediante <a href="https://developer.android.com/training/sharing/receive">Compartir de Android</a> reduce pasos. Copiar inmediatamente un adjunto autorizado a almacenamiento propio evita que el borrador dependa de un permiso temporal o de un archivo que después desaparezca.</p>
+<p>El OCR de fotos puede hacerse en Android con <a href="https://developers.google.com/ml-kit">ML Kit</a>, que procesa estas funciones en el dispositivo. Para garantizar disponibilidad desde la primera ejecución sin red, evaluar la <a href="https://developers.google.com/ml-kit/vision/text-recognition/v2/android">opción con modelo incluido</a>. Reconocer texto no equivale a comprender una receta: mostrar original y resultado, y permitir corregir cantidades y pasos. La escritura manuscrita se considera un caso que necesita evaluación específica.</p>
+<p>En Windows, comenzar con foto adjunta y pegado de texto. Si se incorpora OCR de escritorio, evaluar un motor local y su instalación por separado; el plugin Android no implica soporte de Windows. Para PDF, extraer texto cuando exista y usar OCR solo para páginas escaneadas.</p>
+<p>La extracción asistida por IA sería opcional, tras una primera versión estable. Si utiliza un proveedor externo, la interfaz debe explicar qué contenido se envía, pedir activación y permitir seguir sin él. La IA puede sugerir estructura, pero no inventar cantidades o pasos ausentes como si procedieran de la fuente.</p>
+<p><strong>Protección del importador:</strong> solo HTTP/HTTPS, límites de tamaño/tiempo, comprobación de DNS y del destino real en cada redirección, bloqueo de loopback, redes privadas, link-local, rangos Tailscale y equivalentes IPv6. Aplicar las mismas reglas al descargar fotos de la página. Idealmente separar el proceso de descarga con salida restringida. Es especialmente relevante porque el servidor está en una red doméstica privada. <a href="https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html">Guía de OWASP sobre SSRF</a>.</p>
+<p>El contenido importado se transforma en datos; no se ejecutan scripts ni se renderiza HTML arbitrario dentro de la receta. La detección de duplicados propone revisar por enlace canónico y similitud, pero permite variantes como «versión sin cebolla».</p>
+</section>
+
+<section id="cocina"><h2>11. Modo cocina y temporizadores</h2>
+<p>Una sesión de cocina fija una versión de la receta y sus raciones. Muestra el paso actual, anterior/siguiente y un acceso rápido a ingredientes. Permite ver toda la preparación si se prefiere. Mantener la pantalla encendida solo durante la sesión, con opción para desactivarlo.</p>
+<p>Los temporizadores tienen nombre («pasta», «horno»), duración, pausa, reanudar y añadir un minuto. Se guardan con suficiente información para recomponer el tiempo al volver a la app; la interfaz no debe contar segundos mediante una tarea que desaparece al bloquear el móvil.</p>
+<p>El aviso utiliza APIs locales de Android. WorkManager sirve para trabajo diferible y sincronización, no para prometer un aviso culinario exacto. Las <a href="https://developer.android.com/develop/background-work/services/alarms">alarmas exactas</a> tienen permisos y restricciones; seleccionar la API adecuada al ciclo de vida y la distribución, comprobar autorizaciones y mostrar una explicación si el aviso fiable no está habilitado. Solicitar el permiso de notificaciones cuando se use el primer temporizador.</p>
+<p>Probar con pantalla bloqueada, ahorro de batería, reinicio y dispositivos de distintos fabricantes. Si el sistema fuerza la detención o deniega permisos, debe quedar claro el límite del aviso. En Windows, probar notificaciones y suspensión: un PC dormido no se trata como un temporizador garantizado.</p>
+<p>Los avisos funcionan sin Internet ni servidor. Pasar una sesión a otro equipo puede añadirse después; transferir temporizadores requiere una acción explícita para no hacer sonar todos los dispositivos de la familia.</p>
+</section>
+
+<section id="familia"><h2>12. Colaboración, permisos y privacidad</h2>
+<p>Comenzar con un recetario común, un menú común y listas comunes. Favoritos, ajustes y pasos marcados son individuales. Notas culinarias compartidas y notas personales se distinguen en la interfaz. Los roles se comprueban en el servidor, no solo ocultando botones.</p>
+<div class="table-wrap"><table><thead><tr><th>Rol</th><th>Permisos propuestos</th></tr></thead><tbody><tr><td>Administrador</td><td>Invitar, revocar, restaurar copias, configurar servidor y administrar contenido.</td></tr><tr><td>Editor</td><td>Crear/editar recetas, menú y compras; borrar a papelera según política familiar.</td></tr><tr><td>Lector</td><td>Consultar y cocinar. Si se necesita que marque compras, otorgar ese permiso específico.</td></tr></tbody></table></div>
+<p>Usar invitaciones de un solo uso, con caducidad, hogar y rol asignados por el servidor. El QR contiene la dirección y un secreto temporal de enrolamiento; no una clave permanente de administrador. Escanear no debe modificar permisos locales a voluntad. Una vez consumido, emitir una credencial de dispositivo revocable y guardar sus secretos en el almacén seguro de cada sistema.</p>
+<p>Separar los usuarios de la familia; evitar una contraseña común que dificulte autoría y revocación. El acceso por Tailscale y la autenticación de app son dos capas distintas. Puede simplificarse usando identidad de Serve más adelante, pero debe resolverse explícitamente el caso del cliente Windows local y los dispositivos etiquetados.</p>
+<p>Revocar corta nuevos accesos y futuras sincronizaciones. No puede retirar una receta ya descargada de un móvil que está offline. Esta limitación es inherente a permitir copias locales; no prometer borrado remoto inmediato.</p>
+<p>Reducir datos personales al perfil necesario. Sin analítica externa por defecto, registros sin contenido completo de recetas, fotos sin metadatos GPS cuando se compartan y una opción de exportación familiar. El cifrado de Tailscale protege el transporte; los archivos locales y copias necesitan su propia protección del sistema o cifrado adicional.</p>
+</section>
+
+<section id="operacion"><h2>13. Instalación, disponibilidad y copias de seguridad</h2>
+<p>El instalador Windows instala el cliente y, para el equipo anfitrión, el servicio del servidor con datos fuera de la carpeta de programa. Debe distinguir «Cerrar ventana» de «Detener servidor». El servicio se reinicia tras fallo, genera registros acotados y expone una comprobación de salud sin datos privados.</p>
+<p>La familia ve un asistente con pasos claros: crear recetario, configurar Tailscale, mostrar dirección, generar invitación y descargar. El administrador puede ver versiones, espacio usado, fecha de última copia, dispositivos y errores. Mantener versiones compatibles durante una actualización gradual y copiar antes de migrar la base.</p>
+<div class="table-wrap"><table><thead><tr><th>Servidor</th><th>Ventaja</th><th>Condición</th></tr></thead><tbody><tr><td>PC Windows actual</td><td>Sin hardware adicional; conveniente para empezar.</td><td>Sincroniza mientras esté encendido y despierto. Cerrar la ventana no apaga el servicio.</td></tr><tr><td>Mini PC o NAS compatible</td><td>Disponibilidad continua sin depender del ordenador de trabajo.</td><td>Instalación y copias administradas; traslado del servidor con reconciliación de cursores.</td></tr><tr><td>Servidor remoto privado</td><td>Disponibilidad fuera de casa.</td><td>Coste recurrente, mantenimiento y alojamiento externo de datos.</td></tr></tbody></table></div>
+<p>Para empezar, elegir el PC y usar copias locales en los móviles. Si se necesita que los cambios de compras lleguen durante todo el día, trasladar el servicio a un equipo siempre encendido. Tailscale no mantiene despierto un ordenador apagado.</p>
+<p>Una copia contiene una instantánea consistente de la base, imágenes/adjuntos, versión de esquema y un manifiesto con hashes. Usar la <a href="https://www.sqlite.org/backup.html">API de backup de SQLite</a> o mecanismo equivalente consistente; no copiar una base abierta ignorando su WAL.</p>
+<p>Propuesta de retención: 7 copias diarias y 4 semanales, ajustada al espacio disponible. Mantener una copia en otro disco y, si se desea, otra externa cifrada. Comprobar restauración antes de depender de ella. Una carpeta de copias en el mismo disco protege frente a errores de usuario, pero no frente al fallo de ese disco.</p>
+<p>La restauración debe cambiar la generación de sincronización o forzar una reconciliación completa: los móviles podrían tener cursores posteriores a la copia restaurada y operaciones ya confirmadas. Guardar una copia previa al restaurar y definir cómo recuperar datos más recientes de los clientes; no dejar que un cursor antiguo omita cambios.</p>
+<p>Exportar recetas en JSON legible con versión de formato e imágenes en ZIP, además de impresión/PDF para uso humano. El ZIP de exportación no contiene tokens. La copia del servidor y la exportación tienen finalidades distintas; ambas deben poder verificarse.</p>
+<p>Para Android familiar, un APK firmado puede ser una vía inicial, después de comprobar los requisitos vigentes de distribución. Una actualización conserva identidad, datos y firma; mantener el material de firma a salvo. Antes de publicar en una tienda, verificar sus requisitos de identidad, API objetivo y permisos. No fijar esas reglas a partir de una estimación del informe.</p>
+</section>
+
+<section id="validacion"><h2>14. Pruebas y criterios de aceptación</h2>
+<p>Las métricas siguientes son objetivos iniciales propuestos. Deben medirse en el PC y un Android de gama media de la familia, con datos de prueba y al menos un uso real en cocina y supermercado.</p>
+<div class="table-wrap"><table><thead><tr><th>Área</th><th>Prueba necesaria</th><th>Resultado aceptable</th></tr></thead><tbody>
+<tr><td>Captura</td><td>Guardar título y texto pegado, salir y volver.</td><td>Sin exigir categorías; objetivo de menos de 30 segundos tras tener el texto preparado; borrador recuperado.</td></tr>
+<tr><td>Búsqueda</td><td>5.000 recetas; título, ingrediente y acentos.</td><td>Objetivo p95 inferior a 300 ms local para la consulta acordada.</td></tr>
+<tr><td>Offline</td><td>Servidor apagado y modo avión.</td><td>Leer contenido descargado, cocinar, crear receta y modificar compras; cola intacta tras reiniciar.</td></tr>
+<tr><td>Reintentos</td><td>El servidor confirma una operación y se pierde la respuesta.</td><td>El reenvío no duplica recetas, cantidades o elementos.</td></tr>
+<tr><td>Conflictos</td><td>Dos personas editan la misma receta offline.</td><td>Ambas propuestas se conservan y se pueden comparar/resolver.</td></tr>
+<tr><td>Compras</td><td>Dos móviles añaden y marcan con cortes de red.</td><td>Convergencia con reglas documentadas, sin pérdidas silenciosas ni duplicados por reintento.</td></tr>
+<tr><td>Borrado</td><td>Un móvil elimina y otro vuelve con edición antigua.</td><td>No reaparece la receta sin explicación; edición recuperable.</td></tr>
+<tr><td>Temporal</td><td>Aviso con pantalla bloqueada y ahorro de batería.</td><td>Funciona según permisos/condiciones documentadas; situación no soportada comunicada.</td></tr>
+<tr><td>Acceso</td><td>Equipo fuera del grupo o usuario sin rol.</td><td>Denegación en red/API, incluidos descarga de imágenes y endpoints de cambios.</td></tr>
+<tr><td>Importación</td><td>URLs internas, redirecciones, documentos grandes y HTML defectuoso.</td><td>Descarga limitada y bloqueos correctos; error recuperable y borrador intacto.</td></tr>
+<tr><td>Recuperación</td><td>Restaurar en carpeta nueva y reconectar clientes.</td><td>Recetas, imágenes y relaciones completas; cursores reconciliados.</td></tr>
+<tr><td>Ergonomía</td><td>Texto al 200 %, TalkBack, teclado y una mano.</td><td>Acciones visibles, foco correcto, texto sin recortes y tareas completables.</td></tr>
+</tbody></table></div>
+<p>Para la experiencia, probar con dos o tres familiares: encontrar una receta rápida, guardar una recibida por mensaje, cocinar con ingredientes marcados y añadir una compra. Registrar dónde dudan y cuántas acciones realizan. Diseñar con esos resultados; una paleta atractiva no demuestra comodidad.</p>
+<p>Para conectividad, probar Wi-Fi doméstico, datos móviles, cambio entre ambos, Tailscale desconectado, servidor dormido, DNS fallido y conexión mediante relé. Meta sugerida para dos apps abiertas: cambios pequeños visibles en unos pocos segundos con conexión disponible, midiendo el percentil y sin prometer el mismo plazo en segundo plano.</p>
+</section>
+
+<section id="plan"><h2>15. Plan de desarrollo y costes</h2>
+<p>Avanzar con entregas verificables. La primera prueba debe cubrir la arquitectura completa con una sola receta, antes de ampliar pantallas y funciones.</p>
+<div class="table-wrap"><table><thead><tr><th>Etapa</th><th>Entrega</th><th>Esfuerzo orientativo</th></tr></thead><tbody>
+<tr><td>Prueba técnica y diseño</td><td>Instalación básica Windows/Android, almacenamiento, HTTPS, captura Compartir y alarma local; prototipo de pantallas.</td><td>1–2 semanas.</td></tr>
+<tr><td>Recetario local</td><td>Editor, búsqueda, fotos, borradores, cocina y raciones.</td><td>2–3 semanas.</td></tr>
+<tr><td>Servidor y sincronización</td><td>Invitaciones, permisos, operaciones, descarga incremental, conflictos, imágenes y borrado.</td><td>3–5 semanas.</td></tr>
+<tr><td>Uso familiar</td><td>Compras y menú sencillos, importación web y ajustes de experiencia.</td><td>2–3 semanas.</td></tr>
+<tr><td>Preparación para uso habitual</td><td>Instaladores, actualización, copias, restauración, accesibilidad y pruebas reales.</td><td>2–3 semanas.</td></tr>
+</tbody></table></div>
+<p>La suma orientativa es <strong>10–16 semanas de trabajo dedicado de una persona con experiencia</strong> para este alcance inicial. Añadir una reserva de 25–40 % para integraciones y hallazgos de pruebas sitúa la planificación aproximadamente en 13–23 semanas. No son datos de mercado ni un compromiso: código existente, experiencia del equipo, horas semanales y amplitud de importadores cambian mucho el resultado. OCR avanzado, tiendas e IA se presupuestan aparte.</p>
+<p>El coste técnico recurrente puede ser bajo usando el PC existente y el plan Personal elegible de Tailscale. Los componentes seleccionados no implican por sí mismos pagar un servicio de sincronización comercial. Siguen existiendo el consumo eléctrico, almacenamiento de copias, mantenimiento y, si se elige, hardware, servidor remoto o servicios externos.</p>
+<p>Ejemplo de dimensionado, no medición: 5.000 recetas × 2 imágenes × 300 KB ≈ 3 GB solo de imágenes. PDF, fotos originales, miniaturas y copias aumentan ese volumen. Para energía, consumo en W × 24 × 30 / 1.000 produce kWh/mes si el equipo permanece encendido: 10 W serían 7,2 kWh y 60 W serían 43,2 kWh. El coste depende del consumo real y de la tarifa eléctrica.</p>
+<p>Evitar gastos y dependencias que aún no aporten utilidad: infraestructura de múltiples servicios, búsqueda externa, edición en tiempo real de documentos e IA permanente. Presupuestar primero conservación de datos, flujo offline, instalación y experiencia de uso.</p>
+</section>
+
+<section id="decisiones"><h2>16. Decisiones recomendadas para comenzar</h2>
+<ol>
+<li>Construir clientes Flutter para Windows y Android, con diseños propios para teclado/ratón y para una mano.</li>
+<li>Guardar con SQLite/Drift en cada cliente y sincronizar entidades por API; servidor con SQLite local y archivos.</li>
+<li>Alojar FastAPI como servicio separado en el PC inicial y servir HTTPS mediante Tailscale Serve.</li>
+<li>Usar un hogar compartido, perfiles individuales e invitaciones revocables; acceso familiar restringido.</li>
+<li>Incluir en la primera versión recetas, búsqueda, fotos, cocina, compras, menú sencillo, offline, exportación y restauración.</li>
+<li>Conservar conflictos de recetas; adoptar reglas simples, visibles y reversibles para las compras.</li>
+<li>Capturar foto y texto desde el inicio; incorporar OCR revisable después de validar los flujos básicos.</li>
+<li>Permitir trasladar el servicio a un equipo siempre encendido si la familia necesita sincronizar durante todo el día.</li>
+</ol>
+<p>Antes de ampliar la implementación, las siguientes decisiones sí afectan al alcance: si el PC puede permanecer disponible, cuántos miembros habrá, si se necesitan recetas privadas y cuántas recetas/fotos se importarán. Son decisiones de producto pendientes; Windows, Android y familia ya están confirmados.</p>
+<div class="callout"><strong>Primer hito concreto</strong><p>Crear una receta en Windows, verla en Android por Tailscale, apagar el servidor, modificarla en el móvil, volver a conectar y comprobar que se conserva el cambio. Repetir con una edición concurrente y restaurar una copia. Después de superar ese recorrido, ampliar el recetario y la experiencia familiar.</p></div>
+</section>
+<footer>Informe de investigación y propuesta de producto. Las fuentes primarias se enlazan junto a los hechos que respaldan. Las capacidades observadas corresponden a la documentación consultada el 10 de octubre de 2026; confirmar versiones y requisitos de distribución al implementar. Este archivo contiene la especificación propuesta, no una app instalada.</footer>
+</main></body></html>
