@@ -2,7 +2,7 @@
 
 Actualización Android del 12 de octubre de 2026: se conserva el registro ML Kit que R8 eliminaba en lanzamiento. La prueba nativa en un emulador de lanzamiento tradujo las cinco recetas y verificó lectura/cocina en español. Las recetas guardadas se traducen automáticamente para lectura, conservando tus ediciones. La comparación de velocidad y candidatos está en [investigacion-traduccion-rapida.html](../investigacion-traduccion-rapida.html).
 
-Revisión anterior del 12 de octubre de 2026: se corrigen la aplicación de resultados al llegar fotos, los reintentos y la detección de idioma en importaciones y vistas antiguas. Originales y re-traducción se encuentran ahora en **Original, medidas y fuente**. La comprobación privada con cinco recetas completas está en `output/translation-display-live.json`.
+Revisión anterior del 12 de octubre de 2026: se corrigen la aplicación de resultados al llegar fotos, los reintentos y la detección de idioma en importaciones y vistas antiguas. Originales y re-traducción se encuentran ahora en **Original, medidas y fuente**.
 
 Revisión inicial del 11 de octubre de 2026. El fallo afectaba tanto a la calidad del lenguaje culinario como a la posibilidad de reparar recetas ya traducidas.
 
@@ -10,7 +10,7 @@ Revisión inicial del 11 de octubre de 2026. El fallo afectaba tanto a la calida
 
 El motor antiguo traducía `Pain` como «dolor», `Faites revenir` como «traer de vuelta» y las claras como «blancos». Cuando cambiaba `1.5` a `1,5`, el proceso fragmentaba toda la receta alrededor de sus números. Los modelos antiguos usaban inglés como idioma intermedio. Las notas generadas por Mesa en español también pasaban por el motor del idioma extranjero. Una vez marcada como traducida, una receta no podía traducirse otra vez.
 
-Las pruebas están en `output/translation-before.json`. Los cambios de motor se contrastaron con las mismas frases y con recetas completas de Wikibooks en cinco idiomas. Los modelos genéricos OPUS y NLLB también produjeron errores culinarios; no se seleccionó NLLB. El respaldo OPUS conserva un glosario revisado y validación de cifras, pero no ofrece la misma calidad que el motor especializado.
+Los cambios de motor se contrastaron con las mismas frases y con recetas completas de Wikibooks en cinco idiomas. Los modelos genéricos OPUS y NLLB también produjeron errores culinarios; no se seleccionó NLLB. El respaldo OPUS conserva un glosario revisado y validación de cifras, pero no ofrece la misma calidad que el motor especializado.
 
 ## Implementación
 
@@ -26,7 +26,7 @@ Android consulta primero el ordenador conectado a Mesa. Sin ordenador utiliza ML
 
 Se prueban decimales, fracciones, temperaturas, cifras añadidas u omitidas, técnicas culinarias, instrucciones largas, saltos de párrafo, notas en español, re-traducción desde originales, separación de campos, cantidades dentro de cada campo, selección del servidor en Android, alternativa móvil y revisión con aplicar/descartar. Las pruebas de interfaz ejecutan Flutter; no equivalen a una prueba en un teléfono físico.
 
-Los ejemplos completos revisados proceden de las páginas públicas de pastel 1-2-3-4, aligot, bigoli con pato, strudel de manzana y ambotic. Las muestras y los tiempos están en `output/translation-final-full-recipes.json` y `output/translation-final-italian.json`. Se conservan los metadatos de sus fotos sin descargar archivos de imagen. Esto comprueba muestras concretas, no certifica todas las recetas de un catálogo. Un modelo automático puede interpretar mal una expresión o perder un matiz; el original y la revisión siguen siendo necesarios.
+Los ejemplos completos revisados proceden de las páginas públicas de pastel 1-2-3-4, aligot, bigoli con pato, strudel de manzana y ambotic. Se conservan los metadatos de sus fotos sin descargar archivos de imagen. Esto comprueba muestras concretas, no certifica todas las recetas de un catálogo. Un modelo automático puede interpretar mal una expresión o perder un matiz; el original y la revisión siguen siendo necesarios.
 
 ## Documentación primaria consultada
 

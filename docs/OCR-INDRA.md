@@ -45,5 +45,4 @@ La primera prueba sintética en este equipo reconoció título, cantidades y
 cuatro líneas en 990 ms con carga inicial y 51 ms con el motor ya cargado.
 Estos tiempos no garantizan rendimiento ni exactitud en fotos reales,
 manuscritos, documentos degradados o dispositivos distintos. Revisa siempre
-las cantidades y los pasos. La comprobación de entrega se registra en
-`output/indra-ocr-2026-10-28/validation.json`.
+las cantidades y los pasos.
