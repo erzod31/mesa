@@ -55,11 +55,9 @@ no se fuerza un reinicio en segundo plano ni se desinstala la app.
 
 En la inspección de este encargo, el feed Android activo devuelve 1.16.0+32
 y el feed Windows devuelve HTTP 404. El canal Windows está configurado en el
-código, pero **no está activado en producción**. Los manifiestos candidatos
-se preparan con `scripts/prepare_update_candidates.py` bajo
-`output/in-app-updates-DG-0021/channel`. Publicar esos manifiestos y desplegar
-el helper actualizado requiere un paso posterior autorizado. No se ha hecho
-en DG-0021, ni se han cambiado servicios de red del ordenador. El helper
+código, pero **no está activado en producción**. Publicar los manifiestos
+candidatos y desplegar el helper actualizado requiere un paso posterior
+autorizado. No se han cambiado servicios de red del ordenador. El helper
 empaquetado ya soporta los dos canales y no falla cuando `sys.stderr` es None.
 La APK candidata también acompaña al instalador como recurso local, sin
 activar el feed externo ni cambiar la APK estable publicada.
@@ -71,7 +69,7 @@ reales en este Windows.** La instalación normal y la reapertura tras instalar
 quedan pendientes de una VM independiente. Android no se instala en teléfonos
 del usuario. Se conservan `isolation-incident.json`, `recovery-state.json` y
 la limitación del incidente anterior: no existió una instantánea inmediata
-completa de AppData/registro. Informe: `docs/in-app-updates-DG-0021.json`.
+completa de AppData/registro.
 
 ## Preparación DG-0033 · 1 de noviembre de 2026
 
@@ -99,10 +97,8 @@ tras una activación parcial. No instala versiones antiguas en clientes ya
 actualizados. Un nuevo cliente rechazará un antiguo feed sin firma tras el
 rollback, hasta publicar de nuevo un canal válido.
 
-La preparación concreta y los comandos absolutos están en
-`output/implementation-DG-0033/publication/publication.json` y en el informe
-`docs/implementation-DG-0033.json`. Para activar de verdad hace falta revisar
-su impacto y programar el arranque/relevo del helper existente. Restaurar el
+Para activar de verdad hace falta revisar el impacto y programar el
+arranque/relevo del helper existente. Restaurar el
 servicio serviría los archivos por la ruta privada ya configurada; no es una
 prueba de instalación Android/Windows ni requiere tocar la LG.
 

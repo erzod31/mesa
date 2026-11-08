@@ -27,8 +27,7 @@ segunda caché de memoria independiente de su identidad de modelo.
 | Habitual, 18 campos | 5,93 s | 1,56 s | 11 ms | 0,77 s |
 
 Con proceso nuevo y caché persistida, primera respuesta: 0,45–0,46 s, sin
-inferencia. Los datos completos y desglose están en
-`output/implementation-DG-0033/performance/{before,after,comparison}.json`.
+inferencia.
 Frío significa proceso/modelo no cargado; no se vació la caché del sistema
 operativo. Son muestras pequeñas en este PC, con carga de compilación variable.
 La eliminación de las sondas se midió directamente; no se atribuye toda la
