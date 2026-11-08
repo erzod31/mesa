@@ -26,7 +26,19 @@ public static class MesaBuildPaths {
 $buffer = New-Object System.Text.StringBuilder 32768
 [void][MesaBuildPaths]::GetShortPathName($root,$buffer,32768)
 $short = $buffer.ToString()
-if (!$short -or $short.Contains(' ')) { throw 'El SDK Dart no admite esta ruta con espacios para algunos componentes nativos. Usa un checkout sin espacios para compilar.' }
+$buildJunction = $null
+if (!$short -or $short.Contains(' ')) {
+  # Sin nombres cortos 8.3 (volumen con 8dot3 desactivado): compilar a traves
+  # de un junction sin espacios que apunte al proyecto.
+  $buildJunction = Join-Path ([IO.Path]::GetTempPath()) 'mesa-build'
+  if (Test-Path -LiteralPath $buildJunction) { & cmd.exe /c "rmdir `"$buildJunction`"" 2>$null }
+  & cmd.exe /c "mklink /J `"$buildJunction`" `"$root`"" | Out-Null
+  if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath (Join-Path $buildJunction '.tools/flutter/bin/flutter.bat'))) {
+    throw 'No se pudo preparar una ruta sin espacios para compilar. Usa un checkout sin espacios.'
+  }
+  $root = $buildJunction
+  $short = $buildJunction
+}
 $flutter = Join-Path $short '.tools/flutter/bin/flutter.bat'
 if (!(Test-Path -LiteralPath $flutter)) { throw 'Prepara Flutter 3.47.7 en .tools/flutter siguiendo README.md.' }
 $env:ANDROID_HOME = Join-Path $short '.tools/android'
@@ -76,4 +88,7 @@ try {
       if ($LASTEXITCODE -ne 0) { throw 'No se pudo publicar el paquete de actualización Android.' }
     }
   }
-} finally { Pop-Location }
+} finally {
+  Pop-Location
+  if ($buildJunction) { & cmd.exe /c "rmdir `"$buildJunction`"" 2>$null }
+}

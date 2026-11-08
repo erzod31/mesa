@@ -336,17 +336,20 @@ void main() {
         jsonEncode(reopened.exportData()['entities']),
         jsonEncode(jsonDecode(exported)['entities']),
       );
-      await File('../output/auditoria-intensiva-2026-10-14/bulk-client.json')
-          .writeAsString(
-            jsonEncode({
-              'items': 2101,
-              'recipes': 2000,
-              'import_ms': clock.elapsedMilliseconds,
-              'notifications': notifications,
-              'restart_verified': true,
-              'pending_preserved': true,
-            }),
-          );
+      final bulkFile = File(
+        '../output/auditoria-intensiva-2026-10-14/bulk-client.json',
+      );
+      await bulkFile.parent.create(recursive: true);
+      await bulkFile.writeAsString(
+        jsonEncode({
+          'items': 2101,
+          'recipes': 2000,
+          'import_ms': clock.elapsedMilliseconds,
+          'notifications': notifications,
+          'restart_verified': true,
+          'pending_preserved': true,
+        }),
+      );
       reopened.dispose();
       await reopened.db.close();
     },
