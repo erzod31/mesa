@@ -47,7 +47,7 @@ def test_truncated_translation_original_rejected(api):
     ('es-rechupete',5,10,50),('es-hogarmania',4,13,40),('es-bonviveur',4,18,80),('es-gratis',12,10,30),('ar-paulina',11,1,0)])
 def test_real_recipe_scope_does_not_mix_related_content(provider,expected,photos,minutes):
     from server.catalogs import SOURCES
-    path=Path('output/research/source-pages')/(provider+'.html')
+    path=Path('client/test/fixtures/publishers')/(provider+'.html')
     value=extract_recipe(path.read_text(encoding='utf-8'),SOURCES[provider]['seed'])
     assert len(value['ingredients'])==expected
     assert len(value['photos'])>=photos

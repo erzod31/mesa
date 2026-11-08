@@ -3,7 +3,15 @@ $ErrorActionPreference='Stop'
 $taskRoot=Split-Path -Parent $PSScriptRoot
 $taskFso=New-Object -ComObject Scripting.FileSystemObject
 $taskShort=$taskFso.GetFolder($taskRoot).ShortPath
-if ($taskShort.Contains(' ')) { throw 'Se necesita una ruta corta del SDK.' }
+$taskJunction=$null
+if ($taskShort.Contains(' ')) {
+  $taskJunction=Join-Path ([IO.Path]::GetTempPath()) 'mesa-build'
+  if (Test-Path -LiteralPath $taskJunction) { & cmd.exe /c "rmdir `"$taskJunction`"" 2>$null }
+  & cmd.exe /c "mklink /J `"$taskJunction`" `"$taskRoot`"" | Out-Null
+  if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath (Join-Path $taskJunction '.tools'))) { throw 'No se pudo preparar una ruta sin espacios para compilar.' }
+  $taskRoot=$taskJunction
+  $taskShort=$taskJunction
+}
 $taskAdb=Join-Path $taskRoot '.tools/android/platform-tools/adb.exe'
 if ((& $taskAdb -s $Serial shell getprop ro.kernel.qemu).Trim() -ne '1') { throw 'Solo se permite un emulador de pruebas.' }
 $taskAvd=(& $taskAdb -s $Serial shell getprop ro.boot.qemu.avd_name).Trim()
@@ -26,4 +34,7 @@ try {
   Copy-Item -LiteralPath 'build/app/outputs/flutter-apk/app-release.apk' -Destination $taskTarget -Force
   & $taskAdb -s $Serial install -r $taskTarget
   if ($LASTEXITCODE -ne 0) { throw 'No se pudo actualizar el emulador.' }
-} finally { Pop-Location }
+} finally {
+  Pop-Location
+  if ($taskJunction) { & cmd.exe /c "rmdir `"$taskJunction`"" 2>$null }
+}
