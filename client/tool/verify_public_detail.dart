@@ -13,7 +13,6 @@ Future<void> main(List<String> args) async {
     for (final source in catalogSources.where(
       (s) => s.external && s.browseable,
     )) {
-      if (!args.contains('--live') && source.id == 'mx-kiwilimon') continue;
       try {
         final selected = args.contains('--live') && source.seed == source.url
             ? (await api.search(source.id)).items.first
@@ -42,23 +41,6 @@ Future<void> main(List<String> args) async {
         results[source.id] = {'ok': false, 'error': '$e'};
       }
       stdout.writeln(jsonEncode({source.id: results[source.id]}));
-    }
-    if (args.contains('--live')) {
-      final page = await api.search('es-petitchef');
-      for (final item in page.items.take(3)) {
-        try {
-          final data = await api.detail(item);
-          results[item.id] = {
-            'ok': true,
-            'ingredients': (data['ingredients'] as List).length,
-            'steps': (data['steps'] as List).length,
-            'photos': (data['photos'] as List).length,
-          };
-        } catch (e) {
-          results[item.id] = {'ok': false, 'error': '$e'};
-        }
-        stdout.writeln(jsonEncode({item.id: results[item.id]}));
-      }
     }
     File(
       '../output/public-detail-${args.contains('--live') ? 'live' : 'fixtures'}-results.json',

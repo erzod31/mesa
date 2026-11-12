@@ -53,22 +53,9 @@ bool publisherPhotoUrl(String value) {
       (s) => s.external || s.consultationOnly,
     ))
       ...source.aliases,
-    'imag.bonviveur.com',
-    'static.bainet.es',
-    'i.blogs.es',
-    'cdn0.recetasgratis.net',
-    'images.aws.nestle.recipes',
-    'cdn.blog.paulinacocina.net',
-    'cdn7.kiwilimon.com',
-    'www.recetasderechupete.com',
-    'recetasderechupete.com',
-    'cdn.buenazo.pe',
-    'imgmedia.buenazo.pe',
-    'img.cocinerosargentinos.com',
     'i0.wp.com',
     'i1.wp.com',
     'i2.wp.com',
-    'blogger.googleusercontent.com',
   };
   return hosts.contains(uri.host) &&
       RegExp(

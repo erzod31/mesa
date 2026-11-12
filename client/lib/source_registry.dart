@@ -29,7 +29,7 @@ class CatalogSource {
   bool get included => mode == 'asset';
   bool get consultationOnly => mode == 'book';
   bool get external => mode == 'web';
-  bool get browseable => !consultationOnly && id != 'es-nestle';
+  bool get browseable => !consultationOnly;
 }
 
 const originalSourceCount = 38;

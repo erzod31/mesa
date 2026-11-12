@@ -5,10 +5,7 @@ $taskFso=New-Object -ComObject Scripting.FileSystemObject
 $taskShort=$taskFso.GetFolder($taskRoot).ShortPath
 $taskJunction=$null
 if ($taskShort.Contains(' ')) {
-  $tempBase = [IO.Path]::GetTempPath().TrimEnd('\')
-  if ($tempBase.Contains(' ')) { $tempBase = $taskFso.GetFolder($tempBase).ShortPath }
-  if ($tempBase.Contains(' ')) { throw 'No hay una ruta temporal sin espacios para compilar.' }
-  $taskJunction = Join-Path $tempBase 'mesa-build'
+  $taskJunction = Join-Path ([IO.Path]::GetPathRoot($taskRoot)) 'mesa-build'
   if (!(Test-Path -LiteralPath (Join-Path $taskJunction '.tools'))) {
     if (Test-Path -LiteralPath $taskJunction) { & cmd.exe /c "rmdir `"$taskJunction`"" 2>$null }
     & cmd.exe /c "mklink /J `"$taskJunction`" `"$taskRoot`"" | Out-Null
@@ -20,12 +17,12 @@ if ($taskShort.Contains(' ')) {
 $taskFlutter=Join-Path $taskShort '.tools/flutter/bin/flutter.bat'
 Push-Location (Join-Path $taskRoot 'client')
 try {
-  & $taskFlutter pub get
+  & $taskFlutter pub get 2>&1
   if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-  & $taskFlutter analyze --no-pub
+  & $taskFlutter analyze --no-pub 2>&1
   if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
   if (!$AnalyzeOnly) {
-    & $taskFlutter test --no-pub --reporter expanded
+    & $taskFlutter test --no-pub --reporter expanded 2>&1
     exit $LASTEXITCODE
   }
 } finally { Pop-Location }

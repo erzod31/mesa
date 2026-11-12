@@ -143,15 +143,9 @@ Map<String, dynamic> parsePublicRecipe(
           .where((s) => s.isNotEmpty)
           .toList();
   var steps = recipeInstructions(schema['recipeInstructions']);
-  final publisherScope = switch (url.host) {
-    'bonviveur.com' ||
-    'www.bonviveur.com' => doc.querySelector('article .main .text'),
-    'www.recetasgratis.net' ||
-    'recetas.elperiodico.com' => doc.querySelector('article.columna-post'),
-    'www.hogarmania.com' => doc.querySelector('main.recipe'),
-    'based.cooking' => doc.querySelector('main'),
-    _ => null,
-  };
+  final publisherScope = url.host == 'based.cooking'
+      ? doc.querySelector('main')
+      : null;
   final article =
       publisherScope ??
       doc.querySelector('.entry-content,.article-content') ??
@@ -248,13 +242,10 @@ Map<String, dynamic> parsePublicRecipe(
     if (visibleSteps.isEmpty) visibleSteps = fallbackSteps.toSet().toList();
   }
   if (visibleIngredients.isNotEmpty &&
-      (ingredients.isEmpty ||
-          widget ||
-          url.host.endsWith('paulinacocina.net'))) {
+      (ingredients.isEmpty || widget)) {
     ingredients = visibleIngredients;
   }
-  if (visibleSteps.isNotEmpty &&
-      (steps.isEmpty || widget || url.host.endsWith('bonviveur.com'))) {
+  if (visibleSteps.isNotEmpty && (steps.isEmpty || widget)) {
     steps = visibleSteps;
   }
   var group = '';
@@ -316,23 +307,6 @@ Map<String, dynamic> parsePublicRecipe(
       caseSensitive: false,
     ).firstMatch(scope.text);
     if (declared != null) yieldText = '${declared[1]} ${declared[2]}';
-  }
-  if (url.host == 'www.paulinacocina.net' || url.host == 'paulinacocina.net') {
-    final heading = doc
-        .querySelectorAll('h2,h3,h4')
-        .map((e) => e.text)
-        .where(
-          (s) => RegExp(
-            r'(\d+\s+empanadas|docena)',
-            caseSensitive: false,
-          ).hasMatch(s),
-        )
-        .firstOrNull;
-    if (heading != null) {
-      yieldText = heading.toLowerCase().contains('docena')
-          ? '12 empanadas'
-          : heading;
-    }
   }
   final portions = RegExp(r'\d+(?:[.,]\d+)?').firstMatch(yieldText);
   final unit =
@@ -463,19 +437,6 @@ Map<String, dynamic> parsePublicRecipe(
         .first;
     unique.putIfAbsent(key, () => photo);
   }
-  final visibleMinutes = url.host.endsWith('hogarmania.com')
-      ? doc
-            .querySelectorAll('.recipe-data-row')
-            .map(
-              (n) => RegExp(
-                r'^Tiempo total\s+(\d+)\s*m$',
-                caseSensitive: false,
-              ).firstMatch(n.text.trim()),
-            )
-            .whereType<RegExpMatch>()
-            .map((m) => int.parse(m[1]!))
-            .firstOrNull
-      : null;
   return publicRecipeOrigin({
     'title': title,
     'ingredients': ingredients.take(500).toList(),
@@ -489,7 +450,7 @@ Map<String, dynamic> parsePublicRecipe(
     'servings_declared': portions != null,
     'yield_unit': unit,
     'yield_original': yieldText,
-    'minutes': (visibleMinutes ?? recipeMinutes(schema['totalTime'])),
+    'minutes': recipeMinutes(schema['totalTime']),
     'notes': recipeText(schema['description'] ?? ''),
     'source': url.toString(),
     'language':

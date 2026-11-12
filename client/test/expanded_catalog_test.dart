@@ -74,10 +74,10 @@ void main() {
         return {
           'items': [
             {
-              'id': 'https://www.kiwilimon.com/receta/pan',
+              'id': 'https://based.cooking/pan/',
               'title': 'Pan',
               'provider': provider,
-              'image': 'https://cdn7.kiwilimon.com/pan.jpg',
+              'image': 'https://based.cooking/pix/pan.jpg',
             },
           ],
           'cursor': '2',
@@ -99,11 +99,11 @@ void main() {
     ]);
     expect(publisherPhotoUrl('http://127.0.0.1/pan.jpg'), false);
     expect(
-      publisherPhotoUrl('https://imgmedia.buenazo.pe/recetas/arroz.webp'),
+      publisherPhotoUrl('https://based.cooking/pix/arroz.webp'),
       true,
     );
     expect(
-      publisherPhotoUrl('https://user:secret@cdn7.kiwilimon.com/pan.jpg'),
+      publisherPhotoUrl('https://user:secret@based.cooking/pan.jpg'),
       false,
     );
     await expectLater(api.search('rd-iddi'), throwsException);

@@ -1,5 +1,6 @@
 [
-  "Reutiliza explícitamente un perfil de servidor existente sin copiar datos ni cambiar credenciales.",
-  "Valida la selección antes de abrir la base; no crea otra familia si la ruta o la identidad no son válidas.",
-  "Conserva la traducción rápida y los actualizadores verificados de Windows y Android."
+  "El catálogo muestra solo fuentes con lectura dentro de Mesa; se retiran los sitios que solo abrían su web original.",
+  "Nueva fuente internacional TheMealDB con fotos y cantidades, traducida al español al abrirla.",
+  "Mejora el glosario culinario de francés, alemán, italiano, portugués e inglés: panceta, dados, sofreír, nata y más.",
+  "Si el traductor de calidad rechaza un resultado, Mesa usa automáticamente el motor local en vez de fallar."
 ]

@@ -5,10 +5,7 @@ $taskFso=New-Object -ComObject Scripting.FileSystemObject
 $taskShort=$taskFso.GetFolder($taskRoot).ShortPath
 $taskJunction=$null
 if ($taskShort.Contains(' ')) {
-  $tempBase = [IO.Path]::GetTempPath().TrimEnd('\')
-  if ($tempBase.Contains(' ')) { $tempBase = $taskFso.GetFolder($tempBase).ShortPath }
-  if ($tempBase.Contains(' ')) { throw 'No hay una ruta temporal sin espacios para compilar.' }
-  $taskJunction = Join-Path $tempBase 'mesa-build'
+  $taskJunction = Join-Path ([IO.Path]::GetPathRoot($taskRoot)) 'mesa-build'
   if (!(Test-Path -LiteralPath (Join-Path $taskJunction '.tools'))) {
     if (Test-Path -LiteralPath $taskJunction) { & cmd.exe /c "rmdir `"$taskJunction`"" 2>$null }
     & cmd.exe /c "mklink /J `"$taskJunction`" `"$taskRoot`"" | Out-Null
