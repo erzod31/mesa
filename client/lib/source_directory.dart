@@ -182,7 +182,7 @@ class _SourceDirectoryState extends State<SourceDirectory> {
           'La etiqueta de cada fila indica qué se contó. «≥» es un mínimo de fichas identificadas; puede haber más. '
           'El ranking es orientativo: las fuentes sin una cifra comprobable aparecen sin posición, nunca como cero. '
           'Las cifras no indican recetas importadas en Mesa ni garantizan que todas tengan foto y cantidades. '
-          'Se conservan las primeras 16 fuentes del ranking anterior y se añaden fuentes con licencia libre comprobada. Las nuevas aparecen sin posición cuando su total no está verificado.',
+          'Se conservan únicamente fuentes con catálogo integrado o licencia libre comprobada. Las nuevas aparecen sin posición cuando su total no está verificado.',
         ),
       ),
       actions: [

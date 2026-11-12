@@ -145,7 +145,14 @@ def translate_texts(texts, source):
     if source not in SUPPORTED: raise ValueError('Idioma no compatible. Mesa traduce inglés, francés, italiano, alemán y portugués al español; se conserva el original.')
     if len(texts) > 1100 or sum(len(t) for t in texts) > 120000: raise ValueError('La receta es demasiado larga.')
     from . import quality_translation
-    if quality_translation.available(): return quality_translation.translate_texts(texts, source)
+    if quality_translation.available():
+        try:
+            return quality_translation.translate_texts(texts, source)
+        except (ValueError, RuntimeError, OSError):
+            # The dedicated worker rejected the output (incomplete markers,
+            # altered quantities or timeout): use the local OPUS engine as
+            # backup instead of failing the translation.
+            pass
     from . import translation_cache
     direct=(ROOT/f'opus-{source}-es/download.json').is_file()
     route=[(source,'es')] if direct or source=='en' else [(source,'en'),('en','es')]

@@ -55,6 +55,9 @@ class CatalogItem {
       image.trim(),
     ),
     'delokos-es' => delokosPhotoUrl(image.trim()),
+    'open-mealdb' =>
+      Uri.tryParse(image.trim())?.host == 'www.themealdb.com' &&
+          image.contains('/images/media/meals/'),
     _ =>
       catalogSources.any(
             (s) =>

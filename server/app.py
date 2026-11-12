@@ -525,8 +525,6 @@ def create_app(data_dir: Path | None = None):
             from .catalogs import SOURCES
             from urllib.parse import urlsplit
             matched = next((s for s in SOURCES.values() if urlsplit(body.url).hostname in {urlsplit(s['url']).hostname,*s.get('aliases',[])}), None)
-            if matched and matched['mode']=='book':
-                raise ValueError('La importación de esta fuente está pendiente de autorización del editor.')
             if matched and matched['id']=='es-encantar':
                 if body.provider and body.provider!='es-encantar': raise ValueError('El enlace pertenece a otra fuente.')
                 from .encantar import import_recipe
@@ -544,6 +542,10 @@ def create_app(data_dir: Path | None = None):
                 if body.provider and body.provider!='delokos-es': raise ValueError('El enlace pertenece a otra fuente.')
                 from .wordpress_catalog import import_recipe
                 return import_recipe(body.url)
+            if urlsplit(body.url).hostname=='www.themealdb.com':
+                if body.provider and body.provider!='open-mealdb': raise ValueError('El enlace pertenece a otra fuente.')
+                from .open_catalogs import mealdb_recipe
+                return mealdb_recipe(body.url)
             wiki_source = next((s for s in SOURCES.values() if s['id'].startswith('wiki-') and urlsplit(s['url']).hostname == urlsplit(body.url).hostname), None)
             if wiki_source:
                 if body.provider and body.provider != wiki_source['id']:
@@ -557,11 +559,7 @@ def create_app(data_dir: Path | None = None):
             provider = body.provider or next((s['id'] for s in SOURCES.values() if s['mode']=='web'
                         and target.hostname in {urlsplit(s['url']).hostname,*s.get('aliases',[])}
                         and target.path.startswith(urlsplit(s['url']).path.rstrip('/'))), '')
-            if provider == 'mx-kiwilimon':
-                from .publisher_adapters import kiwilimon_recipe
-                result = kiwilimon_recipe(source, page)
-            else:
-                result = extract_recipe(page, source, language=SOURCES[provider].get('language_code','es') if provider in SOURCES else 'es')
+            result = extract_recipe(page, source, language=SOURCES[provider].get('language_code','es') if provider in SOURCES else 'es')
             result['source'] = source
             if provider:
                 from .catalogs import publisher_origin

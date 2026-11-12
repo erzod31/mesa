@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
@@ -12,8 +11,8 @@ import 'package:mesa/public_recipe.dart';
 
 final catalogSources = fixtureSources;
 
-const url = 'https://www.petitchef.es/recetas/plato/pan-fid-123';
-final source = catalogSources.firstWhere((s) => s.id == 'es-petitchef');
+const url = 'https://based.cooking/pan-casero/';
+final source = catalogSources.firstWhere((s) => s.id == 'open-based');
 String schemaPage({String title = 'Pan casero'}) =>
     '<script type="application/ld+json">${jsonEncode({
       '@graph': [
@@ -67,7 +66,7 @@ void main() {
       sources: fixtureSources,
     );
     final recipe = await api.detail(
-      const CatalogItem(id: url, title: 'Pan', provider: 'es-petitchef'),
+      const CatalogItem(id: url, title: 'Pan', provider: 'open-based'),
     );
     expect(recipe['ingredients'], [
       '500 g de harina',
@@ -84,7 +83,7 @@ void main() {
     expect(recipe['photos'], hasLength(3));
     expect(recipe['photos'][1]['artist'], 'Autor');
     expect(recipe['origin']['url'], url);
-    expect(recipe['origin']['language'], 'es');
+    expect(recipe['origin']['language'], 'en');
     expect(recipe['image'], isEmpty);
   });
 
@@ -93,7 +92,7 @@ void main() {
     final api = CatalogApi(
       MockClient((request) async {
         calls++;
-        expect(request.url.host, 'www.petitchef.es');
+        expect(request.url.host, 'based.cooking');
         expect(request.headers.containsKey('authorization'), false);
         return http.Response(schemaPage(), 200);
       }),
@@ -102,7 +101,7 @@ void main() {
     );
     expect(
       (await api.detail(
-        const CatalogItem(id: url, title: 'Pan', provider: 'es-petitchef'),
+        const CatalogItem(id: url, title: 'Pan', provider: 'open-based'),
       ))['title'],
       'Pan casero',
     );
@@ -164,7 +163,7 @@ void main() {
           const CatalogItem(
             id: 'http://127.0.0.1/recipe',
             title: 'Wrong',
-            provider: 'es-petitchef',
+            provider: 'open-based',
           ),
         ),
         throwsException,
@@ -172,11 +171,11 @@ void main() {
       expect(seen, isEmpty);
       await expectLater(
         api.detail(
-          const CatalogItem(id: url, title: 'Pan', provider: 'es-petitchef'),
+          const CatalogItem(id: url, title: 'Pan', provider: 'open-based'),
         ),
         throwsException,
       );
-      expect(seen, ['www.petitchef.es']);
+      expect(seen, ['based.cooking']);
     },
   );
 
@@ -191,35 +190,5 @@ void main() {
         throwsException,
       );
     }
-  });
-
-  test('Reviewed publisher HTML fixtures can be read locally inside Mesa', () {
-    final results = <String, dynamic>{};
-    final manifest = jsonDecode(
-      File('test/fixtures/publishers/manifest.json').readAsStringSync(),
-    ) as List;
-    for (final entry in manifest) {
-      final source = catalogSources.firstWhere((s) => s.id == entry['id']);
-      final file = File('test/fixtures/publishers/${entry['file']}');
-      final recipe = parsePublicRecipe(
-        file.readAsStringSync(),
-        Uri.parse(entry['url']),
-        source,
-      );
-      expect(
-        (recipe['ingredients'] as List).isNotEmpty,
-        true,
-        reason: source.id,
-      );
-      expect((recipe['steps'] as List).isNotEmpty, true, reason: source.id);
-      results[source.id] = {
-        'ingredients': (recipe['ingredients'] as List).length,
-        'steps': (recipe['steps'] as List).length,
-        'photos': (recipe['photos'] as List).length,
-      };
-    }
-    expect(results.length, greaterThanOrEqualTo(8));
-    File('../output/public-detail-fixtures.json')
-        .writeAsStringSync(jsonEncode(results));
   });
 }

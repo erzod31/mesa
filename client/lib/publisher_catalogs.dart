@@ -89,6 +89,80 @@ class PublicPublisherCatalog {
     };
   }
 
+  Future<Map<String, dynamic>> mealdbSearch(
+    CatalogSource source,
+    String query,
+    String? cursor,
+  ) async {
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    List<dynamic> meals(dynamic data) =>
+        data is Map ? data['meals'] as List? ?? [] : <dynamic>[];
+    if (query.isNotEmpty) {
+      final data = jsonDecode(
+        (await fetch(
+          Uri.parse(
+            'https://www.themealdb.com/api/json/v1/1/search.php?s=${Uri.encodeQueryComponent(query)}',
+          ),
+          source,
+        )).text,
+      );
+      final items = [
+        for (final m in meals(data).whereType<Map>())
+          if (m['idMeal'] is String &&
+              m['strMeal'] is String &&
+              m['strMealThumb'] is String)
+            {
+              'id':
+                  'https://www.themealdb.com/api/json/v1/1/lookup.php?i=${m['idMeal']}',
+              'title': '${m['strMeal']}',
+              'provider': source.id,
+              'image': '${m['strMealThumb']}',
+            },
+      ];
+      return {
+        'items': items,
+        'cursor': null,
+        'notice': items.isEmpty
+            ? 'No hay recetas con ese nombre en inglés. Prueba otra búsqueda.'
+            : '',
+      };
+    }
+    final current = switch (cursor) {
+      null || '' => 0,
+      final letter => letters.indexOf(letter),
+    };
+    if (current < 0 || current >= letters.length) {
+      throw Exception('Página incorrecta.');
+    }
+    final data = jsonDecode(
+      (await fetch(
+        Uri.parse(
+          'https://www.themealdb.com/api/json/v1/1/search.php?f=${letters[current]}',
+        ),
+        source,
+      )).text,
+    );
+    final items = [
+      for (final m in meals(data).whereType<Map>())
+        if (m['idMeal'] is String &&
+            m['strMeal'] is String &&
+            m['strMealThumb'] is String)
+          {
+            'id':
+                'https://www.themealdb.com/api/json/v1/1/lookup.php?i=${m['idMeal']}',
+            'title': '${m['strMeal']}',
+            'provider': source.id,
+            'image': '${m['strMealThumb']}',
+          },
+    ];
+    return {
+      'items': items,
+      'cursor': current + 1 < letters.length ? letters[current + 1] : null,
+      'notice':
+          'Catálogo internacional en inglés; se traduce al español al abrir la receta.',
+    };
+  }
+
   Future<Map<String, dynamic>> creativeganSearch(
     CatalogSource source,
     String query,
@@ -157,6 +231,75 @@ class PublicPublisherCatalog {
       throw Exception(
         'El enlace no pertenece a una fuente de recetas disponible.',
       );
+    }
+    if (source.id == 'open-mealdb') {
+      final mealId = target.queryParameters['i'];
+      if (mealId == null || !RegExp(r'^\d+$').hasMatch(mealId)) {
+        throw Exception('Receta de TheMealDB incorrecta.');
+      }
+      final data = jsonDecode(
+        (await fetch(
+          Uri.parse(
+            'https://www.themealdb.com/api/json/v1/1/lookup.php?i=$mealId',
+          ),
+          source,
+        )).text,
+      );
+      final meals = data is Map ? data['meals'] as List? ?? [] : <dynamic>[];
+      final meal = meals.whereType<Map>().firstOrNull;
+      if (meal == null ||
+          meal['strMealThumb'] is! String ||
+          (meal['strMealThumb'] as String).isEmpty) {
+        throw Exception('La receta no está completa en TheMealDB.');
+      }
+      final ingredients = <String>[];
+      for (var index = 1; index <= 20; index++) {
+        final ingredient = '${meal['strIngredient$index'] ?? ''}'.trim();
+        if (ingredient.isEmpty) continue;
+        final measure = '${meal['strMeasure$index'] ?? ''}'.trim();
+        ingredients.add('$measure $ingredient'.trim());
+      }
+      final steps = ('${meal['strInstructions'] ?? ''}')
+          .split('\r\n')
+          .map((s) => s.trim())
+          .where((s) => s.isNotEmpty)
+          .toList();
+      if (ingredients.isEmpty || steps.isEmpty) {
+        throw Exception('La receta no está completa en TheMealDB.');
+      }
+      return {
+        'title': '${meal['strMeal'] ?? ''}'.trim(),
+        'language': 'en',
+        'ingredients': ingredients,
+        'steps': steps,
+        'tags': const ['Internacional'],
+        'servings': 4,
+        'servings_declared': false,
+        'minutes': 0,
+        'notes': '',
+        'source': target.toString(),
+        'image': '',
+        'photos': [
+          {
+            'url': meal['strMealThumb'],
+            'source': target.toString(),
+            'caption': '',
+            'artist': '',
+            'license': '',
+            'license_url': '',
+            'image': '',
+          },
+        ],
+        'origin': {
+          'provider': 'open-mealdb',
+          'id': mealId,
+          'url': target.toString(),
+          'language': 'en',
+          'attribution': 'TheMealDB',
+          'license': 'Gratuita · atribución requerida',
+          'license_url': 'https://www.themealdb.com/api.php',
+        },
+      };
     }
     if (source.id == 'mx-kiwilimon') {
       if (target.host != 'www.kiwilimon.com' ||
@@ -326,6 +469,9 @@ class PublicPublisherCatalog {
     }
     if (source.id == 'open-based' && !query.startsWith('https://')) {
       return basedSearch(source, query, cursor);
+    }
+    if (source.id == 'open-mealdb' && !query.startsWith('https://')) {
+      return mealdbSearch(source, query, cursor);
     }
     if (source.id == 'mx-kiwilimon' && !query.startsWith('https://')) {
       return kiwilimon(query, cursor);

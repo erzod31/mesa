@@ -43,12 +43,16 @@ def test_pagination_retains_initial_cursor_and_captures_concurrent_edit(api):
 def test_truncated_translation_original_rejected(api):
     assert send(api,data={**recipe(),'original':{'language':'en','title':'Cake'}}).status_code==422
 
+SEEDS={'es-rechupete':'https://www.recetasderechupete.com/tortilla-de-patatas-espanola-receta-paso-a-paso/5182/',
+       'es-hogarmania':'https://www.hogarmania.com/cocina/recetas/tortilla-de-patatas-al-horno.html',
+       'es-bonviveur':'https://www.bonviveur.com/es/recetas/tortilla-de-betanzos',
+       'es-gratis':'https://www.recetasgratis.net/receta-de-lentejas-con-arroz-y-tomate-59773.html',
+       'ar-paulina':'https://www.paulinacocina.net/como-hacer-empanadas-de-carne/9220'}
 @pytest.mark.parametrize('provider,expected,photos,minutes',[
     ('es-rechupete',5,10,50),('es-hogarmania',4,13,40),('es-bonviveur',4,18,80),('es-gratis',12,10,30),('ar-paulina',11,1,0)])
 def test_real_recipe_scope_does_not_mix_related_content(provider,expected,photos,minutes):
-    from server.catalogs import SOURCES
     path=Path('client/test/fixtures/publishers')/(provider+'.html')
-    value=extract_recipe(path.read_text(encoding='utf-8'),SOURCES[provider]['seed'])
+    value=extract_recipe(path.read_text(encoding='utf-8'),SEEDS[provider])
     assert len(value['ingredients'])==expected
     assert len(value['photos'])>=photos
     if minutes: assert value['minutes']==minutes

@@ -2,21 +2,7 @@
   "original_sources": 38,
   "cutoff_position": 17,
   "retained_ids": [
-    "es-petitchef",
-    "mx-kiwilimon",
-    "es-gratis",
-    "es-directo",
-    "ar-cocineros",
-    "mx-nestle",
-    "es-hogarmania",
-    "mx-larousse",
-    "es-rechupete",
-    "es-bonviveur",
-    "es-nestle",
-    "es-recetinas",
     "delokos-es",
-    "ar-paulina",
-    "pe-buenazo",
     "wiki-es"
   ],
   "retired_ids": [
@@ -41,103 +27,92 @@
     "cl-uchile",
     "us-myplate",
     "py-senatur",
-    "cr-ucr"
+    "cr-ucr",
+    "ar-cocineros",
+    "ar-paulina",
+    "es-bonviveur",
+    "es-directo",
+    "es-gratis",
+    "es-hogarmania",
+    "es-nestle",
+    "es-petitchef",
+    "es-recetinas",
+    "es-rechupete",
+    "mx-kiwilimon",
+    "mx-larousse",
+    "mx-nestle",
+    "pe-buenazo"
   ],
   "removed_this_release": [
     {
-      "id": "caribe-goya",
-      "name": "GOYA · español",
-      "previous_position": 17
+      "id": "es-petitchef",
+      "name": "Petitchef · español",
+      "previous_position": 1
     },
     {
-      "id": "cu-vero",
-      "name": "La cocina de Vero",
-      "previous_position": 18
+      "id": "mx-kiwilimon",
+      "name": "Kiwilimón",
+      "previous_position": 2
     },
     {
-      "id": "cl-pilar",
-      "name": "La cocina chilena de Pilar",
-      "previous_position": 19
+      "id": "es-gratis",
+      "name": "RecetasGratis",
+      "previous_position": 3
     },
     {
-      "id": "us-foodhero",
-      "name": "Food Hero · español",
-      "previous_position": 20
+      "id": "es-directo",
+      "name": "Directo al Paladar",
+      "previous_position": 4
     },
     {
-      "id": "ec-laylita",
-      "name": "Laylita",
-      "previous_position": 21
+      "id": "ar-cocineros",
+      "name": "Cocineros Argentinos",
+      "previous_position": 5
     },
     {
-      "id": "gt-aprende",
-      "name": "Guatemala.com · Aprende",
-      "previous_position": 22
+      "id": "mx-nestle",
+      "name": "Recetas Nestlé · México",
+      "previous_position": 6
     },
     {
-      "id": "mx-mely",
-      "name": "México en mi Cocina",
-      "previous_position": 23
+      "id": "es-hogarmania",
+      "name": "Hogarmania",
+      "previous_position": 7
     },
     {
-      "id": "co-erica",
-      "name": "My Colombian Recipes · español",
-      "previous_position": 24
+      "id": "mx-larousse",
+      "name": "Larousse Cocina",
+      "previous_position": 8
     },
     {
-      "id": "es-canarias",
-      "name": "Recetas y cosas canarias",
-      "previous_position": 25
+      "id": "es-rechupete",
+      "name": "Recetas de Rechupete",
+      "previous_position": 9
     },
     {
-      "id": "ve-tuya",
-      "name": "Venezuela Tuya",
-      "previous_position": 26
+      "id": "es-bonviveur",
+      "name": "Bon Viveur",
+      "previous_position": 10
     },
     {
-      "id": "us-bueno-barato",
-      "name": "Bueno y Barato · español",
-      "previous_position": 27
+      "id": "es-nestle",
+      "name": "Nestlé Cocina · España",
+      "previous_position": 11
     },
     {
-      "id": "bo-subsidios",
-      "name": "Recetario Subsidios",
-      "previous_position": 28
+      "id": "es-recetinas",
+      "name": "Recetinas",
+      "previous_position": 12
     },
     {
-      "id": "ca-alberta",
-      "name": "Universidad de Alberta · español",
-      "previous_position": 29
+      "id": "ar-paulina",
+      "name": "Paulina Cocina",
+      "previous_position": 14
     },
     {
-      "id": "rd-iddi",
-      "name": "Cocina con chines · IDDI",
-      "previous_position": 30
-    },
-    {
-      "id": "co-picante",
-      "name": "Picante pero sabroso · AGROSAVIA",
-      "previous_position": 31
-    },
-    {
-      "id": "cl-uchile",
-      "name": "Cocina de integración · Universidad de Chile",
-      "previous_position": 32
-    },
-    {
-      "id": "us-myplate",
-      "name": "MyPlate · español",
-      "previous_position": null
-    },
-    {
-      "id": "py-senatur",
-      "name": "SENATUR · Turismo gastronómico",
-      "previous_position": null
-    },
-    {
-      "id": "cr-ucr",
-      "name": "UCR · Cocina a la tica",
-      "previous_position": null
+      "id": "pe-buenazo",
+      "name": "Buenazo",
+      "previous_position": 15
     }
   ],
   "added_open_ids": [
@@ -149,7 +124,8 @@
     "open-based",
     "es-creativegan",
     "book-polaca",
-    "es-encantar"
+    "es-encantar",
+    "open-mealdb"
   ],
   "expansion_reason": "Fuentes con licencia publicada, autorizadas por el usuario el 11/10/2026."
 }

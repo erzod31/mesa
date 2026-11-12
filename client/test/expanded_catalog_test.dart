@@ -11,7 +11,7 @@ void main() {
     final api = CatalogApi(
       MockClient((_) async => fail('No request to retired sources')),
     );
-    expect(catalogSources, hasLength(25));
+    expect(catalogSources, hasLength(12));
     for (final id in [
       'agro-caribe',
       'agro-arracacha',
@@ -35,6 +35,20 @@ void main() {
       'us-myplate',
       'py-senatur',
       'cr-ucr',
+      'mx-kiwilimon',
+      'ar-paulina',
+      'ar-cocineros',
+      'pe-buenazo',
+      'mx-larousse',
+      'mx-nestle',
+      'es-nestle',
+      'es-bonviveur',
+      'es-rechupete',
+      'es-hogarmania',
+      'es-petitchef',
+      'es-directo',
+      'es-gratis',
+      'es-recetinas',
     ]) {
       expect(catalogSources.any((s) => s.id == id), false);
       await expectLater(api.search(id), throwsException);
@@ -76,8 +90,8 @@ void main() {
         'ingredients': ['500 g de harina'],
       },
     );
-    final page = await api.search('mx-kiwilimon', query: 'pan', cursor: '2');
-    expect(calls, ['mx-kiwilimon:pan:2']);
+    final page = await api.search('open-based', query: 'pan', cursor: '2');
+    expect(calls, ['open-based:pan:2']);
     expect(page.notice, 'Consulta web');
     expect(page.items, hasLength(1));
     expect((await api.detail(page.items.single))['ingredients'], [

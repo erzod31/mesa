@@ -8,10 +8,12 @@ if ($taskShort.Contains(' ')) {
   $tempBase = [IO.Path]::GetTempPath().TrimEnd('\')
   if ($tempBase.Contains(' ')) { $tempBase = $taskFso.GetFolder($tempBase).ShortPath }
   if ($tempBase.Contains(' ')) { throw 'No hay una ruta temporal sin espacios para compilar.' }
-  $taskJunction = Join-Path $tempBase ("mesa-build-" + $PID)
-  if (Test-Path -LiteralPath $taskJunction) { & cmd.exe /c "rmdir `"$taskJunction`"" 2>$null }
-  & cmd.exe /c "mklink /J `"$taskJunction`" `"$taskRoot`"" | Out-Null
-  if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath (Join-Path $taskJunction '.tools'))) { throw 'No se pudo preparar una ruta sin espacios para compilar.' }
+  $taskJunction = Join-Path $tempBase 'mesa-build'
+  if (!(Test-Path -LiteralPath (Join-Path $taskJunction '.tools'))) {
+    if (Test-Path -LiteralPath $taskJunction) { & cmd.exe /c "rmdir `"$taskJunction`"" 2>$null }
+    & cmd.exe /c "mklink /J `"$taskJunction`" `"$taskRoot`"" | Out-Null
+    if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath (Join-Path $taskJunction '.tools'))) { throw 'No se pudo preparar una ruta sin espacios para compilar.' }
+  }
   $taskRoot=$taskJunction
   $taskShort=$taskJunction
 }
@@ -37,7 +39,4 @@ try {
   Copy-Item -LiteralPath 'build/app/outputs/flutter-apk/app-release.apk' -Destination $taskTarget -Force
   & $taskAdb -s $Serial install -r $taskTarget
   if ($LASTEXITCODE -ne 0) { throw 'No se pudo actualizar el emulador.' }
-} finally {
-  Pop-Location
-  if ($taskJunction) { & cmd.exe /c "rmdir `"$taskJunction`"" 2>$null }
-}
+} finally { Pop-Location }

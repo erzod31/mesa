@@ -236,7 +236,7 @@ void main() {
     expect(data['origin']['language'], 'es');
     expect(data['category_ids'], ['category:entrantes']);
     validateEntryData('recipe', data);
-    expect(catalogSources.where((s) => s.language == 'Español'), hasLength(19));
+    expect(catalogSources.where((s) => s.language == 'Español'), hasLength(5));
   });
   test('Catalogues without photos and English providers are rejected before requesting', () async {
     final api = CatalogApi(

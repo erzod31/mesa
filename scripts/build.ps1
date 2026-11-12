@@ -29,7 +29,8 @@ $short = $buffer.ToString()
 $buildJunction = $null
 if (!$short -or $short.Contains(' ')) {
   # Sin nombres cortos 8.3 (volumen con 8dot3 desactivado): compilar a traves
-  # de un junction sin espacios que apunte al proyecto.
+  # de un junction estable sin espacios. Se conserva entre ejecuciones para que
+  # los caches de Dart (.dart_tool) sigan siendo validos.
   $tempBase = [IO.Path]::GetTempPath().TrimEnd('\')
   if ($tempBase.Contains(' ')) {
     $tb = New-Object System.Text.StringBuilder 512
@@ -37,11 +38,13 @@ if (!$short -or $short.Contains(' ')) {
     $tempBase = $tb.ToString()
   }
   if ($tempBase.Contains(' ')) { throw 'No hay una ruta temporal sin espacios para compilar. Usa un checkout sin espacios.' }
-  $buildJunction = Join-Path $tempBase ("mesa-build-" + $PID)
-  if (Test-Path -LiteralPath $buildJunction) { & cmd.exe /c "rmdir `"$buildJunction`"" 2>$null }
-  & cmd.exe /c "mklink /J `"$buildJunction`" `"$root`"" | Out-Null
-  if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath (Join-Path $buildJunction '.tools/flutter/bin/flutter.bat'))) {
-    throw 'No se pudo preparar una ruta sin espacios para compilar. Usa un checkout sin espacios.'
+  $buildJunction = Join-Path $tempBase 'mesa-build'
+  if (!(Test-Path -LiteralPath (Join-Path $buildJunction '.tools/flutter/bin/flutter.bat'))) {
+    if (Test-Path -LiteralPath $buildJunction) { & cmd.exe /c "rmdir `"$buildJunction`"" 2>$null }
+    & cmd.exe /c "mklink /J `"$buildJunction`" `"$root`"" | Out-Null
+    if ($LASTEXITCODE -ne 0 -or !(Test-Path -LiteralPath (Join-Path $buildJunction '.tools/flutter/bin/flutter.bat'))) {
+      throw 'No se pudo preparar una ruta sin espacios para compilar. Usa un checkout sin espacios.'
+    }
   }
   $root = $buildJunction
   $short = $buildJunction
@@ -97,5 +100,4 @@ try {
   }
 } finally {
   Pop-Location
-  if ($buildJunction) { & cmd.exe /c "rmdir `"$buildJunction`"" 2>$null }
 }

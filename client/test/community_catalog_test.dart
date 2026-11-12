@@ -19,13 +19,13 @@ http.Response jsonResponse(dynamic data) => http.Response(
 );
 
 void main() {
-  test('Spanish sources retain existing IDs and expose distinct consultation modes', () {
+  test('Spanish sources retain existing IDs and all offer in-app content', () {
     expect(catalogSources.take(2).map((s) => s.id), ['wiki-es', 'delokos-es']);
-    expect(catalogSources.where((s) => s.language == 'Español'), hasLength(19));
+    expect(catalogSources.where((s) => s.language == 'Español'), hasLength(5));
     expect(catalogSources.where((s) => s.included).map((s) => s.id), [
       'book-polaca',
     ]);
-    expect(catalogSources.where((s) => s.consultationOnly), hasLength(14));
+    expect(catalogSources.where((s) => s.consultationOnly), isEmpty);
   });
 
   test('Actual delokos posts preserve amounts, steps and photo credits, excluding signatures', () {

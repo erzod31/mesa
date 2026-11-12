@@ -81,18 +81,3 @@ def test_two_thousand_recipes_paginate_replay_and_back_up(api):
     assert all(r['revision']==1 and r['data']['ingredients']==['2 huevos'] for r in records)
     assert api.post('/v1/backup').status_code==200
     assert api.get('/v1/export').status_code==200
-
-
-@pytest.mark.parametrize('provider,wrong,correct', [
-    ('es-hogarmania','/cocina/recetas/ensaladas-verduras/','/cocina/recetas/pan-familiar.html'),
-    ('es-bonviveur','/es/actualidad/noticia-de-cocina','/es/recetas/pan-familiar'),
-])
-def test_catalogues_do_not_offer_sections_and_news_as_recipes(monkeypatch,provider,wrong,correct):
-    from server.catalogs import SOURCES
-    monkeypatch.setitem(SOURCES,provider,{**SOURCES[provider],'mode':'web'})
-    from server.catalogs import publisher_catalog, SOURCES
-    source=SOURCES[provider]
-    page=''.join(f'<article><a href="{url}">Pan familiar con queso<img src="/foto.jpg" alt="Pan"></a></article>' for url in [wrong,correct])
-    monkeypatch.setattr('server.catalogs.fetch_page',lambda url:(page,source['url']))
-    items=publisher_catalog(provider)['items']
-    assert len(items)==1 and items[0]['id'].endswith(correct)

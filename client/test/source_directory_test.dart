@@ -30,19 +30,17 @@ void main() {
     'All current sources are classified; unverified totals are never zero',
     () {
       final rows = classifiedSources();
-      expect(rows, hasLength(25));
+      expect(rows, hasLength(12));
       expect(
         rows.map((s) => s.id).toSet(),
         catalogSources.map((s) => s.id).toSet(),
       );
-      expect(rows.where((s) => s.recipeCount != null), hasLength(17));
-      expect(rows.where((s) => s.recipeCount == null), hasLength(8));
-      expect(rows.take(5).map((s) => s.id), [
-        'es-petitchef',
-        'mx-kiwilimon',
-        'es-gratis',
-        'es-directo',
-        'ar-cocineros',
+      expect(rows.where((s) => s.recipeCount != null), hasLength(3));
+      expect(rows.where((s) => s.recipeCount == null), hasLength(9));
+      expect(rows.take(3).map((s) => s.id), [
+        'delokos-es',
+        'wiki-es',
+        'book-polaca',
       ]);
       final counts = rows
           .where((s) => s.recipeCount != null)
@@ -52,28 +50,24 @@ void main() {
         counts,
         orderedEquals([...counts]..sort((a, b) => b.compareTo(a))),
       );
-      expect(sourceCountLabel(rows.first), '33.527 fichas en el índice');
-      expect(sourceCountLabel(rows[1]), 'Más de 21.000 recetas');
-      expect(sourceRankingPosition('es-petitchef'), 1);
-      expect(sourceRankingPosition('mx-kiwilimon'), 2);
+      expect(sourceCountLabel(rows.first), '1.745 recetas');
+      expect(sourceCountLabel(rows[1]), '1.016 fichas en el índice');
+      expect(sourceRankingPosition('delokos-es'), 1);
+      expect(sourceRankingPosition('wiki-es'), 2);
+      expect(sourceRankingPosition('es-petitchef'), isNull);
       expect(sourceRankingPosition('us-myplate'), isNull);
-      expect(sourceRankingPosition('py-senatur'), isNull);
       expect(rows.where((s) => s.recipeCount != null).last.id, 'book-polaca');
-      expect(sourceRankingPosition('wiki-es'), 16);
       expect(rows.any((s) => s.id == 'caribe-goya'), false);
+      expect(rows.any((s) => s.id == 'mx-kiwilimon'), false);
     },
   );
 
-  test('Country and availability include consultation-only sources without restoring retired ones', () {
-    expect(classifiedSources(country: 'México'), hasLength(3));
-    expect(classifiedSources(query: 'kiwilimon').single.id, 'mx-kiwilimon');
+  test('Country and availability classify only sources with in-app content', () {
+    expect(classifiedSources(country: 'México'), isEmpty);
+    expect(classifiedSources(query: 'delokos').single.id, 'delokos-es');
     final available = classifiedSources(order: SourceOrder.availability);
-    expect(available.where((s) => s.browseable), hasLength(11));
-    expect(available.where((s) => s.consultationOnly), hasLength(14));
-    expect(
-      available.where((s) => !s.browseable && !s.consultationOnly),
-      hasLength(0),
-    );
+    expect(available.where((s) => s.browseable), hasLength(12));
+    expect(available.where((s) => s.consultationOnly), hasLength(0));
     expect(available.map((s) => s.id), isNot(contains('agro-caribe')));
     expect(available.map((s) => s.id), isNot(contains('agro-arracacha')));
     expect(available.map((s) => s.id), isNot(contains('sabores-uy')));
@@ -100,7 +94,7 @@ void main() {
       );
 
   testWidgets(
-    'Ranking exposes its evidence and can search a source with a consultation-only source',
+    'Ranking exposes its evidence and searches a licensed catalogue source',
     (tester) async {
       final opened = <String>[];
       await tester.pumpWidget(
@@ -112,41 +106,41 @@ void main() {
       );
       await tester.tap(find.text('Abrir fuentes'));
       await tester.pumpAndSettle();
-      expect(find.text('25 de 25 fuentes'), findsOneWidget);
+      expect(find.text('12 de 12 fuentes'), findsOneWidget);
       expect(
-        find.text('25 actuales · 16 conservadas + 9 libres añadidas'),
+        find.text('12 actuales · 2 conservadas + 10 libres añadidas'),
         findsOneWidget,
       );
       await tester.ensureVisible(
-        find.byTooltip('Ver recuento y estado de Kiwilimón'),
+        find.byTooltip('Ver recuento y estado de La cocina delokos'),
       );
-      await tester.tap(find.byTooltip('Ver recuento y estado de Kiwilimón'));
+      await tester.tap(find.byTooltip('Ver recuento y estado de La cocina delokos'));
       await tester.pumpAndSettle();
       expect(find.text('Revisión: 2026-10-11'), findsOneWidget);
       await tester.tap(find.text('Abrir comprobación'));
       expect(
         opened.single,
-        catalogSources.firstWhere((s) => s.id == 'mx-kiwilimon').countEvidence,
+        catalogSources.firstWhere((s) => s.id == 'delokos-es').countEvidence,
       );
       await tester.tap(find.text('Cerrar'));
       await tester.pumpAndSettle();
       await tester.scrollUntilVisible(find.byType(TextField), -200);
-      await tester.enterText(find.byType(TextField), 'nestle cocina');
+      await tester.enterText(find.byType(TextField), 'delokos');
       await tester.pumpAndSettle();
-      expect(find.text('1 de 25 fuentes'), findsOneWidget);
-      expect(find.text('Nestlé Cocina · España'), findsOneWidget);
-      expect(find.text('3.238 recetas'), findsOneWidget);
-      expect(find.textContaining('Pendiente de autorización'), findsOneWidget);
+      expect(find.text('1 de 12 fuentes'), findsOneWidget);
+      expect(find.text('La cocina delokos'), findsOneWidget);
+      expect(find.text('1.745 recetas'), findsOneWidget);
+      expect(find.textContaining('Catálogo operativo'), findsOneWidget);
       await tester.enterText(find.byType(TextField), 'inexistente');
       await tester.pumpAndSettle();
       expect(find.text('No hay fuentes para este filtro.'), findsOneWidget);
-      await tester.enterText(find.byType(TextField), 'Kiwilimón');
+      await tester.enterText(find.byType(TextField), 'delokos');
       await tester.pumpAndSettle();
       expect(
-        find.text('2'),
+        find.text('1'),
         findsOneWidget,
       ); // The original position survives filtering.
-      expect(find.text('Más de 21.000 recetas'), findsOneWidget);
+      expect(find.text('1.745 recetas'), findsOneWidget);
       await tester.tap(find.byType(DropdownButtonFormField<SourceOrder>));
       await tester.pumpAndSettle();
       await tester.tap(find.text('Nombre').last);
@@ -186,17 +180,17 @@ void main() {
       }
       await tester.enterText(find.byType(TextField), 'Wikilibros');
       await tester.pumpAndSettle();
-      expect(find.text('1 de 25 fuentes'), findsOneWidget);
+      expect(find.text('1 de 12 fuentes'), findsOneWidget);
       expect(tester.takeException(), isNull);
       await tester.enterText(find.byType(TextField), '');
       await tester.pumpAndSettle();
       if (size.width < 400) {
         await tester.ensureVisible(
-          find.byKey(const ValueKey('source:es-petitchef')),
+          find.byKey(const ValueKey('source:delokos-es')),
         );
         await tester.pumpAndSettle();
         expect(tester.takeException(), isNull);
-        expect(find.text('1. Petitchef · español'), findsOneWidget);
+        expect(find.text('1. La cocina delokos'), findsOneWidget);
       }
       await tester.runAsync(() async {
         final boundary =

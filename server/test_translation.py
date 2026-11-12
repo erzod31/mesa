@@ -38,6 +38,18 @@ def test_spelled_quantities_never_repair_changed_ambiguous_or_added_values(text)
         tr.restore_numbers('2 Eier mischen.', text, allow_words=True)
 
 
+def test_quality_engine_failure_falls_back_to_local_opus(monkeypatch):
+    import server.quality_translation as quality
+    monkeypatch.setattr(quality, 'available', lambda: True)
+    def boom(texts, source):
+        raise ValueError('El traductor omitió una cantidad; se conserva el original.')
+    monkeypatch.setattr(quality, 'translate_texts', boom)
+    calls = []
+    monkeypatch.setattr(tr, '_translate_local', lambda texts, source: calls.append(texts) or ['hecho'] * len(texts))
+    assert tr.translate_texts(['Pain', '2 eggs'], 'en') == ['hecho', 'hecho']
+    assert calls == [['Pain', '2 eggs']]
+
+
 def test_german_endpoint_accepts_real_provider_spelling_without_saving(api, monkeypatch):
     monkeypatch.setattr(tr, 'translate_batch', lambda texts, source: [t.replace('2 Eier mischen.', 'Mezclar dos huevos.').replace('2 Eier', '2 huevos') for t in texts])
     original = {**recipe('Test'), 'language': 'de', 'ingredients': ['2 Eier'], 'steps': ['2 Eier mischen.']}
@@ -57,7 +69,7 @@ def test_language_contract_normalizes_bcp47_and_explains_unsupported(api,monkeyp
 
 def test_culinary_techniques_and_units_are_not_left_to_ambiguous_models(monkeypatch):
     monkeypatch.setattr(tr, 'translate_batch', lambda texts, source: [
-        t.replace('les oignons puis', 'las cebollas y luego').replace('pendant', 'durante').replace('minutes', 'minutos').replace('sel', 'sal') for t in texts])
+        t.replace('puis', 'y luego').replace('pendant', 'durante').replace('minutes', 'minutos').replace('sel', 'sal') for t in texts])
     result = tr.translate_texts(['Pain', '1/2 cuillère à café de sel', 'Faites revenir les oignons puis laissez mijoter pendant 20 minutes.'], 'fr')
     assert result == ['Pan', '1/2 cucharadita de sal', 'Rehoga las cebollas y luego deja cocer a fuego lento durante 20 minutos.']
 

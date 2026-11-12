@@ -154,3 +154,80 @@ def based_catalog(query='',cursor=None):
     rows=list(items.values())
     return {'items':rows[offset:offset+24],'cursor':str(offset+24) if offset+24<len(rows) else None,
             'notice':'Textos y fotos de dominio público. Busca en inglés.'}
+
+
+MEALDB_API = 'https://www.themealdb.com/api/json/v1/1'
+MEALDB_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+
+
+def _mealdb_meals(page):
+    return (json.loads(page) or {}).get('meals') or []
+
+
+def mealdb_catalog(query='', cursor=None):
+    query = query.strip()
+    if query.startswith('https://'):
+        raise ValueError('Pega el enlace de una receta concreta de TheMealDB para consultarla.')
+    if query:
+        body, _ = fetch_page(MEALDB_API + '/search.php?' + urlencode({'s': query}))
+        meals = _mealdb_meals(body)
+        items = [{'id': f'{MEALDB_API}/lookup.php?i={m["idMeal"]}', 'title': m['strMeal'],
+                  'provider': 'open-mealdb', 'image': m['strMealThumb']}
+                 for m in meals if m.get('strMealThumb')]
+        return {'items': items, 'cursor': None,
+                'notice': '' if items else 'No hay recetas con ese nombre en inglés. Prueba otra búsqueda.'}
+    if cursor in (None, ''):
+        current = 0
+    elif cursor in MEALDB_LETTERS:
+        current = MEALDB_LETTERS.index(cursor)
+    else:
+        raise ValueError('Página incorrecta.')
+    body, _ = fetch_page(f'{MEALDB_API}/search.php?f={MEALDB_LETTERS[current]}')
+    meals = _mealdb_meals(body)
+    items = [{'id': f'{MEALDB_API}/lookup.php?i={m["idMeal"]}', 'title': m['strMeal'],
+              'provider': 'open-mealdb', 'image': m['strMealThumb']}
+             for m in meals if m.get('strMealThumb')]
+    next_cursor = MEALDB_LETTERS[current + 1] if current + 1 < len(MEALDB_LETTERS) else None
+    return {'items': items, 'cursor': next_cursor,
+            'notice': 'Catálogo internacional en inglés; se traduce al español al abrir la receta.'}
+
+
+def mealdb_recipe(url):
+    parts = urlsplit(url)
+    if parts.hostname != 'www.themealdb.com' or parts.path != '/api/json/v1/1/lookup.php':
+        raise ValueError('Usa el enlace de una receta de TheMealDB.')
+    meal_id = parse_qs(parts.query).get('i', [None])[0]
+    if not meal_id or not meal_id.isdigit():
+        raise ValueError('Receta de TheMealDB incorrecta.')
+    body, _ = fetch_page(f'{MEALDB_API}/lookup.php?i={meal_id}')
+    meals = _mealdb_meals(body)
+    if not meals:
+        raise ValueError('La receta no existe en TheMealDB.')
+    meal = meals[0]
+    ingredients = []
+    for index in range(1, 21):
+        ingredient = (meal.get(f'strIngredient{index}') or '').strip()
+        if not ingredient:
+            continue
+        measure = (meal.get(f'strMeasure{index}') or '').strip()
+        ingredients.append(f'{measure} {ingredient}'.strip())
+    steps = [line.strip() for line in (meal.get('strInstructions') or '').split('\r\n') if line.strip()]
+    if not ingredients or not steps or not meal.get('strMealThumb'):
+        raise ValueError('La receta no está completa en TheMealDB.')
+    return {'title': (meal.get('strMeal') or '').strip(),
+            'language': 'en',
+            'ingredients': ingredients,
+            'steps': steps,
+            'tags': ['Internacional'],
+            'servings': 4,
+            'servings_declared': False,
+            'minutes': 0,
+            'notes': '',
+            'source': url,
+            'image': '',
+            'photos': [{'url': meal['strMealThumb'], 'source': url, 'caption': '', 'artist': '',
+                        'license': '', 'license_url': '', 'image': ''}],
+            'origin': {'provider': 'open-mealdb', 'id': meal_id, 'url': url, 'language': 'en',
+                       'attribution': 'TheMealDB', 'license': 'Gratuita · atribución requerida',
+                       'license_url': 'https://www.themealdb.com/api.php'}}
+

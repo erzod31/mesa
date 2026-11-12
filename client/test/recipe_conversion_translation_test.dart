@@ -79,7 +79,7 @@ void main() {
     expect(()=>restoreRecipeNumbers('350 F','180 C'),throwsException);
   });
   test('Culinary glossary protects techniques, teaspoon sizes and recipe titles', () async {
-    final value=await translateCulinaryTexts(['Pain','1/2 cuillère à café de sel','Faites revenir les oignons puis laissez mijoter pendant 20 minutes.'],'fr',(texts,_)async=>texts.map((t)=>t.replaceAll('sel','sal').replaceAll('les oignons puis','las cebollas y luego').replaceAll('pendant','durante').replaceAll('minutes','minutos')).toList());
+    final value=await translateCulinaryTexts(['Pain','1/2 cuillère à café de sel','Faites revenir les oignons puis laissez mijoter pendant 20 minutes.'],'fr',(texts,_)async=>texts.map((t)=>t.replaceAll('sel','sal').replaceAll('puis','y luego').replaceAll('pendant','durante').replaceAll('minutes','minutos')).toList());
     expect(value,['Pan','1/2 cucharadita de sal','Rehoga las cebollas y luego deja cocer a fuego lento durante 20 minutos.']);
   });
   test('Long instructions and paragraph spacing survive native chunking', () async {

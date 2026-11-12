@@ -54,16 +54,23 @@ def test_pdf_selection_contains_only_reviewed_pages_quantities_and_photo_pairs()
     with pytest.raises(ValueError):books.collection('../../data')
 
 
-def test_unlicensed_publishers_are_consultation_only_and_never_fetched(api,monkeypatch):
-    def unexpected(*args,**kwargs):raise AssertionError('No network allowed before permission')
-    monkeypatch.setattr('server.catalogs.fetch_page',unexpected)
-    monkeypatch.setattr('server.fetcher.fetch_page',unexpected)
-    pending=[s for s in SOURCES.values() if s['mode']=='book']
-    assert len(pending)==14
-    for source in pending:
-        with pytest.raises(ValueError,match='autorización'):publisher_catalog(source['id'])
-        assert api.post('/v1/import-url',json={'url':source['url'],'provider':source['id']}).status_code==422
-    assert api.post('/v1/import-url',json={'url':'https://recetas.elperiodico.com/receta-pan.html'}).status_code==422
+def test_removed_publishers_are_unknown_and_rejected(api,monkeypatch):
+    page='<script type="application/ld+json">{"@type":"Recipe","name":"Pan","recipeIngredient":["500 g de harina"],"recipeInstructions":["Amasar."],"image":["/pan.jpg"]}</script>'
+    monkeypatch.setattr('server.fetcher.fetch_page',lambda u:(page,u))
+    monkeypatch.setattr('server.photos.hydrate_photos',lambda r,**kw:None)
+    assert not [s for s in SOURCES.values() if s['mode']=='book']
+    for source_id in ('es-petitchef','mx-kiwilimon','es-gratis','ar-paulina'):
+        with pytest.raises(ValueError,match='desconocida'):publisher_catalog(source_id)
+        assert api.post('/v1/import-url',json={'url':'https://www.petitchef.es/recetas/plato/pan-fid-1','provider':source_id}).status_code==422
+
+
+def test_unregistered_recipe_url_uses_generic_extraction(api,monkeypatch):
+    page='<script type="application/ld+json">{"@type":"Recipe","name":"Pan","recipeIngredient":["500 g de harina"],"recipeInstructions":["Amasar."],"image":["/pan.jpg"]}</script>'
+    monkeypatch.setattr('server.fetcher.fetch_page',lambda u:(page,u))
+    monkeypatch.setattr('server.photos.hydrate_photos',lambda r,**kw:None)
+    response=api.post('/v1/import-url',json={'url':'https://recetas.elperiodico.com/receta-pan.html'})
+    assert response.status_code==200
+    assert response.json()['ingredients']==['500 g de harina']
 
 
 def test_document_photo_authentication_no_store_and_immutable_fingerprint(api,monkeypatch):
