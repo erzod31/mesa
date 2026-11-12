@@ -58,7 +58,7 @@ def _fetch_public(url, *, image=False, document=False, post_data=None):
             if response.status != 200:
                 raise ValueError(f'La fuente no permitió la consulta automática (HTTP {response.status}). Abre el sitio original.')
             media = response.getheader('Content-Type', '').lower()
-            compatible = media.startswith('application/pdf') if document else media.startswith('image/') if image else any(kind in media for kind in ('text/html', 'application/json', 'application/ld+json'))
+            compatible = media.startswith('application/pdf') if document else media.startswith('image/') if image else (media.startswith('text/') or any(kind in media for kind in ('application/json', 'application/ld+json')))
             if not compatible:
                 raise ValueError('El enlace no contiene una página o receta compatible.')
             encoding = response.getheader('Content-Encoding', 'identity').lower()

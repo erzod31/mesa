@@ -29,6 +29,13 @@ const wikiEditions = <String, ({String prefix, int namespace})>{
   'wiki-it': (prefix: 'Libro di cucina/Ricette/', namespace: 0),
   'wiki-pt': (prefix: 'Livro de receitas/', namespace: 0),
   'wiki-de': (prefix: 'Kochbuch/', namespace: 0),
+  'wiki-ca': (prefix: 'Llibre de cuina/Receptes/', namespace: 0),
+  'wiki-nl': (prefix: 'Kookboek/', namespace: 0),
+  'wiki-pl': (prefix: 'Książka kucharska/', namespace: 0),
+  'wiki-ja': (prefix: '料理本/', namespace: 0),
+  'wiki-zh': (prefix: '食谱/', namespace: 0),
+  'wiki-fi': (prefix: 'Keittokirja/', namespace: 0),
+  'wiki-sv': (prefix: 'Kokboken/Recept/', namespace: 0),
 };
 const wikiCategories = <String, String>{
   'Recetas': 'Todas',
@@ -58,6 +65,9 @@ class CatalogItem {
     'open-mealdb' =>
       Uri.tryParse(image.trim())?.host == 'www.themealdb.com' &&
           image.contains('/images/media/meals/'),
+    'open-cocktaildb' =>
+      Uri.tryParse(image.trim())?.host == 'www.thecocktaildb.com' &&
+          image.contains('/images/media/drink/'),
     _ =>
       catalogSources.any(
             (s) =>
@@ -807,7 +817,7 @@ Map<String, dynamic> parseWiki(String provider, Map<String, dynamic> page) {
     final text = rawText.replaceAll(RegExp(r'\s+'), ' ').trim();
     if (text.isEmpty) continue;
     if (RegExp(
-      r'^(pour|para|per|fur)\s+(\d+|six)\s+(personnes|personas|persone|personen)',
+      r'^(pour|para|per|per a|fur|für|voor|dla)\s+(\d+|six)\s+(personnes|personas|persone|personen|osob)',
       caseSensitive: false,
     ).hasMatch(searchKey(text))) {
       continue;
@@ -818,16 +828,17 @@ Map<String, dynamic> parseWiki(String provider, Map<String, dynamic> page) {
         (element.localName == 'tr' ||
             element.querySelector('b,strong') != null) &&
         RegExp(
-          r'^(ingredientes|ingredients|ingredienti|zutaten|preparacion|preparation|preparazione|zubereitung|modo de preparo|elaboracion|procedimiento|instructions|directions|method)\s*:?(\s*\(.*\))?$',
+          r'^(ingredientes|ingredients|ingredienti|ingrediënten|ingrediens|zutaten|preparacion|preparacio|preparation|preparazione|zubereitung|modo de preparo|elaboracion|procedimiento|instructions|directions|method|bereiding|składniki|材料|用料|食材|ainekset|aineksia|raaka-aineet|przygotowanie|wykonanie|作り方|制作方法|做法|步骤|步驟|valmistus|ohje|tillagning)\s*:?(\s*\(.*\))?$',
           caseSensitive: false,
         ).hasMatch(searchKey(text));
     if (element.localName!.startsWith('h') || paragraphHeading) {
       final heading = searchKey(text);
-      if (RegExp(r'ingredientes|ingredients|ingredienti|zutaten')
-          .hasMatch(heading)) {
+      if (RegExp(
+        r'ingredientes|ingredients|ingredienti|ingrediënten|ingrediens|zutaten|składniki|材料|用料|食材|ainekset|aineksia|raaka-aineet',
+      ).hasMatch(heading)) {
         section = 'ingredients';
       } else if (RegExp(
-        r'preparacion|preparation|preparazione|preparo|confeccao|zubereitung|elaboracion|procedimiento|instructions|directions|method',
+        r'preparacion|preparacio|preparation|preparazione|preparo|confeccao|zubereitung|elaboracion|procedimiento|instructions|directions|method|bereiding|przygotowanie|wykonanie|作り方|制作方法|做法|步骤|步驟|valmistus|ohje|tillagning',
       ).hasMatch(heading)) {
         section = 'steps';
       } else if (['h1', 'h2'].contains(element.localName)) {

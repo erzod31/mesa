@@ -11,7 +11,7 @@ void main() {
     final api = CatalogApi(
       MockClient((_) async => fail('No request to retired sources')),
     );
-    expect(catalogSources, hasLength(12));
+    expect(catalogSources, hasLength(22));
     for (final id in [
       'agro-caribe',
       'agro-arracacha',

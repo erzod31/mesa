@@ -30,17 +30,17 @@ void main() {
     'All current sources are classified; unverified totals are never zero',
     () {
       final rows = classifiedSources();
-      expect(rows, hasLength(12));
+      expect(rows, hasLength(22));
       expect(
         rows.map((s) => s.id).toSet(),
         catalogSources.map((s) => s.id).toSet(),
       );
-      expect(rows.where((s) => s.recipeCount != null), hasLength(3));
-      expect(rows.where((s) => s.recipeCount == null), hasLength(9));
+      expect(rows.where((s) => s.recipeCount != null), hasLength(11));
+      expect(rows.where((s) => s.recipeCount == null), hasLength(11));
       expect(rows.take(3).map((s) => s.id), [
         'delokos-es',
-        'wiki-es',
-        'book-polaca',
+        'wiki-ja',
+        'wiki-pl',
       ]);
       final counts = rows
           .where((s) => s.recipeCount != null)
@@ -51,9 +51,9 @@ void main() {
         orderedEquals([...counts]..sort((a, b) => b.compareTo(a))),
       );
       expect(sourceCountLabel(rows.first), '1.745 recetas');
-      expect(sourceCountLabel(rows[1]), '1.016 fichas en el índice');
+      expect(sourceCountLabel(rows[1]), '1.419 fichas en el índice');
       expect(sourceRankingPosition('delokos-es'), 1);
-      expect(sourceRankingPosition('wiki-es'), 2);
+      expect(sourceRankingPosition('wiki-es'), 4);
       expect(sourceRankingPosition('es-petitchef'), isNull);
       expect(sourceRankingPosition('us-myplate'), isNull);
       expect(rows.where((s) => s.recipeCount != null).last.id, 'book-polaca');
@@ -66,7 +66,7 @@ void main() {
     expect(classifiedSources(country: 'México'), isEmpty);
     expect(classifiedSources(query: 'delokos').single.id, 'delokos-es');
     final available = classifiedSources(order: SourceOrder.availability);
-    expect(available.where((s) => s.browseable), hasLength(12));
+    expect(available.where((s) => s.browseable), hasLength(22));
     expect(available.where((s) => s.consultationOnly), hasLength(0));
     expect(available.map((s) => s.id), isNot(contains('agro-caribe')));
     expect(available.map((s) => s.id), isNot(contains('agro-arracacha')));
@@ -106,9 +106,9 @@ void main() {
       );
       await tester.tap(find.text('Abrir fuentes'));
       await tester.pumpAndSettle();
-      expect(find.text('12 de 12 fuentes'), findsOneWidget);
+      expect(find.text('22 de 22 fuentes'), findsOneWidget);
       expect(
-        find.text('12 actuales · 2 conservadas + 10 libres añadidas'),
+        find.text('22 actuales · 2 conservadas + 20 libres añadidas'),
         findsOneWidget,
       );
       await tester.ensureVisible(
@@ -127,7 +127,7 @@ void main() {
       await tester.scrollUntilVisible(find.byType(TextField), -200);
       await tester.enterText(find.byType(TextField), 'delokos');
       await tester.pumpAndSettle();
-      expect(find.text('1 de 12 fuentes'), findsOneWidget);
+      expect(find.text('1 de 22 fuentes'), findsOneWidget);
       expect(find.text('La cocina delokos'), findsOneWidget);
       expect(find.text('1.745 recetas'), findsOneWidget);
       expect(find.textContaining('Catálogo operativo'), findsOneWidget);
@@ -180,7 +180,7 @@ void main() {
       }
       await tester.enterText(find.byType(TextField), 'Wikilibros');
       await tester.pumpAndSettle();
-      expect(find.text('1 de 12 fuentes'), findsOneWidget);
+      expect(find.text('1 de 22 fuentes'), findsOneWidget);
       expect(tester.takeException(), isNull);
       await tester.enterText(find.byType(TextField), '');
       await tester.pumpAndSettle();

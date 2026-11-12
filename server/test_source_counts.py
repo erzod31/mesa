@@ -7,10 +7,10 @@ from server.catalogs import SOURCES
 
 def test_every_current_source_has_reviewed_count_classification():
     counts = json.loads(Path(__file__).with_name('source_counts.json').read_text(encoding='utf-8'))
-    assert counts.keys() == SOURCES.keys() and len(counts) == 12
+    assert counts.keys() == SOURCES.keys() and len(counts) == 22
     assert not {'agro-caribe', 'agro-arracacha', 'sabores-uy'} & counts.keys()
     known = [s for s in SOURCES.values() if s['recipe_count'] is not None]
-    assert len(known) == 3
+    assert len(known) == 11
     assert all(s['recipe_count'] > 0 and urlsplit(s['count_evidence']).scheme == 'https' for s in known)
     for source in SOURCES.values():
         assert source['count_checked_at'] in {'2026-10-11','2026-10-16','2026-10-22','2026-11-12'} and source['count_note']
@@ -24,4 +24,4 @@ def test_every_current_source_has_reviewed_count_classification():
     assert not set(selection['retired_ids']) & set(SOURCES)
     ranked = sorted(known, key=lambda source: source['recipe_count'], reverse=True)
     assert ranked[-1]['id'] == 'book-polaca' and ranked[-1]['recipe_count'] == 12
-    assert sum(s['recipe_count'] is None for s in SOURCES.values()) == 9
+    assert sum(s['recipe_count'] is None for s in SOURCES.values()) == 11

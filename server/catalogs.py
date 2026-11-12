@@ -30,9 +30,15 @@ def publisher_catalog(provider, query='', cursor=None):
     if provider == 'open-based':
         from .open_catalogs import based_catalog
         return based_catalog(query, cursor)
-    if provider == 'open-mealdb':
+    if provider in ('open-mealdb', 'open-cocktaildb'):
         from .open_catalogs import mealdb_catalog
-        return mealdb_catalog(query, cursor)
+        return mealdb_catalog(provider, query, cursor)
+    if provider == 'open-chowdown':
+        from .open_catalogs import github_catalog
+        return github_catalog(provider, query, cursor)
+    if provider == 'open-freemeals':
+        from .open_catalogs import freemeals_catalog
+        return freemeals_catalog(query, cursor)
     raise ValueError('Esta fuente no ofrece catálogo en Mesa. Consulta el sitio original.')
 
 

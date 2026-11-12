@@ -98,7 +98,7 @@ def test_photo_retry_does_not_repeat_already_saved_downloads(monkeypatch):
 def test_registry_only_holds_sources_with_in_app_content():
     from server.catalogs import SOURCES
     assert not {'sabores-uy', 'agro-arracacha', 'agro-caribe'} & SOURCES.keys()
-    assert len(SOURCES) == 12
+    assert len(SOURCES) == 22
     assert [s['id'] for s in SOURCES.values() if s['mode']=='asset']==['book-polaca']
     assert all(s['mode']!='book' for s in SOURCES.values())
     for removed in ('es-petitchef','mx-kiwilimon','ar-paulina','es-gratis'):
@@ -144,3 +144,78 @@ def test_mealdb_detail_builds_recipe_with_measures_and_origin(monkeypatch):
     with pytest.raises(ValueError): mealdb_recipe('https://www.themealdb.com/meal/52772')
     with pytest.raises(ValueError): mealdb_recipe('https://evil.example/api/json/v1/1/lookup.php?i=52772')
     with pytest.raises(ValueError): mealdb_recipe('https://www.themealdb.com/api/json/v1/1/lookup.php?i=abc')
+
+
+def test_cocktaildb_browses_and_builds_cocktails_with_measures(monkeypatch):
+    from server.catalogs import publisher_catalog
+    payload = json.dumps({'drinks': [
+        {'idDrink': '11007', 'strDrink': 'Margarita', 'strDrinkThumb': 'https://www.thecocktaildb.com/images/media/drink/a.jpg'},
+        {'idDrink': '11008', 'strDrink': 'Apple Mojito', 'strDrinkThumb': ''},
+    ]})
+    calls = []
+    monkeypatch.setattr('server.open_catalogs.fetch_page', lambda u: calls.append(u) or (payload, u))
+    result = publisher_catalog('open-cocktaildb')
+    assert len(result['items']) == 1 and result['items'][0]['title'] == 'Margarita'
+    assert result['items'][0]['id'].endswith('i=11007') and result['cursor'] == 'b'
+    assert calls[0].endswith('?f=a') and 'cocktaildb.com' in calls[0]
+    searched = publisher_catalog('open-cocktaildb', query='mojito')
+    assert searched['items'][0]['title'] == 'Margarita' and searched['cursor'] is None
+    from server.open_catalogs import mealdb_recipe
+    detail = json.dumps({'drinks': [{'idDrink': '11007', 'strDrink': 'Margarita',
+        'strDrinkThumb': 'https://www.thecocktaildb.com/images/media/drink/a.jpg',
+        'strIngredient1': 'Tequila', 'strMeasure1': '1 1/2 oz',
+        'strIngredient2': 'Lime juice', 'strMeasure2': '1 oz',
+        'strIngredient3': '', 'strMeasure3': '',
+        'strInstructions': 'Rub the rim of the glass with the lime slice.\r\nShake the other ingredients.'}]})
+    monkeypatch.setattr('server.open_catalogs.fetch_page', lambda u: (detail, u))
+    recipe = mealdb_recipe('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007')
+    assert recipe['origin']['provider'] == 'open-cocktaildb'
+    assert recipe['ingredients'] == ['1 1/2 oz Tequila', '1 oz Lime juice']
+    assert recipe['steps'] == ['Rub the rim of the glass with the lime slice.', 'Shake the other ingredients.']
+    with pytest.raises(ValueError): mealdb_recipe('https://www.themealdb.com/api/json/v1/1/lookup.php?i=11007')
+
+
+
+def test_chowdown_catalog_and_detail_parse_front_matter(monkeypatch):
+    from server.catalogs import publisher_catalog
+    from server.open_catalogs import github_recipe
+    def fetch(url):
+        if 'git/trees' in url:
+            return json.dumps({'tree': [
+                {'path': '_recipes/banana-bread.md', 'type': 'blob'},
+                {'path': '_recipes/sin-foto.md', 'type': 'blob'},
+                {'path': 'images/banana-bread.jpg', 'type': 'blob'},
+            ]}), url
+        if url.endswith('banana-bread.md'):
+            return ('---\ntitle: "Banana Bread"\nimage: banana-bread.jpg\ningredients:\n- 4 bananas\n- 2 cups flour\ndirections:\n- Mash and mix.\n---\nResto'), url
+        if url.endswith('sin-foto.md'):
+            return ('---\ntitle: Sin foto\ningredients:\n- 2 cups flour\ndirections:\n- Mix.\n---'), url
+        raise AssertionError('no esperado: ' + url[:100])
+    monkeypatch.setattr('server.open_catalogs.fetch_page', fetch)
+    result = publisher_catalog('open-chowdown')
+    assert len(result['items']) == 1 and result['items'][0]['title'] == 'Banana Bread'
+    assert result['items'][0]['image'].endswith('images/banana-bread.jpg')
+    recipe = github_recipe('open-chowdown', result['items'][0]['id'])
+    assert recipe['ingredients'] == ['4 bananas', '2 cups flour']
+    assert recipe['steps'] == ['Mash and mix.']
+    assert recipe['origin']['license'] == 'Unlicense · dominio público'
+    with pytest.raises(ValueError): github_recipe('open-chowdown', 'https://raw.githubusercontent.com/otro/repo/main/x.md')
+
+
+def test_freemeals_browses_and_builds_recipes(monkeypatch):
+    from server.catalogs import publisher_catalog
+    from server.open_catalogs import freemeals_recipe
+    payload = json.dumps({'data': {'data': [
+        {'idMeal': '52785', 'strMeal': 'Dal fry', 'strMealThumb': 'https://www.themealdb.com/images/media/meals/x.jpg',
+         'strIngredient1': 'Toor dal', 'strMeasure1': '1 cup', 'strIngredient2': '', 'strMeasure2': '',
+         'strInstructions': 'Wash the dal.\r\nBoil it.'}], 'nextPage': False}})
+    monkeypatch.setattr('server.open_catalogs.fetch_page', lambda u: (payload, u))
+    result = publisher_catalog('open-freemeals')
+    assert len(result['items']) == 1 and result['items'][0]['title'] == 'Dal fry'
+    assert result['items'][0]['id'].endswith('|52785')
+    searched = publisher_catalog('open-freemeals', query='dal')
+    assert searched['items'] == [] and 'no permite buscar' in searched['notice']
+    recipe = freemeals_recipe('https://freeapi.app/api/v1/public/meals?page=1&i=52785')
+    assert recipe['ingredients'] == ['1 cup Toor dal'] and recipe['language'] == 'en'
+    assert recipe['origin']['provider'] == 'open-freemeals'
+    with pytest.raises(ValueError): freemeals_recipe('https://freeapi.app/api/v1/public/meals?page=1&i=abc')

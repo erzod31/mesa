@@ -542,10 +542,16 @@ def create_app(data_dir: Path | None = None):
                 if body.provider and body.provider!='delokos-es': raise ValueError('El enlace pertenece a otra fuente.')
                 from .wordpress_catalog import import_recipe
                 return import_recipe(body.url)
-            if urlsplit(body.url).hostname=='www.themealdb.com':
-                if body.provider and body.provider!='open-mealdb': raise ValueError('El enlace pertenece a otra fuente.')
+            if urlsplit(body.url).hostname in ('www.themealdb.com','www.thecocktaildb.com'):
+                expected = 'open-mealdb' if urlsplit(body.url).hostname == 'www.themealdb.com' else 'open-cocktaildb'
+                if body.provider and body.provider != expected: raise ValueError('El enlace pertenece a otra fuente.')
                 from .open_catalogs import mealdb_recipe
                 return mealdb_recipe(body.url)
+            if urlsplit(body.url).hostname=='raw.githubusercontent.com':
+                source_id = body.provider or ('open-chowdown' if '/clarklab/chowdown/' in body.url else '')
+                if source_id != 'open-chowdown': raise ValueError('El enlace pertenece a otra fuente.')
+                from .open_catalogs import github_recipe
+                return github_recipe(source_id, body.url)
             wiki_source = next((s for s in SOURCES.values() if s['id'].startswith('wiki-') and urlsplit(s['url']).hostname == urlsplit(body.url).hostname), None)
             if wiki_source:
                 if body.provider and body.provider != wiki_source['id']:

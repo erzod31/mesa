@@ -82,5 +82,75 @@
     "count_evidence": "https://www.themealdb.com/api.php",
     "count_checked_at": "2026-11-12",
     "count_note": "Total del catálogo no verificado; no significa cero recetas. Solo se incorporan recetas con foto y cantidades."
+  },
+  "open-cocktaildb": {
+    "recipe_count": null,
+    "count_kind": "not_verified",
+    "count_evidence": "https://www.thecocktaildb.com/api.php",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Total del catálogo no verificado; no significa cero recetas. Solo se incorporan cócteles con foto y cantidades."
+  },
+  "wiki-ca": {
+    "recipe_count": 642,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://ca.wikibooks.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Receptes_de_cuina&cmlimit=500&format=json",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Páginas de la categoría Receptes de cuina del recetario. No se ha comprobado foto y cantidades en todas ellas."
+  },
+  "wiki-nl": {
+    "recipe_count": 535,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://nl.wikibooks.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:Recept_niveau_2&cmlimit=500&format=json",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Suma de las categorías Recept niveau 1-5 (124+210+174+24+3). No se ha comprobado foto y cantidades en todas ellas."
+  },
+  "wiki-pl": {
+    "recipe_count": 1018,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://pl.wikibooks.org/w/api.php?action=query&list=allpages&apprefix=Ksi%C4%85%C5%BCka_kucharska/&aplimit=500&format=json",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Páginas bajo el prefijo Książka kucharska del recetario. No se ha comprobado foto y cantidades en todas ellas."
+  },
+  "wiki-ja": {
+    "recipe_count": 1419,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://ja.wikibooks.org/w/api.php?action=query&list=allpages&apprefix=%E6%96%99%E7%90%86%E6%9C%AC/&aplimit=500&format=json",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Páginas bajo el prefijo 料理本 del recetario. No se ha comprobado foto y cantidades en todas ellas."
+  },
+  "wiki-zh": {
+    "recipe_count": 202,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://zh.wikibooks.org/w/api.php?action=query&list=allpages&apprefix=%E9%A3%9F%E8%B0%B1/&aplimit=500&format=json",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Páginas bajo el prefijo 食谱 del recetario. No se ha comprobado foto y cantidades en todas ellas."
+  },
+  "wiki-fi": {
+    "recipe_count": 74,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://fi.wikibooks.org/w/api.php?action=query&list=allpages&apprefix=Keittokirja/&aplimit=500&format=json",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Páginas bajo el prefijo Keittokirja del recetario. No se ha comprobado foto y cantidades en todas ellas."
+  },
+  "wiki-sv": {
+    "recipe_count": 423,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://sv.wikibooks.org/w/api.php?action=query&list=allpages&apprefix=Kokboken/Recept/&aplimit=500&format=json",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Páginas bajo el prefijo Kokboken/Recept del recetario. No se ha comprobado foto y cantidades en todas ellas."
+  },
+  "open-chowdown": {
+    "recipe_count": 34,
+    "count_kind": "indexed_entries",
+    "count_evidence": "https://github.com/clarklab/chowdown/tree/gh-pages/_recipes",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Archivos de receta en _recipes del repositorio; las fotos están incluidas en el propio repositorio."
+  },
+  "open-freemeals": {
+    "recipe_count": null,
+    "count_kind": "not_verified",
+    "count_evidence": "https://freeapi.app",
+    "count_checked_at": "2026-11-12",
+    "count_note": "Total del catálogo no verificado; no significa cero recetas. Solo se incorporan recetas con foto y cantidades."
   }
 }

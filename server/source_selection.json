@@ -125,7 +125,17 @@
     "es-creativegan",
     "book-polaca",
     "es-encantar",
-    "open-mealdb"
+    "open-mealdb",
+    "open-cocktaildb",
+    "wiki-ca",
+    "wiki-nl",
+    "wiki-pl",
+    "wiki-ja",
+    "wiki-zh",
+    "wiki-fi",
+    "wiki-sv",
+    "open-chowdown",
+    "open-freemeals"
   ],
   "expansion_reason": "Fuentes con licencia publicada, autorizadas por el usuario el 11/10/2026."
 }

@@ -1,6 +1,6 @@
 [
-  "El catálogo muestra solo fuentes con lectura dentro de Mesa; se retiran los sitios que solo abrían su web original.",
-  "Nueva fuente internacional TheMealDB con fotos y cantidades, traducida al español al abrirla.",
-  "Mejora el glosario culinario de francés, alemán, italiano, portugués e inglés: panceta, dados, sofreír, nata y más.",
-  "Si el traductor de calidad rechaza un resultado, Mesa usa automáticamente el motor local en vez de fallar."
+  "Diez fuentes libres más: TheCocktailDB, ocho recetarios de Wikilibros (catalán, neerlandés, polaco, japonés, chino, finés y sueco) y Chowdown.",
+  "Nueva fuente FreeAPI Meals, con catálogo internacional por páginas y traducción al español.",
+  "Las fotos de cada receta siguen comprobándose una a una con licencia libre; las recetas sin foto verificable no entran.",
+  "Los recetarios en otros idiomas se muestran en su lengua original; los que tienen traductor (inglés, francés, italiano, portugués, alemán) se traducen como siempre."
 ]
