@@ -16,9 +16,23 @@ def no_models_or_network(monkeypatch,tmp_path):
     ('1.5 cups', '1,5 tazas', '1.5 tazas'),
     ('1/2 cup', '½ taza', '1/2 taza'),
     ('350 F for 20 minutes', '350 F durante 20 minutos', '350 F durante 20 minutos'),
+    ('30–40 minutes', '30, 40 minutos', '30, 40 minutos'),
+    ('Cook for 5-6 minutes', 'Cocina durante 5, 6 minutos', 'Cocina durante 5, 6 minutos'),
 ])
 def test_numeric_format_is_restored_without_fragmenting(original, translated, expected):
     assert tr.restore_numbers(original, translated) == expected
+
+
+def test_spelled_cardinal_with_conjunction_is_restored():
+    assert tr.restore_numbers('Mix 3 eggs.', 'Mezcla harina y tres huevos.', allow_words=True) == 'Mezcla harina y 3 huevos.'
+
+
+def test_digit_ranges_are_normalized_before_the_model(monkeypatch):
+    calls = []
+    monkeypatch.setattr(tr, 'translate_batch', lambda texts, source: calls.extend(texts) or [t.replace('reposer', 'reposar').replace('minutes', 'minutos') for t in texts])
+    result = tr._translate_local(['Laisser reposer 30–40 minutes.'], 'fr')
+    assert '30–40' not in ' '.join(calls) and '30, 40' in ' '.join(calls)
+    assert result == ['Laisser reposar 30, 40 minutos.']
 
 @pytest.mark.parametrize('translated', ['3 huevos', '2 huevos durante 10 minutos', 'huevos'])
 def test_changed_or_invented_quantities_are_rejected(translated):

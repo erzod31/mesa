@@ -16,6 +16,9 @@ REVISION = 5
 LOCK = BoundedSemaphore(1)
 FLIGHT_LOCK = BoundedSemaphore(1)
 NUMBER = re.compile(r'\d+(?:[.,]\d+)?(?:\s*[/⁄]\s*\d+)?|[½¼¾⅓⅔⅛⅜⅝⅞]')
+# OPUS models mangle digit ranges ("30–40" -> "30,540"): normalize the dash to a
+# comma before translating; the model preserves "30, 40" in every language.
+RANGE = re.compile(r'(?<=\d)\s*[–—−\-]\s*(?=\d)')
 FRACTIONS = dict(zip('½¼¾⅓⅔⅛⅜⅝⅞', ['1/2','1/4','3/4','1/3','2/3','1/8','3/8','5/8','7/8']))
 # OPUS de-es sometimes spells small integer quantities (2 -> dos). Accept
 # exact lexical equivalents only in the local fallback, then restore digits.
@@ -33,8 +36,11 @@ def restore_numbers(original, translated, *, allow_words=False):
     before, after = list(NUMBER.finditer(original)), list(NUMBER.finditer(translated))
     if allow_words and len(after) < len(before):
         words = list(WORD_NUMBER.finditer(translated))
-        # Never guess about compound numbers, fractions or ambiguous articles.
-        if all(m[0].lower() in CARDINALS for m in words) and not re.search(r'\b(?:y|coma|punto)\b', translated, re.I):
+        # Only exact cardinals 2-20 count; compound numbers, fractions and
+        # ambiguous articles are never guessed. The candidate count and value
+        # equality below guarantee the repair is exact, so conjunctions such as
+        # "harina y tres huevos" are safe.
+        if all(m[0].lower() in CARDINALS for m in words):
             candidates = sorted([*after, *words], key=lambda m: m.start())
             values = [CARDINALS[m[0].lower()] if m in words else number_value(m[0]) for m in candidates]
             if len(candidates) == len(before) and values == [number_value(m[0]) for m in before]:
@@ -175,7 +181,7 @@ def _translate_local(texts,source):
     fragments, layouts = [], []
     for text in texts:
         layout = []
-        for fixed, part in text_parts(text, source):
+        for fixed, part in text_parts(RANGE.sub(', ', text), source):
             if fixed or not re.search(f'[{LETTERS}]', part):
                 layout.append((None, part)); continue
             leading, trailing = re.match(r'^\s*', part)[0], re.search(r'\s*$', part)[0]

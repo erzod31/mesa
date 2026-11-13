@@ -1,6 +1,4 @@
 [
-  "Diez fuentes libres más: TheCocktailDB, ocho recetarios de Wikilibros (catalán, neerlandés, polaco, japonés, chino, finés y sueco) y Chowdown.",
-  "Nueva fuente FreeAPI Meals, con catálogo internacional por páginas y traducción al español.",
-  "Las fotos de cada receta siguen comprobándose una a una con licencia libre; las recetas sin foto verificable no entran.",
-  "Los recetarios en otros idiomas se muestran en su lengua original; los que tienen traductor (inglés, francés, italiano, portugués, alemán) se traducen como siempre."
+  "Corrige las traducciones fallidas: los rangos de cantidades (30–40 minutos) ya no rompen la traducción y las cifras escritas se restauran con seguridad.",
+  "El traductor local acepta ahora casi todas las recetas en inglés, francés, italiano, alemán y portugués; si una cifra no es fiable, se conserva el original como siempre."
 ]
