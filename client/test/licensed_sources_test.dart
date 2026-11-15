@@ -113,6 +113,18 @@ void main() {
       const url =
           'https://bunkatura.pl/pdf/mesa_polaca.pdf?mesa_recipe_image=91';
       expect(documentPhotoReference(url), (provider: 'book-polaca', page: 91));
+      expect(
+        documentPhotoReference(
+          'https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=5',
+        ),
+        (provider: 'book-los-rios', page: 5),
+      );
+      expect(
+        documentPhotoReference(
+          'https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=1',
+        ),
+        isNull,
+      );
       for (final value in [
         url.replaceFirst('91', '128'),
         '$url&other=1',

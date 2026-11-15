@@ -19,11 +19,13 @@ class CatalogSource {
     this.languageCode = 'es',
     this.licenseName = '',
     this.licenseUrl = '',
+    this.photoPages = const [],
   });
   final String id, name, language, description, country, url, mode, asset;
   final String seed;
   final String languageCode, licenseName, licenseUrl;
   final List<String> aliases;
+  final List<int> photoPages;
   final int? recipeCount;
   final String countKind, countEvidence, countCheckedAt, countNote;
   bool get included => mode == 'asset';
@@ -124,6 +126,7 @@ const catalogSources = [
     countEvidence: "https://bunkatura.pl/pdf/mesa_polaca.pdf",
     countCheckedAt: "2026-10-16",
     countNote: "Fichas seleccionadas y revisadas para Mesa; no es el total de recetas del editor.",
+    photoPages: [91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113],
   ),
   CatalogSource(
     "book-los-rios",
@@ -142,6 +145,7 @@ const catalogSources = [
     countEvidence: "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf",
     countCheckedAt: "2026-11-15",
     countNote: "Fichas seleccionadas y revisadas para Mesa; 20 recetas del recetario completo.",
+    photoPages: [5, 7, 11, 12, 14, 16, 17, 19, 21, 24, 26, 28, 29, 31, 33, 35, 38, 40, 43, 45],
   ),
   CatalogSource(
     "wiki-en",

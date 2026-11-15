@@ -1,4 +1,6 @@
 // Reviewed PDF photo references; never accept an arbitrary document or page.
+import 'source_registry.dart';
+
 ({String provider, int page})? documentPhotoReference(String value) {
   final uri = Uri.tryParse(value);
   if (uri == null ||
@@ -14,22 +16,12 @@
       .replace(query: '')
       .toString()
       .replaceFirst(RegExp(r'\?$'), '');
-  if (base == "https://bunkatura.pl/pdf/mesa_polaca.pdf" &&
-      const [
-        91,
-        93,
-        95,
-        97,
-        99,
-        101,
-        103,
-        105,
-        107,
-        109,
-        111,
-        113,
-      ].contains(page)) {
-    return (provider: 'book-polaca', page: page);
+  // Match any reviewed document (asset) source by its published URL and its
+  // reviewed photo pages. The family server re-checks the page when requested.
+  for (final source in catalogSources) {
+    if (source.included && source.url == base && source.photoPages.contains(page)) {
+      return (provider: source.id, page: page);
+    }
   }
   return null;
 }
