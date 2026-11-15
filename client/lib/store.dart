@@ -394,9 +394,7 @@ class Cookbook extends ChangeNotifier {
         'Conecta el ordenador para ver las fotos del recetario PDF.',
       );
     }
-    final source = provider == 'book-polaca'
-        ? 'https://bunkatura.pl/pdf/mesa_polaca.pdf'
-        : '';
+    final source = documentPhotoUrl(provider) ?? '';
     if (documentPhotoReference('$source?mesa_recipe_image=$page') == null) {
       throw Exception('Foto no revisada.');
     }

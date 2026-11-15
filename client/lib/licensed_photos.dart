@@ -25,3 +25,11 @@ import 'source_registry.dart';
   }
   return null;
 }
+
+/// Published PDF URL of a reviewed document source, if registered.
+String? documentPhotoUrl(String provider) {
+  for (final source in catalogSources) {
+    if (source.included && source.id == provider) return source.url;
+  }
+  return null;
+}

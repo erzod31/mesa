@@ -1,4 +1,4 @@
 [
-  "Corrige la visibilidad del Recetario de Los Ríos: sus recetas chilenas ya aparecen al elegir el país Chile.",
-  "El reconocedor de fotos de libros ahora admite cualquier recetario revisado, no solo Mesa polaca."
+  "Corrige la descarga de las fotos del Recetario de Los Ríos; ahora se sirven desde el documento igual que las de Mesa polaca.",
+  "El cliente ya no limita el reconocimiento de fotos de libros a un único recetario."
 ]

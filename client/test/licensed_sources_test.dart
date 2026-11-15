@@ -13,6 +13,17 @@ import 'package:mesa/public_recipe.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   final source = catalogSources.firstWhere((s) => s.id == 'es-creativegan');
+  test('Reviewed document URLs resolve for every book source', () {
+    expect(
+      documentPhotoUrl('book-polaca'),
+      'https://bunkatura.pl/pdf/mesa_polaca.pdf',
+    );
+    expect(
+      documentPhotoUrl('book-los-rios'),
+      'https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf',
+    );
+    expect(documentPhotoUrl('wiki-es'), isNull);
+  });
   test(
     'CreatiVegan preserves amounts and excludes the copyright discussion',
     () {
