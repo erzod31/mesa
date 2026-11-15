@@ -21,9 +21,10 @@ http.Response jsonResponse(dynamic data) => http.Response(
 void main() {
   test('Spanish sources retain existing IDs and all offer in-app content', () {
     expect(catalogSources.take(2).map((s) => s.id), ['wiki-es', 'delokos-es']);
-    expect(catalogSources.where((s) => s.language == 'Español'), hasLength(5));
+    expect(catalogSources.where((s) => s.language == 'Español'), hasLength(6));
     expect(catalogSources.where((s) => s.included).map((s) => s.id), [
       'book-polaca',
+      'book-los-rios',
     ]);
     expect(catalogSources.where((s) => s.consultationOnly), isEmpty);
   });

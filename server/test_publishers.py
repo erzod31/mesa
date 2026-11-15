@@ -98,8 +98,8 @@ def test_photo_retry_does_not_repeat_already_saved_downloads(monkeypatch):
 def test_registry_only_holds_sources_with_in_app_content():
     from server.catalogs import SOURCES
     assert not {'sabores-uy', 'agro-arracacha', 'agro-caribe'} & SOURCES.keys()
-    assert len(SOURCES) == 22
-    assert [s['id'] for s in SOURCES.values() if s['mode']=='asset']==['book-polaca']
+    assert len(SOURCES) == 23
+    assert [s['id'] for s in SOURCES.values() if s['mode']=='asset']==['book-polaca','book-los-rios']
     assert all(s['mode']!='book' for s in SOURCES.values())
     for removed in ('es-petitchef','mx-kiwilimon','ar-paulina','es-gratis'):
         with pytest.raises(ValueError): publisher_catalog(removed)

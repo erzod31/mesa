@@ -11,7 +11,7 @@ void main() {
     final api = CatalogApi(
       MockClient((_) async => fail('No request to retired sources')),
     );
-    expect(catalogSources, hasLength(22));
+    expect(catalogSources, hasLength(23));
     for (final id in [
       'agro-caribe',
       'agro-arracacha',
@@ -59,6 +59,7 @@ void main() {
     }
     expect(catalogSources.where((s) => s.included).map((s) => s.id), [
       'book-polaca',
+      'book-los-rios',
     ]);
   });
 

@@ -465,5 +465,26 @@
     "count_evidence": "https://freeapi.app",
     "count_checked_at": "2026-11-12",
     "count_note": "Total del catálogo no verificado; no significa cero recetas. Solo se incorporan recetas con foto y cantidades."
+  },
+  {
+    "id": "book-los-rios",
+    "name": "Recetario de Los Ríos",
+    "country": "Chile",
+    "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf",
+    "mode": "asset",
+    "asset": "assets/catalogs/book-los-rios.json",
+    "language": "Español",
+    "language_code": "es",
+    "description": "20 recetas de patrimonio culinario de la Región de Los Ríos · texto sin conexión · fotos del documento",
+    "license": "CC BY 3.0 Chile",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+    "recipe_count": 20,
+    "count_kind": "reviewed_selection",
+    "count_evidence": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf",
+    "count_checked_at": "2026-11-15",
+    "count_note": "Fichas seleccionadas y revisadas para Mesa; 20 recetas del recetario completo.",
+    "permission_status": "published_license",
+    "permission_checked_at": "2026-11-15",
+    "permission_evidence": "https://creativecommons.org/licenses/by/3.0/cl/"
   }
 ]

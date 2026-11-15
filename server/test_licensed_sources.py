@@ -73,6 +73,25 @@ def test_unregistered_recipe_url_uses_generic_extraction(api,monkeypatch):
     assert response.json()['ingredients']==['500 g de harina']
 
 
+def test_chilean_books_are_reviewed_and_catalogued():
+    for provider, expected in (('book-los-rios', 20),):
+        selection = books.collection(provider)
+        assert len(selection['recipes']) == expected
+        assert selection['document']['country'] == 'Chile'
+        assert selection['document']['license'] == 'CC BY 3.0 Chile'
+        assert len(selection['document']['photo_pages']) == expected
+        for row in selection['recipes']:
+            assert row['ingredients'] and row['steps'] and row['photos']
+            assert row['origin']['license'] == 'CC BY 3.0 Chile'
+            assert int(row['origin']['id']) in selection['document']['photo_pages']
+            assert row['photos'][0]['url'].endswith(f'?mesa_recipe_image={row["origin"]["id"]}')
+        assert len(books.catalog(provider)['items']) == expected
+        first = selection['recipes'][0]
+        assert books.recipe(provider, first['origin']['id'])['title'] == first['title']
+        with pytest.raises(ValueError):
+            books.photo(provider, 999)
+
+
 def test_document_photo_authentication_no_store_and_immutable_fingerprint(api,monkeypatch):
     calls=[]
     monkeypatch.setattr(books,'photo',lambda provider,page:calls.append((provider,page)) or b'jpeg')

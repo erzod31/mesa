@@ -152,5 +152,12 @@
     "count_evidence": "https://freeapi.app",
     "count_checked_at": "2026-11-12",
     "count_note": "Total del catálogo no verificado; no significa cero recetas. Solo se incorporan recetas con foto y cantidades."
+  },
+  "book-los-rios": {
+    "recipe_count": 20,
+    "count_kind": "reviewed_selection",
+    "count_evidence": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf",
+    "count_checked_at": "2026-11-15",
+    "count_note": "Fichas seleccionadas y revisadas para Mesa; 20 recetas del recetario completo."
   }
 }

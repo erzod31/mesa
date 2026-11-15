@@ -1,4 +1,4 @@
 [
-  "Corrige las fuentes que no cargaban: Wikilibros devolvía error de límite de consultas y las ediciones nuevas (catalán, neerlandés, polaco, japonés, chino, finés y sueco) estaban bloqueadas en la app.",
-  "El lector de catálogos usa ahora un agente descriptivo que Wikimedia acepta y reintenta automáticamente cuando la fuente está ocupada."
+  "Nueva fuente chilena: el Recetario de Los Ríos, 20 recetas de patrimonio culinario regional con licencia CC BY 3.0 Chile.",
+  "El texto se guarda para leerlo sin conexión; las fotos se sirven desde el documento original mediante el ordenador conectado."
 ]

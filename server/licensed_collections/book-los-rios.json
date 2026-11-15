@@ -1,0 +1,1264 @@
+{
+  "provider": "book-los-rios",
+  "checked_at": "2026-11-15",
+  "document": {
+    "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf",
+    "country": "Chile",
+    "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+    "license": "CC BY 3.0 Chile",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+    "sha256": "4d6e438b8f6b12d938033b440c0535ff6f7c2ae03837588b35b99a31b3c19aa0",
+    "photo_pages": [
+      5,
+      7,
+      11,
+      12,
+      14,
+      16,
+      17,
+      19,
+      21,
+      24,
+      26,
+      28,
+      29,
+      31,
+      33,
+      35,
+      38,
+      40,
+      43,
+      45
+    ]
+  },
+  "recipes": [
+    {
+      "title": "Ceviche de Salmón Exótico",
+      "ingredients": [
+        "500 g Salmón",
+        "150 g Cilantro",
+        "40 g Sal",
+        "10 Limones",
+        "1 Palta",
+        "1 Papaya",
+        "1 Nalca",
+        "1 Cebolla",
+        "1 Pimiento rojo",
+        "1 Pimiento amarillo"
+      ],
+      "steps": [
+        "Lavamos muy bien el salmón y procedemos a quitarle las espinas y filetearlo.",
+        "Lavamos también los demás ingredientes para la preparación.",
+        "Cortamos el salmón en parmentier y exprimir los 10 limones.",
+        "Luego vaciamos en un bowl de vidrio los dos ingredientes mezclados y dejamos reposar por 15 minutos en el refrigerador.",
+        "Picar la nalca, palta, papaya, pimiento rojo y amarillo en brunoise y la cebolla en juliana.",
+        "Una vez ya todos los ingredientes cortados, retiramos el bowl del refrigerador y procedemos a mezclar los ingredientes uno por uno.",
+        "Una vez mezclado todo, procedemos a montar.",
+        "Una vez listo el montaje dejamos enfriar por 10 minutos en el refrigerador y servimos."
+      ],
+      "servings": 6,
+      "servings_declared": true,
+      "yield_original": "6",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=5",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=5",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=5",
+          "caption": "Ceviche de Salmón Exótico",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "5",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=5",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Dúo de Empanadas a la Chilena",
+      "ingredients": [
+        "400 g Cogote de vacuno",
+        "1 Pechuga de pollo",
+        "400 g Champiñones",
+        "3 Cebollas",
+        "1/2 Morrón",
+        "100 g Choclo",
+        "1 cdta Pimienta",
+        "350 g Queso",
+        "2 cdas Sal",
+        "1 cdta Comino",
+        "1 cdta Merkén",
+        "100 g Perejil",
+        "1 lt Aceite",
+        "800 g Harina",
+        "50 g Manteca",
+        "500 ml Agua",
+        "1 cda Vinagre",
+        "4 Huevos"
+      ],
+      "steps": [
+        "Preparación de la masa: Primero se vierte la harina en un bowl y se agrega una pizca de sal; la manteca se derrite en una fuente y cuando está caliente se revuelve con una paleta de madera.",
+        "Luego se añade una cucharadita de vinagre y se va incorporando la masa con ayuda del agua (previamente tibia), hasta conseguir una masa homogénea.",
+        "Se amasa y está listo.",
+        "Finalizando con la masa, trabajaremos con el apoyo de una estiradora.",
+        "Relleno carne de vacuno: Cortar la carne en parmentier.",
+        "Cortar 2 cebollas en brunoise.",
+        "Cortar 50 g de perejil en chiffonade.",
+        "Procederemos a echar aceite y 1 1/2 cucharadita de merkén, luego sofreír nuestra carne.",
+        "Agregar a la preparación la pimienta, el comino y la sal.",
+        "En otra olla pondremos las cebollas para darles un hervor y quitarles un poco lo fuerte.",
+        "Luego se estilan las cebollas en un colador para unirlas con la carne que ya está cocida y con aliños.",
+        "Se revuelve bien, se deja cocer bien las cebollas junto a la carne para que se unan los sabores.",
+        "Se retira del fuego y se deja enfriar.",
+        "Cuando está frío se le agregan los 4 huevos picados en parmentier y el perejil.",
+        "Relleno carne de pollo: Picar la pechuga de pollo en parmetier.",
+        "Rallar el queso.",
+        "Cortar la cebolla y el morrón en brunoise.",
+        "Limpiar los champiñones con una servilleta y pelarlos para luego cortarlos en parmentier.",
+        "Se vierte un poco de aceite y se sofríe el pollo junto con los aliños (comino, pimienta y merkén) y el morrón.",
+        "Coceremos el choclo en agua y en otra olla le daremos un hervor a la cebolla.",
+        "Luego la colaremos para añadirla al pollo.",
+        "También agregamos los champiñones.",
+        "Se revuelve y se deja cocer para que se unan los sabores.",
+        "Dejamos enfriar y una vez listo agregamos 50 g de perejil cortados en chiffonade.",
+        "Fritura: Una vez listos ambos pinos y estirada la masa procederemos a formar nuestras empanadas, se calienta el aceite en una olla o sartén para freírlas."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=7",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=7",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=7",
+          "caption": "Dúo de Empanadas a la Chilena",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "7",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=7",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Arvejas con longaniza",
+      "ingredients": [
+        "2 cdas Aceite",
+        "3 Dientes de ajo",
+        "1/2 Morrón",
+        "2 Longanizas",
+        "3 tazas Arvejas",
+        "3 Papas",
+        "1 cda Sal",
+        "1 cda Orégano",
+        "3 lt Agua"
+      ],
+      "steps": [
+        "Colocar en una olla aceite, morrón, ajo y orégano.",
+        "Freír con un poco de sal.",
+        "Después, enjuagar medio kilo de arvejas con todos los ingredientes juntos.",
+        "Poner un poquito de carne de longaniza a fuego lento.",
+        "Después cocer las papas y los fideos en agua.",
+        "Mezclar todos los ingredientes en la preparación, calentar a fuego lento.",
+        "Servir y agregar una pizca de perejil."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=11",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=11",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=11",
+          "caption": "Arvejas con longaniza",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "11",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=11",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Brocheta de equino en costra de cochayuyo acompañado en ensalada de mote primaveral",
+      "ingredients": [
+        "1 kg Lomo de equino",
+        "1 pqt Cochayuyo",
+        "2 Diente de ajo",
+        "30 cc Aceite de oliva",
+        "5 g Merkén",
+        "1/4 pqt Cilantro",
+        "3 Limones",
+        "5 g Sal",
+        "4 g Pimienta",
+        "600 g Mote cocido",
+        "1/4 pqt Cebollín",
+        "1/2 Morrón",
+        "1 Zanahoria"
+      ],
+      "steps": [
+        "Preparación brocheta de equino: Desgrasar la carne de equino y cortar en cubos grandes.",
+        "Salpimentar y aliñar con ajo.",
+        "Llevar los cubos al sartén previamente aceitado y marvar.",
+        "Formar brochetas con los dados ya marcados.",
+        "Triturar el cochayuyo para cubrir los dados de carne.",
+        "Una vez cubiertos los dados en la brocheta terminar cocción en el horno.",
+        "Servir acompañado de la ensalada de mote.",
+        "Preparación de Ensalada de Mote Primaveral: Lavar mote y estilar.",
+        "Cortar verduras en brunoise y reservar.",
+        "Blanquear zanahoria y reservar.",
+        "En un bowl unir mote, zanahoria, morrón, cebollín, cilantro y merkén.",
+        "Aliñar con jugo de limón y aceite de oliva.",
+        "Servir acompañando la brocheta de equino."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=12",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=12",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=12",
+          "caption": "Brocheta de equino en costra de cochayuyo acompañado en ensalada de mote primaveral",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "12",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=12",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Brota, Seitán relleno con ensalada de mote berros y salsa de murta con vino rosé",
+      "ingredients": [
+        "210 g Gluten de trigo",
+        "100 g Harina de garbanzos",
+        "2 g Merkén",
+        "2 g Albahaca deshidratada",
+        "60 g Avellanas",
+        "200 g Champiñones",
+        "40 g Mote",
+        "45 g Berros",
+        "20 g Murta",
+        "10 g Dulce de Membrillo",
+        "80 ml Vino rosé",
+        "3 cdas Limón",
+        "1 cda Sal",
+        "1 pizca Jengibre"
+      ],
+      "steps": [
+        "Dejar las avellanas aproximadamente 6 horas con agua hasta cubrirlas.",
+        "Elaboración: En un bowl mezclar gluten de trigo, harina de garbanzos, merkén, albahaca deshidratada, cucharada de sal, amasar suavemente.",
+        "Dejar reposar tapado con alusa por 15 a 20 minutos.",
+        "Mientras tanto pondremos a fuego medio el mote con agua 30 minutos, sin tapar e ir revolviendo de vez en cuando, el dressing lo haremos con una pizca de jengibre y limón.",
+        "Una vez listo, lo dejaremos macerar con el mote y los berros, aproximadamente por 5 minutos.",
+        "Procedemos a preparar nuestra pasta de avellanas, procesando nuestra hidratación previa en la licuadora o minipimer.",
+        "Salteamos los champiñones con aceite de oliva o salsa de soya a gusto.",
+        "Una vez listo el relleno, sacamos nuestro Seitán con cuidado ya que queremos una consistencia firme.",
+        "Con un uslero, estiramos la masa hasta formar un rectángulo.",
+        "Echamos nuestra pasta de avellanas con un mezquino, esparciendo bien para que quede todo cubierto.",
+        "Pondremos los champiñones salteados arriba de la pasta de una forma ordenada, empezamos a enrollar esta masa con muchísimo cuidado y asegurándonos que quede bien compacta nuestra masa, así el relleno no saldrá.",
+        "Envolvemos con alusa y dejamos en refrigeración, temperatura 3°C - 4°C aproximadamente por 10 minutos; esto es más que nada para que cuando esté en el horno no se desarme.",
+        "Pasados los minutos, trasladamos el seitán al horno por 25 minutos a una temperatura de 180°C.",
+        "Para la salsa, en un sartén a fuego medio vertimos el vino rosé, dejamos actuar por 3 minutos, pondremos el dulce de membrillo y revolvemos hasta que se disuelva, agregamos la murta pasada por la licuadora, dejamos espesar hasta que quede la consistencia deseada.",
+        "¡Y listo! Brota está llegando a su fin de preparación, puedes emplatar a gusto. ¡Qué lo disfrutes!"
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=14",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=14",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=14",
+          "caption": "Brota, Seitán relleno con ensalada de mote berros y salsa de murta con vino rosé",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "14",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=14",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Cancato",
+      "ingredients": [
+        "4 und Trucha",
+        "2 und Tomate",
+        "150 g Queso",
+        "4 und Longaniza",
+        "50 g Mantequilla",
+        "2 und Culle"
+      ],
+      "steps": [
+        "La preparación consiste en limpiar la trucha, luego ponerla en papel aluminio, aliñar con merkén, comino, limón y pimienta.",
+        "Después, se ponen trozos de mantequilla en el pescado, luego el queso de forma rectangular y posteriormente el tomate en forma de rodajas.",
+        "Las longanizas se parten por la mitad cubriéndola con queso.",
+        "Cubrimos con papel aluminio y llevamos al horno por 25 minutos.",
+        "Posteriormente se realiza la ensalada con su nombre original Culle, Oxalis (nombre científico), acompañado con rodajas de tomate."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=16",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=16",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=16",
+          "caption": "Cancato",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "16",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=16",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Cerdo bañado con salsa champiñón acompañado de papas a las finas hierbas",
+      "ingredients": [
+        "2 und Papas",
+        "10 g Eneldo",
+        "10 g Romero",
+        "100 g Champiñón",
+        "100 g Tocino",
+        "1 pizca Sal",
+        "1 und Chuleta de cerdo",
+        "1 pizca Ajo molido",
+        "10 g Orégano",
+        "200 ml Crema",
+        "1 und Morrón",
+        "1 und Cebolla",
+        "Papel aluminio"
+      ],
+      "steps": [
+        "Lavar los ustensilios.",
+        "Realizar la mise en place.",
+        "Preparar en la asadera la carne.",
+        "Agregar los condimentos: ajo molido, sal, orégano, morrón, cebolla.",
+        "Colocar papel aluminio y dorar.",
+        "Retirar el papel aluminio.",
+        "Preparación para las papas: Lavar las papas.",
+        "Luego llevarlas a la olla a cocer.",
+        "Después cortar en rodajas.",
+        "Dorar las papas con mantequilla y agregar las finas hierbas.",
+        "Preparación de la jalea: Sofreír el champiñón en el sartén.",
+        "Luego agregar los champiñones. Cocinar unos tres minutos.",
+        "Luego agregar la crema, revolver por dos minutos y retirar.",
+        "Montar el plato con los ingredientes preparados."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=17",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=17",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=17",
+          "caption": "Cerdo bañado con salsa champiñón acompañado de papas a las finas hierbas",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "17",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=17",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Charquicán de picorocos",
+      "ingredients": [
+        "0,25 k Verduras surtidas",
+        "0,01 l Aceite",
+        "0,80 k Zapallo",
+        "6 und Picorocos",
+        "0,5 k Papas",
+        "0,05 k Arroz",
+        "0,1 und Cebolla",
+        "0,002 k Sal",
+        "0,002 Merkén",
+        "0,003 Ajo",
+        "0,003 und Cochayuyo",
+        "0,003 g Cilantro orgánico",
+        "0,002 k Orégano",
+        "2 l Agua",
+        "0,1 und Morrón"
+      ],
+      "steps": [
+        "Cocer los picorocos previamente y aparte en agua.",
+        "Hacer un sofrito de cebolla, ajo, morrón y especias.",
+        "Agregar el fondo de picorocos al sofrito.",
+        "Agregar agua junto a las verduras surtidas.",
+        "Cortar las papas (corte irregular) y junto a las verduras que quedan.",
+        "Agregar el arroz.",
+        "Añadir picorocos molidos a la preparación junto con el cilantro.",
+        "Moler la preparación para formar el charquicán.",
+        "Moler el cochayuyo y agregarlo en forma de lluvia.",
+        "Servir caliente."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=19",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=19",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=19",
+          "caption": "Charquicán de picorocos",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "19",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=19",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Chupe de guatita con papas rústicas",
+      "ingredients": [
+        "0,50 g Guatita",
+        "1 und Cebolla",
+        "0,10 ml Leche",
+        "1 und Pan",
+        "0,05 g Queso",
+        "1 und Ajo",
+        "2 und Papas",
+        "C/s l Aceite",
+        "Aceite de oliva a gusto",
+        "Sal a gusto"
+      ],
+      "steps": [
+        "En una olla agregar agua y las cuatitas el agua debe cubrir por completo las guatitas.",
+        "Cocer guatitas por 1 hora y 30 min aprox. hasta que las guatitas estén blandas.",
+        "Dejar remojado pan marraqueta en leche.",
+        "Machacar ajo.",
+        "Cortar cebolla en brunoise.",
+        "En un sartén incorporar el ajo y la cebolla.",
+        "Una vez listas, cortar las guatitas en brunoise.",
+        "Desmenuzar el pan remojado.",
+        "En una olla, poner agua hervida.",
+        "Incorporar guatitas, sofrito de cebolla, pan, queso y sal a gusto.",
+        "Dejar cocinar de unos 8 a 10 min.",
+        "Verter la mezcla en un librillo o budinera.",
+        "Agregar queso en la superficie.",
+        "Llevarlo al horno hasta que el queso se gratine.",
+        "Preparación 2: Higienizar utensilios y materia prima.",
+        "Cortar las papas en gajos.",
+        "Ponerlas sobre una lata de horno.",
+        "Incorporar aceite de oliva y sal a gusto.",
+        "Llevarlas al horno calentado previamente.",
+        "Sacarlas cuando estén doradas."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=21",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=21",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=21",
+          "caption": "Chupe de guatita con papas rústicas",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "21",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=21",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Criadillas bañadas en cerveza negra y miel de la zona acompañada con puré de piñón con merkén",
+      "ingredients": [
+        "8 und criadillas",
+        "200 g miel",
+        "350 cc cerveza",
+        "2 und ajo",
+        "30 cc aceite de oliva",
+        "25 g sal",
+        "10 g pimienta",
+        "800 g piñones",
+        "150 cc crema",
+        "5 g merkén"
+      ],
+      "steps": [
+        "Preparación Criadillas: Quitar escroto de las criadillas cuidadosamente.",
+        "Cortar en mitades las criadillas y reservar.",
+        "Preparar marinada con la cerveza, la miel derretida y el ajo machacado.",
+        "Dejar macerar las criadillas durante tres horas.",
+        "En una grilla agregar dos cucharadas de aceite de oliva y llevar las criadillas a cocción 10min por lado.",
+        "Salpimentar y rectificar sabor.",
+        "Servir acompañado del puré de piñones.",
+        "Preparación puré de piñón: Cocer piñones en abundante agua durante 90min, pelar los piñones y reservar.",
+        "En una procesadora de alimentos, agregar piñones, crema de leche, sal, merkén y pimienta.",
+        "Calentar la mezcla en una olla a fuego lento y servir acompañando las criadillas."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=24",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=24",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=24",
+          "caption": "Criadillas bañadas en cerveza negra y miel de la zona acompañada con puré de piñón con merkén",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "24",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=24",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Lentejas con choritos",
+      "ingredients": [
+        "1 und zanahoria",
+        "2 Tazas de lentejas",
+        "2 cditas orégano",
+        "Sal al gusto",
+        "1 Caluga de sazonador (ej. Maggi)",
+        "4 dientes de ajo",
+        "1 tarro choritos",
+        "Ensalada",
+        "1 taza de porotos negros",
+        "1 und cebolla",
+        "2 ají verde",
+        "1 cilantro",
+        "1 lt aceite",
+        "limón, sal a gusto"
+      ],
+      "steps": [
+        "Se ponen a cocer las lentejas con abundante agua, después, se le agrega las zanahorias, el ajo y la sal.",
+        "Una vez cocida la zanahoria, se le agrega el orégano y después de unos minutos, los choritos.",
+        "Cuando se monta el plato, se pica cilantro y se agrega una pequeña porción en el centro de la mise en place.",
+        "En lo que concierne a la ensalada, se echan a cocer los porotos en abundante agua.",
+        "Después, una vez cocidos, se lavan y se empieza a picar la cebolla en juliana, con el ají y el cilantro.",
+        "Se aliña después con aceite, limón, sal."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=26",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=26",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=26",
+          "caption": "Lentejas con choritos",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "26",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=26",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Mar y tierra",
+      "ingredients": [
+        "200 g salmón sellado al vacío",
+        "100 g harina tostada",
+        "1 huevo",
+        "250 g mantequilla",
+        "20 g orégano",
+        "20 g sal",
+        "5 g pimienta",
+        "5 unds espárragos",
+        "6 unds tomate cherry",
+        "2 papas medianas",
+        "1 betarraga",
+        "4 g sésamo",
+        "2 yogurt natural",
+        "1 ajo",
+        "1 cilantro",
+        "1 cdta aceite de maravilla",
+        "medio limón",
+        "1 g tomillo"
+      ],
+      "steps": [
+        "Lavar bien los ingredientes, tomates, espárragos, huevo, papas, betarraga, cilantro, ajo.",
+        "Cocer la betarraga por 30 min y las papas por 20 min.",
+        "Blanqueamos los espárragos de 2 a 3 min.",
+        "El pescado se marina en sal, orégano y pimienta, se deja reposar por 30 min.",
+        "Mientras tanto se prepara el puré de papas con la betarraga, se condimenta con sal, mantequilla y tomillo.",
+        "Se saltean los espárragos en mantequilla.",
+        "El pescado ya marinado se pasa por huevo batido, harina tostada una vez lado por lado.",
+        "Ahora calentamos un sartén con la mantequilla a temperatura media alta y colocamos el pescado por más menos 5 min por lado.",
+        "Preparamos la salsa de yogurt con cilantro y un ajo en la licuadora hasta que obtengo una mezcla homogénea, condimento con aceite y unas gotitas de limón."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=28",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=28",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=28",
+          "caption": "Mar y tierra",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "28",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=28",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Merluza tricolor",
+      "ingredients": [
+        "350 g filete de merluza",
+        "6 und papas",
+        "200 g zapallo",
+        "1 und zanahoria",
+        "200 g espinaca",
+        "400 g harina",
+        "2 und huevos",
+        "1 ajo chilote",
+        "5 g sal",
+        "350 cc agua"
+      ],
+      "steps": [
+        "Merluza: Bañamos el filete de merluza en una mezcla que consiste en Harina, Huevo, Ajo, Sal y Agua.",
+        "Revolver todo hasta obtener una espesa y homogénea mezcla.",
+        "Luego freímos a fuego medio-alto con aceite medio por 10 minutos.",
+        "Puré tricolor: Puré de Espinaca: Cocemos y hervimos las papas en una olla, mientras blanqueamos algunas hojas de espinaca.",
+        "Luego con ayuda de una batidora, batimos las papas junto con las espinacas creando un puré color verde.",
+        "Puré de Zanahoria: Repetimos el procedimiento anterior con las papas; hervimos una zanahoria para luego hacer la segunda porción de puré color naranjo.",
+        "Puré de Zapallo: Continuando con el mismo procedimiento de las papas al ser hervidas, hervimos el trozo de zapallo para luego moler junto con las papas ya cocinadas, obteniendo la tercera porción de puré tono amarillo mostaza."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=29",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=29",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=29",
+          "caption": "Merluza tricolor",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "29",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=29",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Papa rellena con cochayuyo",
+      "ingredients": [
+        "6 und papas",
+        "1 lt aceite",
+        "1 lt agua tibia",
+        "200 g harina tostada",
+        "1 und huevo",
+        "200 g harina",
+        "600 g cochayuyo",
+        "0,5 und cebolla",
+        "1 und zanahoria",
+        "1 und pimentón",
+        "orégano, aliño completo, sal y pimienta a gusto"
+      ],
+      "steps": [
+        "Relleno: Se lavan todos los vegetales, luego pelar y picar la cebolla, el pimentón, la zanahoria, todo en brunoise.",
+        "Una vez que estén los vegetales picados, ponemos primero la cebolla en la sartén junto con aceite para sudar, luego agregamos los otros ingredientes.",
+        "Ya que esta está bien cocido y dorado le añadimos los condimentos, aliño completo, orégano, sal a gusto.",
+        "Por último, se le agrega el cochayuyo previamente cocido en agua y picado en brunoise.",
+        "Rectificar sabores.",
+        "Se deja enfriar.",
+        "Masa: Lavar las papas, salpimentar y agregar un poco de aceite.",
+        "Llevar al horno por una hora aproximadamente a unos 180 grados Celsius, hasta que esté blanda la papa.",
+        "Una vez cocida, sacar la cáscara y moler como para puré.",
+        "Se le agrega harina, huevo, sal, pimienta para formar la masa.",
+        "Dar forma para poder rellenar con el pino de cochayuyo.",
+        "Finalmente aplanar por harina tostada y freír a temperatura media.",
+        "Servir."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=31",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=31",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=31",
+          "caption": "Papa rellena con cochayuyo",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "31",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=31",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Pescado con quinoa y salsa cítrica",
+      "ingredients": [
+        "180 g pescado",
+        "500 g quinoa",
+        "150 g naranja",
+        "100 g limón",
+        "10 g perejil",
+        "1 lt aceite",
+        "20 g maisena"
+      ],
+      "steps": [
+        "Primer Paso: Se fríe el pescado durante 10 minutos a fuego lento, le sacamos la saponina a la quinoa y la ponemos a hervir.",
+        "Segundo Paso: Le sacamos el jugo a la naranja y al limón, colamos y agregamos maisena hasta que quede una textura gelatinosa, sacamos la quinoa y la mezclamos con verduras, en mi caso la mezclé con perejil.",
+        "Tercer Paso: Rociar la salsa, en el pescado para que absorba el sabor.",
+        "Montar la preparación ya que está lista para consumir."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=33",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=33",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=33",
+          "caption": "Pescado con quinoa y salsa cítrica",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "33",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=33",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Terrina de trucha sureña asada acompañada de suave puré de camote y crocante de charqui de equino",
+      "ingredients": [
+        "1 kg trucha fileteada",
+        "300 cc crema de leche",
+        "4 und huevos",
+        "1 g cebolla",
+        "2 g morrón rojo y verde",
+        "1 g zanahoria",
+        "800 g piñones",
+        "30 cc aceite de oliva",
+        "30 g sal",
+        "10 g pimienta",
+        "1 kg camote",
+        "50 g charqui de equino"
+      ],
+      "steps": [
+        "TERRINA DE TRUCHA SUREÑA: Lavamos cebolla, zanahoria y morrón.",
+        "Pelamos la cebolla y la zanahoria.",
+        "Luego cortamos la cebolla, la zanahoria y el morrón en brunoise.",
+        "Sofreiremos las verduras en aceite de oliva en un sartén a fuego alto.",
+        "Reservamos y dejamos enfriar.",
+        "Limpiamos el pescado.",
+        "Lo cortaremos, quitamos las espinas y retiramos la piel.",
+        "Luego lo fileteamos y lo trozamos en cubos pequeños.",
+        "En una procesadora agregamos los trozos de pescado; agregamos el mirepoix de verduras ya frío, junto con la crema de leche, los huevos, y salpimentamos.",
+        "Luego, procedemos a incorporar los ingredientes, hasta formar una mezcla homogénea y lisa.",
+        "Habremos ya cocido y pelado previamente los piñones (el día anterior ya que estos necesitan una coccion extensa).",
+        "Pasamos la mezcla a una terrina previamente aceitada con aceite de oliva extra virgen y sumergimos los piñones para que estos, al cortar la tarrina, se luzcan.",
+        "Cubrimos la terrina con papel de aluminio y la ponemos sobre una budinera con agua para cocinar a baño maria.",
+        "Tenemos el horno precalentado por unos 15 minutos.",
+        "Ponemos la terrina en el horno a una temperatura de 190 °C por unos 25 a 30 minutos.",
+        "Ya pasados los 25 minutos, retiramos el papel aluminio y terminamos la cocion dejando gratinar por unos 40 minutos a 200°C.",
+        "Retiramos la terrina del horno y la desmontamos y presentamos en el plato.",
+        "SUAVE PURÉ DE CAMOTE: Lavamos bien los camotes y luego los pelamos.",
+        "Los cortamos en cascos obteniendo tamaños similares para lograr una coccion uniforme.",
+        "Para hornear el camote en una bandeja vertemos agua y agregamos los camotes, el nivel de agua debe ser bajo ya que lo que queremos es que se cocinen al vapor, por lo que recubrimos con papel aluminio la bandeja.",
+        "Ponemos los camotes al horno hasta que estén blandos.",
+        "Una vez cocinados los retiramos del horno y sacamos el agua.",
+        "Procederemos a aplastar los camotes, agregamos un poco de crema de leche para darle una textura suave al puré y condimentamos con sal y pimienta.",
+        "Luego el charqui de equino es dispuesto en el horno para que adquiera crocancia."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=35",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=35",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=35",
+          "caption": "Terrina de trucha sureña asada acompañada de suave puré de camote y crocante de charqui de equino",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "35",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=35",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Treile a la costilla de cordero con salsa de pico ardiente",
+      "ingredients": [
+        "100 g harina blanca",
+        "100 g harinilla especial",
+        "1 cabeza ajo",
+        "10 cc aceite",
+        "15 g sal",
+        "5 g merkén",
+        "20 g manteca",
+        "2 mezquino",
+        "250 g cordero"
+      ],
+      "steps": [
+        "Mise en place.",
+        "Higienizar el espacio que utilizaremos.",
+        "En un bowl agregar harina y harinilla especial, incorporando la sal y el agua hasta formar la masa; estirar y, con la ayuda de un plato, hacer una forma circular; llevar a la olla con agua hirviendo.",
+        "Para la costilla de cordero dejar en un bowl con agua o vino blanco incorporando aliños, marinar a gusto y la sal; luego con la ayuda de una servilleta retirar todo el exceso de condimentos.",
+        "En un sartén con aceite, sellar todas las caras y llevar al horno temperatura 200°C aprox.",
+        "Para la salsa en un sartén agregar manteca, los ajos y el merkén.",
+        "Montar plato, fotografiar y servir."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=38",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=38",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=38",
+          "caption": "Treile a la costilla de cordero con salsa de pico ardiente",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "38",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=38",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Zapallo italiano relleno",
+      "ingredients": [
+        "1 und zapallo italiano redondo",
+        "2 und cochayuyo",
+        "240 g mote",
+        "50 g morrón",
+        "50 g cebolla",
+        "79 g queso chanco",
+        "1 pizca comino",
+        "1 pizca merkén",
+        "1 pizca pimienta",
+        "140 g leche",
+        "15 g mantequilla",
+        "15 g harina"
+      ],
+      "steps": [
+        "Dejar remojar el cochayuyo durante la noche.",
+        "Hervir cochayuyo por 40 min, hervir el mote durante 20 min y hervir agua con sal para blanquear el zapallo italiano.",
+        "Luego de blanquear el zapallo italiano durante 5 min, retirar la cubierta y retirar el relleno.",
+        "Cortar morrón, cebolla, cochayuyo en brunoice, agregar el relleno del zapallo italiano y el mote, para luego saltear en una sartén y agregar las especias.",
+        "En una olla aparte agregar mantequilla, harina y revolver a fuego bajo durante un minuto, luego agregar leche mientras se revuelve enérgicamente, para luego agregar queso.",
+        "Agregar al salteado la salsa mornay y revolver para luego agregar la mezcla al zapallo italiano, colocar queso encima y gratinar.",
+        "Montar en un plato."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=40",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=40",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=40",
+          "caption": "Zapallo italiano relleno",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "40",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=40",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Mousse de cereza con cerezas en almíbar cubierto de crumble de chocolate",
+      "ingredients": [
+        "1 Lt crema para batir",
+        "2 und gelatina sabor cereza",
+        "1 Kg cerezas",
+        "0,6 g azúcar",
+        "2 und limón",
+        "0,4 g chocolate en polvo",
+        "0,7 g harina",
+        "0,2 g mantequilla"
+      ],
+      "steps": [
+        "Primero hacemos el crumble, echamos la mantequilla a un bowl junto al azúcar e integramos la harina y el chocolate en polvo de a poco hasta crear una masa similar a la de galletas.",
+        "Una vez logrado, dejamos reposar una hora, mientras hacemos el mousse.",
+        "En un bowl, ponemos la crema para batir y la batimos hasta que suba y tenga consistencia menos líquida.",
+        "Echamos de a poco la mezcla de gelatina preparada previamente.",
+        "Se incorpora toda la mezcla hasta estar bien unida.",
+        "Ponemos la mezcla en brazos refrigerados.",
+        "Para las cerezas en almíbar, debe prepararse el almíbar con agua, azúcar y un poco de jugo de limón hasta que hierva.",
+        "Una vez hervido, agregamos todo a un frasco con las cerezas ya deshuesadas anteriormente.",
+        "Cerramos el frasco y lo metemos en una olla con agua.",
+        "Lo dejamos hervir.",
+        "La masa del crumble, la separamos en partes pequeñas y la metemos al horno 5 minutos.",
+        "Después sacamos la lata y, con un tenedor, separamos todo para que queden migas.",
+        "Volvemos a meter la lata al horno unos minutos más.",
+        "Una vez listo, hacemos la presentación con el mousse y ponemos las cerezas encima con el crumble."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=43",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=43",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=43",
+          "caption": "Mousse de cereza con cerezas en almíbar cubierto de crumble de chocolate",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "43",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=43",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    },
+    {
+      "title": "Mousse de miel",
+      "ingredients": [
+        "130 g crema de leche",
+        "125 g leche condensada",
+        "100 g vainilla",
+        "230 g frutos rojos del bosque",
+        "100 g miel",
+        "100 g almendras"
+      ],
+      "steps": [
+        "Colocar los ingredientes en la mezcladora y batir junto a la crema condensada hasta que su consistencia sea estable y sin grumos.",
+        "Agregar la vainilla y dejar reposar por 30 minutos.",
+        "Colocar los frutos rojos a fuego medio.",
+        "Agregar la miel y revolver hasta que tenga el punto de espesor conciso (se deja enfriar por 16 minutos).",
+        "Moler la almendras y agregar a la salsa de frutos rojos."
+      ],
+      "servings": 4,
+      "servings_declared": false,
+      "yield_original": "",
+      "yield_unit": "porciones",
+      "minutes": 0,
+      "language": "es",
+      "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=45",
+      "tags": [
+        "Chile"
+      ],
+      "notes": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos. CC BY 3.0 Chile. Formato y títulos adaptados a Mesa; cantidades y preparación conservadas.",
+      "notes_language": null,
+      "photos": [
+        {
+          "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf?mesa_recipe_image=45",
+          "source": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=45",
+          "caption": "Mousse de miel",
+          "artist": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+          "license": "CC BY 3.0 Chile",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/cl/"
+        }
+      ],
+      "origin": {
+        "provider": "book-los-rios",
+        "id": "45",
+        "url": "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf#page=45",
+        "attribution": "Ministerio de las Culturas, las Artes y el Patrimonio · INJUV · Red Futuro Técnico Los Ríos",
+        "license": "CC BY 3.0 Chile",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/cl/",
+        "language": "es",
+        "reuse_status": "published_license"
+      }
+    }
+  ]
+}

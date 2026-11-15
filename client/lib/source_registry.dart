@@ -34,7 +34,7 @@ class CatalogSource {
 
 const originalSourceCount = 38;
 const retiredSourceCount = 36;
-const addedOpenSourceCount = 20;
+const addedOpenSourceCount = 21;
 
 const catalogSources = [
   CatalogSource(
@@ -124,6 +124,24 @@ const catalogSources = [
     countEvidence: "https://bunkatura.pl/pdf/mesa_polaca.pdf",
     countCheckedAt: "2026-10-16",
     countNote: "Fichas seleccionadas y revisadas para Mesa; no es el total de recetas del editor.",
+  ),
+  CatalogSource(
+    "book-los-rios",
+    "Recetario de Los Ríos",
+    "Español",
+    "20 recetas de patrimonio culinario de la Región de Los Ríos · texto sin conexión · fotos del documento",
+    languageCode: "es",
+    licenseName: "CC BY 3.0 Chile",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/cl/",
+    country: "Chile",
+    url: "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf",
+    mode: "asset",
+    asset: "assets/catalogs/book-los-rios.json",
+    recipeCount: 20,
+    countKind: "reviewed_selection",
+    countEvidence: "https://www.cultura.gob.cl/wp-content/uploads/2021/05/recetario-patrimonio-culinario-los-rios-2020.pdf",
+    countCheckedAt: "2026-11-15",
+    countNote: "Fichas seleccionadas y revisadas para Mesa; 20 recetas del recetario completo.",
   ),
   CatalogSource(
     "wiki-en",

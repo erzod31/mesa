@@ -12,7 +12,7 @@ from pypdf import PdfReader
 from .fetcher import fetch_document
 
 DIRECTORY = Path(__file__).with_name('licensed_collections')
-PROVIDERS = frozenset({'book-polaca'})
+PROVIDERS = frozenset({'book-polaca', 'book-los-rios'})
 _lock = Lock()
 _slots = BoundedSemaphore(8)
 _document = None
