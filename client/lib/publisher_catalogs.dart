@@ -629,7 +629,8 @@ class PublicPublisherCatalog {
       }
       final request = http.Request(form == null ? 'GET' : 'POST', uri)
         ..followRedirects = false;
-      request.headers['User-Agent'] = 'MesaRecipeApp/1.4.1';
+      request.headers['User-Agent'] =
+          'MesaRecipeApp/1.19 (https://github.com/erzod31/mesa; recetario familiar privado)';
       if (form != null) request.bodyFields = form;
       final response = await client
           .send(request)

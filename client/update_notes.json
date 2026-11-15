@@ -1,4 +1,4 @@
 [
-  "Corrige las traducciones fallidas: los rangos de cantidades (30–40 minutos) ya no rompen la traducción y las cifras escritas se restauran con seguridad.",
-  "El traductor local acepta ahora casi todas las recetas en inglés, francés, italiano, alemán y portugués; si una cifra no es fiable, se conserva el original como siempre."
+  "Corrige las fuentes que no cargaban: Wikilibros devolvía error de límite de consultas y las ediciones nuevas (catalán, neerlandés, polaco, japonés, chino, finés y sueco) estaban bloqueadas en la app.",
+  "El lector de catálogos usa ahora un agente descriptivo que Wikimedia acepta y reintenta automáticamente cuando la fuente está ocupada."
 ]

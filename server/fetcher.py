@@ -26,6 +26,7 @@ def public_target(url):
 
 def _fetch_public(url, *, image=False, document=False, post_data=None):
     deadline = time.monotonic() + (45 if document else 12 if image else 25)
+    throttle_retries = 0
     for _ in range(4):
         if deadline is not None and time.monotonic() >= deadline:
             raise TimeoutError('Tiempo de descarga de la foto agotado.')
@@ -44,7 +45,7 @@ def _fetch_public(url, *, image=False, document=False, post_data=None):
             path = target.path or '/'
             if target.query:
                 path += '?' + target.query
-            headers = {'Host': hostname, 'User-Agent': 'Mesa-Source-Research/1.0 (public read-only sample audit)', 'Accept': 'application/pdf' if document else 'image/*' if image else 'text/html,application/json', 'Accept-Encoding': 'identity'}
+            headers = {'Host': hostname, 'User-Agent': 'MesaRecipeApp/1.19 (https://github.com/erzod31/mesa; recetario familiar sin ánimo de lucro)', 'Accept': 'application/pdf' if document else 'image/*' if image else 'text/html,application/json', 'Accept-Encoding': 'identity'}
             if post_data is not None:
                 headers['Content-Type'] = 'application/x-www-form-urlencoded'
             connection.request('POST' if post_data is not None else 'GET', path, body=post_data, headers=headers) if post_data is not None else connection.request('GET', path, headers=headers)
@@ -54,6 +55,10 @@ def _fetch_public(url, *, image=False, document=False, post_data=None):
                 if not location:
                     raise ValueError('El enlace redirige sin indicar un destino.')
                 url = urljoin(url, location)
+                continue
+            if response.status == 429 and throttle_retries < 2:
+                throttle_retries += 1
+                time.sleep(1.5)
                 continue
             if response.status != 200:
                 raise ValueError(f'La fuente no permitió la consulta automática (HTTP {response.status}). Abre el sitio original.')

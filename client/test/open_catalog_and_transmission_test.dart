@@ -59,4 +59,25 @@ void main() {
     expect(store.generation,'new');
     store.dispose();await store.db.close();
   });
+
+  test('Every Wikibooks edition passes the catalogue address check', () async {
+    final api = CatalogApi(
+      MockClient(
+        (request) async => http.Response(
+          '{}',
+          200,
+          headers: {'content-type': 'application/json'},
+        ),
+      ),
+    );
+    for (final code in [
+      'es', 'en', 'fr', 'it', 'pt', 'de', 'ca', 'nl', 'pl', 'ja', 'zh', 'fi', 'sv',
+    ]) {
+      final value = await api.request(
+        Uri.https('$code.wikibooks.org', '/w/api.php', {'action': 'query'}),
+      );
+      expect(value, <String, dynamic>{});
+    }
+  });
 }
+

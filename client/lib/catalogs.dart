@@ -186,6 +186,13 @@ class CatalogApi {
               'it',
               'pt',
               'de',
+              'ca',
+              'nl',
+              'pl',
+              'ja',
+              'zh',
+              'fi',
+              'sv',
             ].any((code) => uri.host == '$code.wikibooks.org') &&
             uri.path == '/w/api.php') ||
         uri.host == 'huggingface.co' ||
@@ -200,10 +207,13 @@ class CatalogApi {
       throw Exception('La dirección del catálogo no es válida.');
     }
     final req = http.Request('GET', uri)..followRedirects = false;
-    req.headers['User-Agent'] = 'MesaRecipeApp/1.3 (private family cookbook)';
-    final response = await client
-        .send(req)
-        .timeout(const Duration(seconds: 12));
+    req.headers['User-Agent'] =
+        'MesaRecipeApp/1.19 (https://github.com/erzod31/mesa; recetario familiar privado)';
+    var response = await client.send(req).timeout(const Duration(seconds: 12));
+    if (response.statusCode == 429) {
+      await Future<void>.delayed(const Duration(milliseconds: 1200));
+      response = await client.send(req).timeout(const Duration(seconds: 12));
+    }
     if (response.statusCode != 200) {
       throw Exception(
         response.statusCode == 429
